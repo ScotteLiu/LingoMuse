@@ -1,0 +1,7 @@
+{
+  "edition": "offline",
+  "engine": "Ollama 0.31.2 CPU/Vulkan",
+  "model": "qwen3:1.7b",
+  "modelDigest": "sha256:8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+  "builtAt": "2026-07-13"
+}

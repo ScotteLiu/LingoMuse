@@ -1,0 +1,361 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      uiohook-napi:
+        specifier: ^1.5.5
+        version: 1.5.5
+    devDependencies:
+      '@types/node':
+        specifier: ^24.10.1
+        version: 24.13.3
+      concurrently:
+        specifier: ^9.2.1
+        version: 9.2.4
+      cross-env:
+        specifier: ^10.1.0
+        version: 10.1.0
+      electron:
+        specifier: ^43.1.0
+        version: 43.1.0
+      electron-builder:
+        specifier: ^26.15.3
+        version: 26.15.3(electron-builder-squirrel-windows@26.15.3)
+      typescript:
+        specifier: ^7.0.2
+        version: 7.0.2
+      vite:
+        specifier: ^8.1.4
+        version: 8.1.4(@types/node@24.13.3)(jiti@2.7.0)
+      vitest:
+        specifier: ^4.1.10
+        version: 4.1.10(@types/node@24.13.3)(vite@8.1.4(@types/node@24.13.3)(jiti@2.7.0))
+      wait-on:
+        specifier: ^9.0.4
+        version: 9.0.10
+
+packages:
+
+  '@electron-internal/extract-zip@1.0.4':
+    resolution: {integrity: sha512-Zr1Vs7E9tpCNhZHDAbFVXc2gEVCG9RqPDjrno5+bdgB6LRAuvgyMHJut4NCVyYwtAieapMzc3fiQ3CSTi75ARg==}
+    engines: {node: '>=22.12.0'}
+
+  '@electron/asar@3.4.1':
+    resolution: {integrity: sha512-i4/rNPRS84t0vSRa2HorerGRXWyF4vThfHesw0dmcWHp+cspK743UanA0suA5Q5y8kzY2y6YKrvbIUn69BCAiA==}
+    engines: {node: '>=10.12.0'}
+    hasBin: true
+
+  '@electron/fuses@1.8.0':
+    resolution: {integrity: sha512-zx0EIq78WlY/lBb1uXlziZmDZI4ubcCXIMJ4uGjXzZW0nS19TjSPeXPAjzzTmKQlJUZm0SbmZhPKP7tuQ1SsEw==}
+    hasBin: true
+
+  '@electron/get@3.1.0':
+    resolution: {integrity: sha512-F+nKc0xW+kVbBRhFzaMgPy3KwmuNTYX1fx6+FxxoSnNgwYX6LD7AKBTWkU0MQ6IBoe7dz069CNkR673sPAgkCQ==}
+    engines: {node: '>=14'}
+
+  '@electron/get@5.0.0':
+    resolution: {integrity: sha512-pjoBpru1KdEtcExBnuHAP1cAc/5faoedw0hzJkL3o4/IJp7HNF1+fbrdxT3gMYRX2oJfvnA/WXeCTVQpYYxyJA==}
+    engines: {node: '>=22.12.0'}
+
+  '@electron/notarize@2.5.0':
+    resolution: {integrity: sha512-jNT8nwH1f9X5GEITXaQ8IF/KdskvIkOFfB2CvwumsveVidzpSc+mvhhTMdAGSYF3O+Nq49lJ7y+ssODRXu06+A==}
+    engines: {node: '>= 10.0.0'}
+
+  '@electron/osx-sign@1.3.3':
+    resolution: {integrity: sha512-KZ8mhXvWv2rIEgMbWZ4y33bDHyUKMXnx4M0sTyPNK/vcB81ImdeY9Ggdqy0SWbMDgmbqyQ+phgejh6V3R2QuSg==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+
+  '@electron/rebuild@4.2.0':
+    resolution: {integrity: sha512-RKL/O+jGoXJMxrx/5771y1n0xTKmFuOYGO3gMmwypBM6rsH0kou0mswwdXA2JrhIkE4xyC7v9vGk0n6NPzgOxQ==}
+    engines: {node: '>=22.12.0'}
+    hasBin: true
+
+  '@electron/universal@2.0.3':
+    resolution: {integrity: sha512-Wn9sPYIVFRFl5HmwMJkARCCf7rqK/EurkfQ/rJZ14mHP3iYTjZSIOSVonEAnhWeAXwtw7zOekGRlc6yTtZ0t+g==}
+    engines: {node: '>=16.4'}
+
+  '@electron/windows-sign@1.2.2':
+    resolution: {integrity: sha512-dfZeox66AvdPtb2lD8OsIIQh12Tp0GNCRUDfBHIKGpbmopZto2/A8nSpYYLoedPIHpqkeblZ/k8OV0Gy7PYuyQ==}
+    engines: {node: '>=14.14'}
+    hasBin: true
+
+  '@emnapi/core@1.11.1':
+    resolution: {integrity: sha512-RSvbQmHzdKzNsLYa/wHrbc3KN4sYLKAdPZxqiM2HATqv/SBk2/ENSHpvXGaLOMcsAyz0poEGqkmmKYG3OWiJEQ==}
+
+  '@emnapi/runtime@1.11.1':
+    resolution: {integrity: sha512-vgj7R3y3Wgx24IQaGPA/R6YFXLHVMOZ0uVEyIQPaWs+rd1AzfEMXlAC22FYwO1XkKR6NPsq7mUandH8oIRdZFw==}
+
+  '@emnapi/wasi-threads@1.2.2':
+    resolution: {integrity: sha512-c95qOXkHdydNKhscBTebqEC1CVAZpyqOfVfBzQ1qgzyl3gfeldUjIggDbIZgDKsHLgnsM+igH7TJ/eAasaVuMA==}
+
+  '@epic-web/invariant@1.0.0':
+    resolution: {integrity: sha512-lrTPqgvfFQtR/eY/qkIzp98OGdNJu0m5ji3q/nJI8v3SXkRKEnWiOxMmbvcSoAIzv/cGiuvRy57k4suKQSAdwA==}
+
+  '@hapi/address@5.1.1':
+    resolution: {integrity: sha512-A+po2d/dVoY7cYajycYI43ZbYMXukuopIsqCjh5QzsBCipDtdofHntljDlpccMjIfTy6UOkg+5KPriwYch2bXA==}
+    engines: {node: '>=14.0.0'}
+
+  '@hapi/formula@3.0.2':
+    resolution: {integrity: sha512-hY5YPNXzw1He7s0iqkRQi+uMGh383CGdyyIGYtB+W5N3KHPXoqychklvHhKCC9M3Xtv0OCs/IHw+r4dcHtBYWw==}
+
+  '@hapi/hoek@11.0.7':
+    resolution: {integrity: sha512-HV5undWkKzcB4RZUusqOpcgxOaq6VOAH7zhhIr2g3G8NF/MlFO75SjOr2NfuSx0Mh40+1FqCkagKLJRykUWoFQ==}
+
+  '@hapi/pinpoint@2.0.1':
+    resolution: {integrity: sha512-EKQmr16tM8s16vTT3cA5L0kZZcTMU5DUOZTuvpnY738m+jyP3JIUj+Mm1xc1rsLkGBQ/gVnfKYPwOmPg1tUR4Q==}
+
+  '@hapi/tlds@1.1.7':
+    resolution: {integrity: sha512-MgNjRwy9Ti92yVAixLmDc8dd1bJIKwO9qlWCfFQRwRmUEDPQHYn4G6hwPFvFGUTzAa0FsS+inMjLin7GnyBRhA==}
+    engines: {node: '>=14.0.0'}
+
+  '@hapi/topo@6.0.2':
+    resolution: {integrity: sha512-KR3rD5inZbGMrHmgPxsJ9dbi6zEK+C3ZwUwTa+eMwWLz7oijWUTWD2pMSNNYJAU6Qq+65NkxXjqHr/7LM2Xkqg==}
+
+  '@isaacs/fs-minipass@4.0.1':
+    resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
+    engines: {node: '>=18.0.0'}
+
+  '@jridgewell/sourcemap-codec@1.5.5':
+    resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
+
+  '@malept/cross-spawn-promise@2.0.0':
+    resolution: {integrity: sha512-1DpKU0Z5ThltBwjNySMC14g0CkbyhCaz9FkhxqNsZI6uAPJXFS8cMXlBKo26FJ8ZuW6S9GCMcR9IO5k2X5/9Fg==}
+    engines: {node: '>= 12.13.0'}
+
+  '@malept/flatpak-bundler@0.4.0':
+    resolution: {integrity: sha512-9QOtNffcOF/c1seMCDnjckb3R9WHcG34tky+FHpNKKCW0wc/scYLwMtO+ptyGUfMW0/b/n4qRiALlaFHc9Oj7Q==}
+    engines: {node: '>= 10.0.0'}
+
+  '@napi-rs/wasm-runtime@1.1.6':
+    resolution: {integrity: sha512-ZLv/JdUfkvOy9eCnnBaGfiO+XimbjebAeO+MRQqD/B+FR1tnRN0tpKSJHRbE8sFfS6aqsXZ67TQjfwfsxULVbg==}
+    peerDependencies:
+      '@emnapi/core': ^1.7.1
+      '@emnapi/runtime': ^1.7.1
+
+  '@noble/hashes@1.4.0':
+    resolution: {integrity: sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==}
+    engines: {node: '>= 16'}
+
+  '@noble/hashes@2.2.0':
+    resolution: {integrity: sha512-IYqDGiTXab6FniAgnSdZwgWbomxpy9FtYvLKs7wCUs2a8RkITG+DFGO1DM9cr+E3/RgADRpFjrKVaJ1z6sjtEg==}
+    engines: {node: '>= 20.19.0'}
+
+  '@oxc-project/types@0.139.0':
+    resolution: {integrity: sha512-r9gHphtCs+1M7J0pw6Sn/hh/Wpa/iQrOOkrNAlVLF/gHq+/CJmHIWKKUUhdWjcD6CIa8idarspCsASiXCXvFUw==}
+
+  '@peculiar/asn1-schema@2.8.0':
+    resolution: {integrity: sha512-7YT0U/ze0tF2QOBbE15gKZwy5tvgGyLRiRHLzhlbOpf7BT032oBSd0haZqXn5W6l26WLlu3dyxzjM+2638/z2Q==}
+
+  '@peculiar/json-schema@1.1.12':
+    resolution: {integrity: sha512-coUfuoMeIB7B8/NMekxaDzLhaYmp0HZNPEjYRm9goRou8UZIC3z21s0sL9AWoCw4EG876QyO3kYrc61WNF9B/w==}
+    engines: {node: '>=8.0.0'}
+
+  '@peculiar/utils@2.0.3':
+    resolution: {integrity: sha512-+oL3HPFRIZ1St2K50lWCXiioIgSoxzz7R1J3uF6neO2yl1sgmpgY6XXJH4BdpoDkMWznQTeYF6oWNDZLCdQ4eQ==}
+
+  '@peculiar/webcrypto@1.7.1':
+    resolution: {integrity: sha512-ODOov0sGMJMf3jPonOkgGqPknTsu+DdQ7kD++gz8aI+aFMOMHFbWAA2taqXXVTdP+OTOQR/znGvSpmkeI0WTYQ==}
+    engines: {node: '>=14.18.0'}
+
+  '@rolldown/binding-android-arm64@1.1.5':
+    resolution: {integrity: sha512-lZg8fqIv2v7FF237bwMgzGZEJvGL79/s5knJ/i6FmsGF4XXlzccZ4jb+TrFIxtSSxFtIpdsgrPZeMk1I9AFcyQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [android]
+
+  '@rolldown/binding-darwin-arm64@1.1.5':
+    resolution: {integrity: sha512-51Bnx9pNiMRKSUNtBfySkNJ9vMU9Hh3I1ozDd6gyPPYzaXCfnptUcEZxXGYFn+ul2dtcMUiqGR1Yai2K10uoTw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@rolldown/binding-darwin-x64@1.1.5':
+    resolution: {integrity: sha512-Tm+gbfC0aHu1tBA/JvKQh32S0K6YgCHkiAF4/W6xX0K0RmNuc94VeK419dJoE65R5aRxmo+noZQSWrAMF6yb6g==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [darwin]
+
+  '@rolldown/binding-freebsd-x64@1.1.5':
+    resolution: {integrity: sha512-JMzDKCCXq93YccG5gz3hvOs1oXRKAf0XYpfOS88e+wZrC8Iugj6j68867vrYZkvpDDpKn/KoKORThmchMpF6TA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@rolldown/binding-linux-arm-gnueabihf@1.1.5':
+    resolution: {integrity: sha512-uML21j2K5TfPGutKxub+M+nLjZIrWjXQ5Grx4lCe/nimTj9B4L63zHpjXLl4y0L3mcm2htEQIb06oCG/szerNw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+
+  '@rolldown/binding-linux-arm64-gnu@1.1.5':
+    resolution: {integrity: sha512-navSiuTMogvnQoZoM/v+l3ZWo50/NTwSHSzheABx/RCnmUPaKwq9qSo4Br2OYRs21+Fz8uFqITZM3H4opOB0/Q==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@rolldown/binding-linux-arm64-musl@1.1.5':
+    resolution: {integrity: sha512-lAryqH7IteztmCXQXk0etKj4wBQ7Gx5S6LjKhsgp9zb8I5bsuvU/2llH1hDQcjsFeqIsovMVN339/8pUDDBXxA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@rolldown/binding-linux-ppc64-gnu@1.1.5':
+    resolution: {integrity: sha512-fsK/sNBnxzBlL4O1JNrZakVQxPspqpED5dLtNsZS9oOKmtSpdNIzxH2kkol5HYTWJN47sE20ztMJPxfZ89qGOg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ppc64]
+    os: [linux]
+    libc: [glibc]
+
+  '@rolldown/binding-linux-s390x-gnu@1.1.5':
+    resolution: {integrity: sha512-gLYb4BIadlfTOYT5gO503n8zQjXflgzpD0FcyKh0Mzx3rqCZKnHoJWV9xe1KXUJ5lx2JfcSHr/mhzS0PC/McAA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [s390x]
+    os: [linux]
+    libc: [glibc]
+
+  '@rolldown/binding-linux-x64-gnu@1.1.5':
+    resolution: {integrity: sha512-FjcpEKUyJygHgs1o50VYNvkt5+7Le/VEdYt0AkRpkL33MnyQfwr8l5mXwMmfmTbyMPr5vJLC+8/Gd9gXnwU1QQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@rolldown/binding-linux-x64-musl@1.1.5':
+    resolution: {integrity: sha512-Me+PfPI2TMeOQk0gYWfLQZtTktrmzbr8cDboqX83XKc7UrgAi55gF+2dUkWdxd19n55Essp2yeca+O9N5rBxHg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@rolldown/binding-openharmony-arm64@1.1.5':
+    resolution: {integrity: sha512-yc5WrLzXks6zCQfn9Oxr8pORKyl/pF+QjHmW/Qx3qu0oyrrNC+y2JLTU1E2rcWYAmzlnqngWXHQjy51VzW70Vw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [openharmony]
+
+  '@rolldown/binding-wasm32-wasi@1.1.5':
+    resolution: {integrity: sha512-VbQGPX2b4r48TAMIM2cjgluIM1HYutm4pcTEJsle7iEP7sB1dFqtPLBVbdLAZCxy1txCcPxf4QFf4v8uvltPqA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [wasm32]
+
+  '@rolldown/binding-win32-arm64-msvc@1.1.5':
+    resolution: {integrity: sha512-gHv82k63z4qpV5+Q1y/12KrK0ltWBukVDI8nZcbT7Tt/ZlOIVwppazneq0F93oDxTo3IgAMEDIoQh3E2n6mVsw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [win32]
+
+  '@rolldown/binding-win32-x64-msvc@1.1.5':
+    resolution: {integrity: sha512-tTZuDBPw85tEN5PQi1pnEBzDy0Z49HtScLAbD5t6hyeU92A95pRWaSMw1GZZi/RwgSgUIl0xrSlXIT/9QzvYSA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [win32]
+
+  '@rolldown/pluginutils@1.0.1':
+    resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
+
+  '@sindresorhus/is@4.6.0':
+    resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
+    engines: {node: '>=10'}
+
+  '@standard-schema/spec@1.1.0':
+    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  '@szmarczak/http-timer@4.0.6':
+    resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
+    engines: {node: '>=10'}
+
+  '@tybys/wasm-util@0.10.3':
+    resolution: {integrity: sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==}
+
+  '@types/cacheable-request@6.0.3':
+    resolution: {integrity: sha512-IQ3EbTzGxIigb1I3qPZc1rWJnH0BmSKv5QYTalEwweFvyBDLSAe24zP0le/hyi7ecGfZVlIVAg4BZqb8WBwKqw==}
+
+  '@types/chai@5.2.3':
+    resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
+
+  '@types/debug@4.1.13':
+    resolution: {integrity: sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw==}
+
+  '@types/deep-eql@4.0.2':
+    resolution: {integrity: sha512-c9h9dVVMigMPc4bwTvC5dxqtqJZwQPePsWjPlpSOnojbor6pGqdk541lfA7AqFQr5pB1BRdq0juY9db81BwyFw==}
+
+  '@types/estree@1.0.9':
+    resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
+
+  '@types/fs-extra@9.0.13':
+    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
+
+  '@types/http-cache-semantics@4.2.0':
+    resolution: {integrity: sha512-L3LgimLHXtGkWikKnsPg0/VFx9OGZaC+eN1u4r+OB1XRqH3meBIAVC2zr1WdMH+RHmnRkqliQAOHNJ/E0j/e0Q==}
+
+  '@types/keyv@3.1.4':
+    resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
+
+  '@types/ms@2.1.0':
+    resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
+
+  '@types/node@24.13.3':
+    resolution: {integrity: sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q==}
+
+  '@types/responselike@1.0.3':
+    resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
+
+  '@typescript/typescript-aix-ppc64@7.0.2':
+    resolution: {integrity: sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ==}
+    engines: {node: '>=16.20.0'}
+    cpu: [ppc64]
+    os: [aix]
+
+  '@typescript/typescript-darwin-arm64@7.0.2':
+    resolution: {integrity: sha512-gowzar9MwS/aRWp6f3a4KUqzRjAZjOsmGNCM6LcTgXum+dBfgsBVMN+AgvOCCbguXyick6LJhpBszxMebJ8syA==}
+    engines: {node: '>=16.20.0'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@typescript/typescript-darwin-x64@7.0.2':
+    resolution: {integrity: sha512-SZ9xZInqApNlNGc9s0W1VSsktYSOe9cFqNOIqmN1Gs8SmkjKZYFt017G4VwPxASInODuAdbTW7sXiFUf893RgA==}
+    engines: {node: '>=16.20.0'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@typescript/typescript-freebsd-arm64@7.0.2':
+    resolution: {integrity: sha512-W5NH4y/J0plIIS5b2xvTEkU7JFxyqdMAOgf+Ilhl0vHQXKO5dZoxd+C/jEtq56c4F3wk71RB4BMRQ2XdI+bwYQ==}
+    engines: {node: '>=16.20.0'}
+    cpu: [arm64]
+    os: [freebsd]
+
+  '@typescript/typescript-freebsd-x64@7.0.2':
+    resolution: {integrity: sha512-UMGDx5sTpzNw3WiPebH7l90IWfJggEd+egHt/q6p7/Cm3zqoV7VxkGXt+3DxPIw8CcmvAB0j3sVVfbhX+M4Tpw==}
+    engines: {node: '>=16.20.0'}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@typescript/typescript-linux-arm64@7.0.2':
+    resolution: {integrity: sha512-Qh4eU4/y3yDjnfjjyPYihMj5/ODIlmt+Bzu17OI+fiSRDW57QmU5SiN63exPRNJPKUzcc1INa1NXdrJ+MqHjUQ==}
+    engines: {node: '>=16.20.0'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@typescript/typescript-linux-arm@7.0.2':
+    resolution: {integrity: sha512-gffT3xPz9sR7j/YJExkyPntrI0P2EP9XbOyWzth2/Gs0RstK+90RBcO0ncXoXy/beYll1SXw846Nf2zdnEz0QQ==}
+    engines: {node: '>=16.20.0'}
+    cpu: [arm]
+    os: [linux]
+
+  '@typescript/typescript-linux-loong64@7.0.2':
+    resolution: {integrity: sha512-uEHck9i8hoAzXPiYRib1O7miOnz23SxIeVl6F4LXox+qov1K35jHcEW6VHKvZI+pyvl7fZEP4MCU5LYvIq1GuQ==}
+    engines: {node: '>=16.20.0'}
+    cpu: [loong64]
+    os: [linux]
+
+  '@typescript/typescript-linux-mips64el@7.0.2':
+    resolution: {integrity: shÛ7òÚ$z{-®éÜj× ¢6ÆÂÖ&–æBÖÇ’Ö†VÇW'3¢ãã ¢W2ÖFVf–æR×&÷W'G“¢ãã¢W2ÖW'&÷'3¢ã2ã ¢W2Öö&¦V7BÖFö×3¢ãã ¢gVæ7F–öâÖ&–æC¢ãã ¢vWB×&÷Fó¢ãã¢v÷C¢ã"ã ¢†2×7–Ö&öÇ3¢ãã ¢†6÷vã¢"ãã@¢ÖF‚Ö–çG&–ç6–73¢ãã  ¢vWB×&÷Fôãã ¢FWVæFVæ6–W3 ¢GVæFW"×&÷Fó¢ãã¢W2Öö&¦V7BÖFö×3¢ãã  ¢vWB×7G&VÔRã"ã ¢FWVæFVæ6–W3 ¢V×¢2ãã@ ¢vÆö$rã"ã3 ¢FWVæFVæ6–W3 ¢g2ç&VÇFƒ¢ãã ¢–æfÆ–v‡C¢ãã`¢–æ†W&—G3¢"ãã@¢Ö–æ–ÖF6ƒ¢2ããP¢öæ6S¢ãBã ¢F‚Ö—2Ö'6öÇWFS¢ãã ¢vÆö&ÂÖvVçD2ãã ¢FWVæFVæ6–W3 ¢&ööÆVã¢2ã"ã ¢W3bÖW'&÷#¢Bãã¢ÖF6†W#¢2ãã ¢&ö'#¢"ãRã@¢6V×fW#¢rãrã@¢6W&–Æ—¦RÖW'&÷#¢rãã¢÷F–öæÃ¢G'VP ¢vÆö&ÇF†—4ããC ¢FWVæFVæ6–W3 ¢FVf–æR×&÷W'F–W3¢ã"ã¢v÷C¢ã"ã ¢÷F–öæÃ¢G'VP ¢v÷Dã"ã¢·Ð ¢v÷Dã‚ãc ¢FWVæFVæ6–W3 ¢t6–æG&W6÷&‡W2ö—2s¢Bãbã ¢t7¦Ö&7¦²ö‡GG×F–ÖW"s¢Bãã`¢tG—W2ö66†V&ÆR×&WVW7Bs¢bãã0¢tG—W2÷&W7öç6VÆ–¶Rs¢ãã0¢66†V&ÆRÖÆöö·W¢Rãã@¢66†V&ÆR×&WVW7C¢rãã@¢FV6ö×&W72×&W7öç6S¢bãã ¢‡GG"×w&W#¢ãã0¢Æ÷vW&66RÖ¶W—3¢"ãã ¢Ö6æ6VÆ&ÆS¢"ãã¢&W7öç6VÆ–¶S¢"ãã ¢w&6VgVÂÖg4Bã"ã¢·Ð ¢†2ÖfÆtBãã¢·Ð ¢†2×&÷W'G’ÖFW67&—F÷'4ãã# ¢FWVæFVæ6–W3 ¢W2ÖFVf–æR×&÷W'G“¢ãã¢÷F–öæÃ¢G'VP ¢†2×7–Ö&öÇ4ãã¢·Ð ¢†2×F÷7G&–æwFtãã# ¢FWVæFVæ6–W3 ¢†2×7–Ö&öÇ3¢ãã  ¢†6÷vä"ããC ¢FWVæFVæ6–W3 ¢gVæ7F–öâÖ&–æC¢ãã  ¢†÷7FVBÖv—BÖ–æfôBãã ¢FWVæFVæ6–W3 ¢Ç'RÖ66†S¢bãã  ¢‡GGÖ66†R×6VÖçF–74Bã"ã¢·Ð ¢‡GG×&÷‡’ÖvVçDrãã# ¢FWVæFVæ6–W3 ¢vVçBÖ&6S¢rãã@¢FV'Vs¢BãBã0¢G&ç6—F—fUVW$FWVæFVæ6–W3 ¢Ò7W÷'G2Ö6öÆ÷  ¢‡GG"×w&W$ãã3 ¢FWVæFVæ6–W3 ¢V–6²ÖÇ'S¢Rãã¢&W6öÇfRÖÇã¢ã"ã ¢‡GG2×&÷‡’ÖvVçDRãã ¢FWVæFVæ6–W3 ¢vVçBÖ&6S¢bãã ¢FV'Vs¢BãBã0¢G&ç6—F—fUVW$FWVæFVæ6–W3 ¢Ò7W÷'G2Ö6öÆ÷  ¢‡GG2×&÷‡’ÖvVçDrããc ¢FWVæFVæ6–W3 ¢vVçBÖ&6S¢rãã@¢FV'Vs¢BãBã0¢G&ç6—F—fUVW$FWVæFVæ6–W3 ¢Ò7W÷'G2Ö6öÆ÷  ¢–æfÆ–v‡Dããc ¢FWVæFVæ6–W3 ¢öæ6S¢ãBã ¢w&“¢ãã  ¢–æ†W&—G4"ããC¢·Ð ¢—2ÖgVÆÇv–GF‚Ö6öFR×ö–çD2ãã¢·Ð ¢—6'&”ãã¢·Ð ¢—6&–æ'–f–ÆTBãã¢·Ð ¢—6&–æ'–f–ÆTRããs¢·Ð ¢—6W†T"ãã¢·Ð ¢—6W†T2ããS¢·Ð ¢—6W†TBãã¢·Ð ¢¦¶Tã’ãC ¢FWVæFVæ6–W3 ¢7–æ3¢2ã"ã`¢f–ÆVÆ—7C¢ãã`¢–6ö6öÆ÷'3¢ãã ¢¦—F”"ãrã¢·Ð ¢¦ö”‚ã"ã3 ¢FWVæFVæ6–W3 ¢t†’öFG&W72s¢Rãã¢t†’öf÷&×VÆs¢2ãã ¢t†’ö†öV²s¢ããp¢t†’÷–çö–çBs¢"ãã¢t†’÷FÆG2s¢ããp¢t†’÷F÷òs¢bãã ¢t7FæF&B×66†VÖ÷7V2s¢ãã  ¢§2×–ÖÄBã2ã ¢FWVæFVæ6–W3 ¢&w'6S¢"ãã ¢§6öâÖ'VffW$2ãã¢·Ð ¢§6öâ×66†VÖ×G&fW'6Tãã¢·Ð ¢§6öâ×7G&–æv–g’×6fTRãã ¢÷F–öæÃ¢G'VP ¢§6öãT"ã"ã3¢·Ð ¢§6öæf–ÆTBãã ¢÷F–öæÄFWVæFVæ6–W3 ¢w&6VgVÂÖg3¢Bã"ã ¢§6öæf–ÆTbã"ã ¢FWVæFVæ6–W3 ¢Væ—fW'6Æ–g“¢"ãã¢÷F–öæÄFWVæFVæ6–W3 ¢w&6VgVÂÖg3¢Bã"ã ¢¶W—dBãRãC ¢FWVæFVæ6–W3 ¢§6öâÖ'VffW#¢2ãã ¢Æ§’×fÄããS¢·Ð ¢Æ–v‡Fæ–æv772ÖæG&ö–BÖ&ÓcDã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772ÖF'v–âÖ&ÓcDã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772ÖF'v–â×ƒcDã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772Ög&VV'6B×ƒcDã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772ÖÆ–çW‚Ö&ÒÖvçVV&–†dã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772ÖÆ–çW‚Ö&ÓcBÖvçTã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772ÖÆ–çW‚Ö&ÓcBÖ×W6Äã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772ÖÆ–çW‚×ƒcBÖvçTã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772ÖÆ–çW‚×ƒcBÖ×W6Äã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772×v–ã3"Ö&ÓcBÖ×7f4ã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv772×v–ã3"×ƒcBÖ×7f4ã3"ã ¢÷F–öæÃ¢G'VP ¢Æ–v‡Fæ–æv774ã3"ã ¢FWVæFVæ6–W3 ¢FWFV7BÖÆ–&3¢"ãã ¢÷F–öæÄFWVæFVæ6–W3 ¢Æ–v‡Fæ–æv772ÖæG&ö–BÖ&ÓcC¢ã3"ã ¢Æ–v‡Fæ–æv772ÖF'v–âÖ&ÓcC¢ã3"ã ¢Æ–v‡Fæ–æv772ÖF'v–â×ƒcC¢ã3"ã ¢Æ–v‡Fæ–æv772Ög&VV'6B×ƒcC¢ã3"ã ¢Æ–v‡Fæ–æv772ÖÆ–çW‚Ö&ÒÖvçVV&–†c¢ã3"ã ¢Æ–v‡Fæ–æv772ÖÆ–çW‚Ö&ÓcBÖvçS¢ã3"ã ¢Æ–v‡Fæ–æv772ÖÆ–çW‚Ö&ÓcBÖ×W6Ã¢ã3"ã ¢Æ–v‡Fæ–æv772ÖÆ–çW‚×ƒcBÖvçS¢ã3"ã ¢Æ–v‡Fæ–æv772ÖÆ–çW‚×ƒcBÖ×W6Ã¢ã3"ã ¢Æ–v‡Fæ–æv772×v–ã3"Ö&ÓcBÖ×7f3¢ã3"ã ¢Æ–v‡Fæ–æv772×v–ã3"×ƒcBÖ×7f3¢ã3"ã  ¢ÆöF6„Bã‚ã¢·Ð ¢Æ÷vW&66RÖ¶W—4"ãã¢·Ð ¢Ç'RÖ66†Tbãã ¢FWVæFVæ6–W3 ¢–ÆÆ—7C¢Bãã  ¢Öv–2×7G&–ætã3ã# ¢FWVæFVæ6–W3 ¢t§&–FvWvVÆÂ÷6÷W&6VÖÖ6öFV2s¢ãRãP ¢ÖF6†W$2ãã ¢FWVæFVæ6–W3 ¢W66R×7G&–ær×&VvW‡¢Bãã ¢÷F–öæÃ¢G'VP ¢ÖF‚Ö–çG&–ç6–74ãã¢·Ð ¢Ö–ÖRÖF$ãS"ã¢·Ð ¢Ö–ÖR×G—W4"ãã3S ¢FWVæFVæ6–W3 ¢Ö–ÖRÖF#¢ãS"ã  ¢Ö–ÖT"ãbã¢·Ð ¢Ö–Ö–2×&W7öç6Tãã¢·Ð ¢Ö–Ö–2×&W7öç6T2ãã¢·Ð ¢Ö–æ–ÖF6„ã"ãS ¢FWVæFVæ6–W3 ¢'&6RÖW‡ç6–öã¢Rããp ¢Ö–æ–ÖF6„2ããS ¢FWVæFVæ6–W3 ¢'&6RÖW‡ç6–öã¢ãã` ¢Ö–æ–ÖF6„Rãã“ ¢FWVæFVæ6–W3 ¢'&6RÖW‡ç6–öã¢"ãã  ¢Ö–æ–ÖF6„’ãã“ ¢FWVæFVæ6–W3 ¢'&6RÖW‡ç6–öã¢"ãã  ¢Ö–æ–Ö—7Dã"ãƒ¢·Ð ¢Ö–æ—74rãã3¢·Ð ¢Ö–æ—¦Æ–$2ãã ¢FWVæFVæ6–W3 ¢Ö–æ—73¢rãã0 ¢Ö¶F—'ãRãc ¢FWVæFVæ6–W3 ¢Ö–æ–Ö—7C¢ã"ã€ ¢×4"ãã3¢·Ð ¢ææö–D2ã2ãc¢·Ð ¢æöFRÖ&”Bã32ã ¢FWVæFVæ6–W3 ¢6V×fW#¢rãrã@ ¢æöFRÖ’×fW'6–öäã"ã ¢FWVæFVæ6–W3 ¢6V×fW#¢rãrã@ ¢æöFRÖw—Ö'V–ÆDBã‚ãC¢·Ð ¢æöFRÖw—"ãBã ¢FWVæFVæ6–W3 ¢Vçb×F‡3¢"ã"ã¢W‡öæVçF–ÂÖ&6¶öfc¢2ãã0¢w&6VgVÂÖg3¢Bã"ã¢æ÷C¢’ãã ¢&ö2ÖÆös¢bãã ¢6V×fW#¢rãrã@¢F#¢rãRã# ¢F–ç–vÆö&'“¢ã"ãp¢VæF–6“¢bã#rã ¢v†–6ƒ¢bãã ¢æöFRÖ–çCcDãBã¢·Ð ¢æ÷D’ãã ¢FWVæFVæ6–W3 ¢&'&Wc¢Bãã  ¢æ÷&ÖÆ—¦R×W&Äbãã¢·Ð ¢ö&¦V7BÖ¶W—4ãã ¢÷F–öæÃ¢G'VP ¢ö'Vt"ãã3¢·Ð ¢öæ6TãBã ¢FWVæFVæ6–W3 ¢w&“¢ãã  ¢Ö6æ6VÆ&ÆT"ãã¢·Ð ¢ÖÆ–Ö—D2ãã ¢FWVæFVæ6–W3 ¢–ö7Fò×VWVS¢ãã  ¢F‚Ö—2Ö'6öÇWFTãã¢·Ð ¢F‚Ö¶W”2ãã¢·Ð ¢F†T"ãã3¢·Ð ¢RÖÆ–'&'”ãBã¢·Ð ¢–6ö6öÆ÷'4ãã¢·Ð ¢–6öÖF6„BããS¢·Ð ¢¶–§42ãBã ¢FWVæFVæ6–W3 ¢tæö&ÆRö†6†W2s¢ãBã ¢6ã§3¢2ãã ¢'—FW7G&VÖ§3¢"ãã¢gG7WF–Ç3¢ã2ã`¢gWF–Ç3¢ããP¢G6Æ–#¢"ã‚ã ¢Æ—7D2ãã ¢FWVæFVæ6–W3 ¢t†ÖÆFöÒ÷†ÖÆFöÒs¢ã‚ã0¢&6ScBÖ§3¢ãRã¢†ÖÆ'V–ÆFW#¢Rãã ¢÷7F774‚ãRãs ¢FWVæFVæ6–W3 ¢ææö–C¢2ã2ã`¢–6ö6öÆ÷'3¢ãã¢6÷W&6RÖÖÖ§3¢ã"ã ¢÷7F¦V7DããÖÇ†ãc ¢FWVæFVæ6–W3 ¢6öÖÖæFW#¢’ãRã ¢÷F–öæÃ¢G'VP ¢&ö2ÖÆötbãã¢·Ð ¢&ö6W72ÖæW‡F–6²Ö&w4"ãã¢·Ð ¢&öw&W74"ãã3¢·Ð ¢&öÖ—6R×&WG'”"ãã ¢FWVæFVæ6–W3 ¢W'"Ö6öFS¢"ãã0¢&WG'“¢ã"ã  ¢&÷W"ÖÆö6¶f–ÆTBãã# ¢FWVæFVæ6–W3 ¢w&6VgVÂÖg3¢Bã"ã¢&WG'“¢ã"ã ¢6–væÂÖW†—C¢2ããp ¢&÷‡’Ög&öÒÖVçd"ãã¢·Ð ¢V×2ããC ¢FWVæFVæ6–W3 ¢VæBÖöb×7G&VÓ¢ãBãP¢öæ6S¢ãBã  ¢gG7WF–Ç4ã2ãc ¢FWVæFVæ6–W3 ¢G6Æ–#¢"ã‚ã ¢gWF–Ç4ããS¢·Ð ¢V–6²ÖÇ'TRãã¢·Ð ¢&VBÖ&–æ'’Öf–ÆRÖ&6„ããc ¢FWVæFVæ6–W3 ¢FV'Vs¢BãBã0¢G&ç6—F—fUVW$FWVæFVæ6–W3 ¢Ò7W÷'G2Ö6öÆ÷  ¢&VF&ÆR×7G&VÔ"ã2ãƒ ¢FWVæFVæ6–W3 ¢6÷&R×WF–ÂÖ—3¢ãã0¢–æ†W&—G3¢"ãã@¢—6'&“¢ãã ¢&ö6W72ÖæW‡F–6²Ö&w3¢"ãã¢6fRÖ'VffW#¢Rãã ¢7G&–æuöFV6öFW#¢ãã¢WF–ÂÖFW&V6FS¢ãã  ¢&WV—&RÖF—&V7F÷'”"ãã¢·Ð ¢&WV—&RÖg&öÒ×7G&–æt"ãã#¢·Ð ¢&W6VF—Dãrã# ¢FWVæFVæ6–W3 ¢RÖÆ–'&'“¢ãBã ¢&W6öÇfRÖÇäã"ã¢·Ð ¢&W7öç6VÆ–¶T"ãã ¢FWVæFVæ6–W3 ¢Æ÷vW&66RÖ¶W—3¢"ãã  ¢&WG'”ã"ã¢·Ð ¢&–×&d"ãbã3 ¢FWVæFVæ6–W3 ¢vÆö#¢rã"ã0 ¢&ö'$"ãRãC ¢FWVæFVæ6–W3 ¢&ööÆVã¢2ã"ã ¢FWFV7BÖæöFS¢"ãã ¢vÆö&ÇF†—3¢ãã@¢§6öâ×7G&–æv–g’×6fS¢Rãã¢6V×fW"Ö6ö×&S¢ãã ¢7&–çFbÖ§3¢ãã0¢÷F–öæÃ¢G'VP ¢&öÆÆF÷väããS ¢FWVæFVæ6–W3 ¢t÷†2×&ö¦V7B÷G—W2s¢ã3’ã ¢t&öÆÆF÷vâ÷ÇVv–çWF–Ç2s¢ãã¢÷F–öæÄFWVæFVæ6–W3 ¢t&öÆÆF÷vâö&–æF–ærÖæG&ö–BÖ&ÓcBs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖF'v–âÖ&ÓcBs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖF'v–â×ƒcBs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖg&VV'6B×ƒcBs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖÆ–çW‚Ö&ÒÖvçVV&–†bs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖÆ–çW‚Ö&ÓcBÖvçRs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖÆ–çW‚Ö&ÓcBÖ×W6Âs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖÆ–çW‚×3cBÖvçRs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖÆ–çW‚×33“‚ÖvçRs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖÆ–çW‚×ƒcBÖvçRs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖÆ–çW‚×ƒcBÖ×W6Âs¢ããP¢t&öÆÆF÷vâö&–æF–ærÖ÷Væ†&Ööç’Ö&ÓcBs¢ããP¢t&öÆÆF÷vâö&–æF–ær×v6Ó3"×v6’s¢ããP¢t&öÆÆF÷vâö&–æF–ær×v–ã3"Ö&ÓcBÖ×7f2s¢ããP¢t&öÆÆF÷vâö&–æF–ær×v–ã3"×ƒcBÖ×7f2s¢ããP ¢'†§4rã‚ã# ¢FWVæFVæ6–W3 ¢G6Æ–#¢"ã‚ã ¢6fRÖ'VffW$Rãã#¢·Ð ¢6æ—F—¦RÖf–ÆVæÖTãbãC ¢FWVæFVæ6–W3 ¢G'Væ6FR×WFc‚Ö'—FW3¢ãã  ¢6„ãbã¢·Ð ¢6V×fW"Ö6ö×&Tãã ¢÷F–öæÃ¢G'VP ¢6V×fW$Rãrã#¢·Ð ¢6V×fW$bã2ã¢·Ð ¢6V×fW$rãrãC¢·Ð ¢6V×fW$rã‚ãS¢·Ð ¢6W&–Æ—¦RÖW'&÷$rãã ¢FWVæFVæ6–W3 ¢G—RÖfW7C¢ã2ã¢÷F–öæÃ¢G'VP ¢6†V&ærÖ6öÖÖæD"ãã ¢FWVæFVæ6–W3 ¢6†V&ær×&VvWƒ¢2ãã  ¢6†V&ær×&VvW„2ãã¢·Ð ¢6†VÆÂ×V÷FTã’ã¢·Ð ¢6–v–æfô"ãã¢·Ð ¢6–væÂÖW†—D2ããs¢·Ð ¢6–×ÆR×WFFRÖæ÷F–f–W$"ãã ¢FWVæFVæ6–W3 ¢6V×fW#¢rã‚ãP ¢6÷W&6RÖÖÖ§4ã"ã¢·Ð ¢6÷W&6RÖÖ×7W÷'DãRã# ¢FWVæFVæ6–W3 ¢'VffW"Ög&öÓ¢ãã ¢6÷W&6RÖÖ¢ãbã ¢6÷W&6RÖÖãbã¢·Ð ¢7&–çFbÖ§4ãã3 ¢÷F–öæÃ¢G'VP ¢7F6¶&6´ãã#¢·Ð ¢7FBÖÖöFTãã¢·Ð ¢7FBÖVçdBã"ã¢·Ð ¢7G&–ær×v–GF„Bã"ã3 ¢FWVæFVæ6–W3 ¢VÖö¦’×&VvWƒ¢‚ãã ¢—2ÖgVÆÇv–GF‚Ö6öFR×ö–çC¢2ãã ¢7G&—Öç6“¢bãã ¢7G&–æuöFV6öFW$ãã ¢FWVæFVæ6–W3 ¢6fRÖ'VffW#¢Rãã  ¢7G&—Öç6”bãã ¢FWVæFVæ6–W3 ¢ç6’×&VvWƒ¢Rãã ¢7VÖ6†V6¶W$2ãã ¢FWVæFVæ6–W3 ¢FV'Vs¢BãBã0¢G&ç6—F—fUVW$FWVæFVæ6–W3 ¢Ò7W÷'G2Ö6öÆ÷  ¢7W÷'G2Ö6öÆ÷$rã"ã ¢FWVæFVæ6–W3 ¢†2ÖfÆs¢Bãã  ¢7W÷'G2Ö6öÆ÷$‚ãã ¢FWVæFVæ6–W3 ¢†2ÖfÆs¢Bãã  ¢F$rãRã# ¢FWVæFVæ6–W3 ¢t—672ög2ÖÖ–æ—72s¢Bãã¢6†÷vç#¢2ãã ¢Ö–æ—73¢rãã0¢Ö–æ—¦Æ–#¢2ãã ¢–ÆÆ—7C¢Rãã  ¢FV×Öf–ÆT2ãBã ¢FWVæFVæ6–W3 ¢7–æ2ÖW†—BÖ†öö³¢"ãã¢g2ÖW‡G&¢ãã  ¢FV×ã’ãC ¢FWVæFVæ6–W3 ¢Ö¶F—'¢ãRã`¢&–×&c¢"ãbã0 ¢F–ç’Ö7–æ2×ööÄã2ã ¢FWVæFVæ6–W3 ¢6V×fW#¢Rãrã  ¢F–ç–&Væ6„"ã’ã¢·Ð ¢F–ç–W†V4ã"ãC¢·Ð ¢F–ç–vÆö&'”ã"ãs ¢FWVæFVæ6–W3 ¢fF—#¢bãRã‡–6öÖF6„BããR¢–6öÖF6ƒ¢BããP ¢F–ç—&–æ&÷t2ãã¢·Ð ¢F××&öÖ—6T2ãã3 ¢FWVæFVæ6–W3 ¢F×¢ã"ãp ¢F×ã"ãs¢·Ð ¢G&VRÖ¶–ÆÄã"ã#¢·Ð ¢G'Væ6FR×WFc‚Ö'—FW4ãã# ¢FWVæFVæ6–W3 ¢WFc‚Ö'—FRÖÆVæwFƒ¢ããP ¢G6Æ–$"ã‚ã¢·Ð ¢G—RÖfW7Dã2ã ¢÷F–öæÃ¢G'VP ¢G—W67&—Drãã# ¢÷F–öæÄFWVæFVæ6–W3 ¢tG—W67&—B÷G—W67&—BÖ—‚×3cBs¢rãã ¢tG—W67&—B÷G—W67&—BÖF'v–âÖ&ÓcBs¢rãã ¢tG—W67&—B÷G—W67&—BÖF'v–â×ƒcBs¢rãã ¢tG—W67&—B÷G—W67&—BÖg&VV'6BÖ&ÓcBs¢rãã ¢tG—W67&—B÷G—W67&—BÖg&VV'6B×ƒcBs¢rãã ¢tG—W67&—B÷G—W67&—BÖÆ–çW‚Ö&Òs¢rãã ¢tG—W67&—B÷G—W67&—BÖÆ–çW‚Ö&ÓcBs¢rãã ¢tG—W67&—B÷G—W67&—BÖÆ–çW‚ÖÆööæscBs¢rãã ¢tG—W67&—B÷G—W67&—BÖÆ–çW‚ÖÖ—3cFVÂs¢rãã ¢tG—W67&—B÷G—W67&—BÖÆ–çW‚×3cBs¢rãã ¢tG—W67&—B÷G—W67&—BÖÆ–çW‚×&—67ccBs¢rãã ¢tG—W67&—B÷G—W67&—BÖÆ–çW‚×33“‚s¢rãã ¢tG—W67&—B÷G—W67&—BÖÆ–çW‚×ƒcBs¢rãã ¢tG—W67&—B÷G—W67&—BÖæWF'6BÖ&ÓcBs¢rãã ¢tG—W67&—B÷G—W67&—BÖæWF'6B×ƒcBs¢rãã ¢tG—W67&—B÷G—W67&—BÖ÷Væ'6BÖ&ÓcBs¢rãã ¢tG—W67&—B÷G—W67&—BÖ÷Væ'6B×ƒcBs¢rãã ¢tG—W67&—B÷G—W67&—B×7Væ÷2×ƒcBs¢rãã ¢tG—W67&—B÷G—W67&—B×v–ã3"Ö&ÓcBs¢rãã ¢tG—W67&—B÷G—W67&—B×v–ã3"×ƒcBs¢rãã  ¢V–ö†öö²Öæ”ãRãS ¢FWVæFVæ6–W3 ¢æöFRÖw—Ö'V–ÆC¢Bã‚ã@ ¢VæF–6’×G—W4rã‚ã#¢·Ð ¢VæF–6”bã#rã¢·Ð ¢VæF–6”rã#‚ã ¢÷F–öæÃ¢G'VP ¢Væ—fW'6Æ–g”ãã#¢·Ð ¢Væ—fW'6Æ–g”"ãã¢·Ð ¢Vç¦—W$ã"ãS ¢FWVæFVæ6–W3 ¢&ÇVV&—&C¢2ãrã ¢GWÆW†W##¢ãã@¢g2ÖW‡G&¢ã2ã¢w&6VgVÂÖg3¢Bã"ã¢æöFRÖ–çCcC¢ãBã  ¢WFc‚Ö'—FRÖÆVæwF„ããS¢·Ð ¢WF–ÂÖFW&V6FTãã#¢·Ð ¢f—FT‚ããB„G—W2öæöFT#Bã2ã2’†¦—F”"ãrã“ ¢FWVæFVæ6–W3 ¢Æ–v‡Fæ–æv773¢ã3"ã ¢–6öÖF6ƒ¢BããP¢÷7F773¢‚ãRãp¢&öÆÆF÷vã¢ããP¢F–ç–vÆö&'“¢ã"ãp¢÷F–öæÄFWVæFVæ6–W3 ¢tG—W2öæöFRs¢#Bã2ã0¢g6WfVçG3¢"ã2ã0¢¦—F“¢"ãrã  ¢f—FW7DBãã„G—W2öæöFT#Bã2ã2’‡f—FT‚ããB„G—W2öæöFT#Bã2ã2’†¦—F”"ãrã’“ ¢FWVæFVæ6–W3 ¢tf—FW7BöW‡V7Bs¢Bãã ¢tf—FW7BöÖö6¶W"s¢Bãã‡f—FT‚ããB„G—W2öæöFT#Bã2ã2’†¦—F”"ãrã’¢tf—FW7B÷&WGG’Öf÷&ÖBs¢Bãã ¢tf—FW7B÷'VææW"s¢Bãã ¢tf—FW7B÷6æ6†÷Bs¢Bãã ¢tf—FW7B÷7’s¢Bãã ¢tf—FW7B÷WF–Ç2s¢Bãã ¢W2ÖÖöGVÆRÖÆW†W#¢"ã2ã¢W‡V7B×G—S¢ãBã ¢Öv–2×7G&–æs¢ã3ã#¢ö'Vs¢"ãã0¢F†S¢"ãã0¢–6öÖF6ƒ¢BããP¢7FBÖVçc¢Bã"ã ¢F–ç–&Væ6ƒ¢"ã’ã ¢F–ç–W†V3¢ã"ã@¢F–ç–vÆö&'“¢ã"ãp¢F–ç—&–æ&÷s¢2ãã ¢f—FS¢‚ããB„G—W2öæöFT#Bã2ã2’†¦—F”"ãrã¢v‡’Ö—2ÖæöFR×'Vææ–æs¢"ã2ã ¢÷F–öæÄFWVæFVæ6–W3 ¢tG—W2öæöFRs¢#Bã2ã0¢G&ç6—F—fUVW$FWVæFVæ6–W3 ¢Ò×7p ¢v—BÖöä’ãã ¢FWVæFVæ6–W3 ¢†–÷3¢ã‚ã¢¦ö“¢‚ã"ã0¢ÆöF6ƒ¢Bã‚ã¢Ö–æ–Ö—7C¢ã"ã€¢'†§3¢rã‚ã ¢G&ç6—F—fUVW$FWVæFVæ6–W3 ¢ÒFV'Vp¢Ò7W÷'G2Ö6öÆ÷  ¢vV&7'—FòÖ6÷&Tã’ã# ¢FWVæFVæ6–W3 ¢tV7VÆ–"ö6ã×66†VÖs¢"ã‚ã ¢tV7VÆ–"ö§6öâ×66†VÖs¢ãã ¢tV7VÆ–"÷WF–Ç2s¢"ãã0¢6ã§3¢2ãã ¢G6Æ–#¢"ã‚ã ¢v†–6„"ãã# ¢FWVæFVæ6–W3 ¢—6W†S¢"ãã  ¢v†–6„Rãã ¢FWVæFVæ6–W3 ¢—6W†S¢2ããP ¢v†–6„bãã ¢FWVæFVæ6–W3 ¢—6W†S¢Bãã  ¢v‡’Ö—2ÖæöFR×'Vææ–æt"ã2ã ¢FWVæFVæ6–W3 ¢6–v–æfó¢"ãã ¢7F6¶&6³¢ãã  ¢w&Öç6”rãã ¢FWVæFVæ6–W3 ¢ç6’×7G–ÆW3¢Bã2ã ¢7G&–ær×v–GFƒ¢Bã"ã0¢7G&—Öç6“¢bãã ¢w&”ãã#¢·Ð ¢†ÖÆ'V–ÆFW$Rãã¢·Ð ¢“†äRããƒ¢·Ð ¢–ÆÆ—7DBãã¢·Ð ¢–ÆÆ—7DRãã¢·Ð ¢–&w2×'6W$#ãã¢·Ð ¢–&w4rãrã# ¢FWVæFVæ6–W3 ¢6Æ—V“¢‚ãã¢W66ÆFS¢2ã"ã ¢vWBÖ6ÆÆW"Öf–ÆS¢"ããP¢&WV—&RÖF—&V7F÷'“¢"ãã¢7G&–ær×v–GFƒ¢Bã"ã0¢“†ã¢Rãã€¢–&w2×'6W#¢#ãã ¢–&w4rãrã3 ¢FWVæFVæ6–W3 ¢6Æ—V“¢‚ãã¢W66ÆFS¢2ã"ã ¢vWBÖ6ÆÆW"Öf–ÆS¢"ããP¢&WV—&RÖF—&V7F÷'“¢"ãã¢7G&–ær×v–GFƒ¢Bã"ã0¢“†ã¢Rãã€¢–&w2×'6W#¢#ãã ¢–ö7Fò×VWVTãã¢·Ð
