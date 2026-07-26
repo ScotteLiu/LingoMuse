@@ -211,7 +211,7 @@ function renderBody(): string {
           <span class="section-label">${resultLabel}</span>
           <div class="result-actions">
             <button type="button" data-action="speak" title="朗讀英文" aria-label="朗讀英文">${icon('volume', 17)}</button>
-            <button type="button" data-action="copy" title="複製翻譯" aria-label="${popupState.copied ? '已複製' : '複製翻譯'}">${popupState.copied ? icon('check', 17) : icon('copy', 17)}</button>
+            <button class="${popupState.copied ? 'is-copied' : ''}" type="button" data-action="copy" title="複製翻譯" aria-label="${popupState.copied ? '已複製' : '複製翻譯'}">${popupState.copied ? icon('check', 17) : icon('copy', 17)}</button>
           </div>
         </div>
         <h1 lang="${languageTag(result.targetLanguage)}">${escapeHtml(result.translation)}</h1>
@@ -262,7 +262,7 @@ function renderPartialResult(): string {
           <span class="section-label">${resultLabel} · 快速預覽</span>
           <div class="result-actions">
             <button type="button" data-action="speak" title="朗讀英文" aria-label="朗讀英文">${icon('volume', 17)}</button>
-            <button type="button" data-action="copy" title="複製翻譯" aria-label="${popupState.copied ? '已複製' : '複製翻譯'}">${popupState.copied ? icon('check', 17) : icon('copy', 17)}</button>
+            <button class="${popupState.copied ? 'is-copied' : ''}" type="button" data-action="copy" title="複製翻譯" aria-label="${popupState.copied ? '已複製' : '複製翻譯'}">${popupState.copied ? icon('check', 17) : icon('copy', 17)}</button>
           </div>
         </div>
         <h1 lang="${languageTag(partial.targetLanguage)}">${escapeHtml(partial.translation)}</h1>
