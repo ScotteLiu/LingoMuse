@@ -39,7 +39,7 @@ import {
   resolvePerformanceProfile,
   sanitizePerformanceMode,
 } from './performance-profile.mjs'
-import { normalizeBaseUrl, translateWithOllama } from './translation.mjs'
+import { isRetryableTranslationError, normalizeBaseUrl, translateWithOllama } from './translation.mjs'
 import { createTranslationCache } from './translation-cache.mjs'
 import { PRIVACY_DEFAULTS } from './privacy-defaults.mjs'
 import { loadSettingsFile, saveSettingsFile } from './settings-store.mjs'
@@ -980,7 +980,7 @@ function registerIpc() {
       }
       stageTimer.mark('translation started', { textLength: text.length })
       let firstPartialMarked = false
-      const result = await translateWithOllama({
+      const translateOnce = () => translateWithOllama({
         text,
         model: settings.model,
         baseUrl: settings.baseUrl,
@@ -1005,6 +1005,14 @@ function registerIpc() {
             }
           : undefined,
       })
+      let result
+      try {
+        result = await translateOnce()
+      } catch (translationError) {
+        if (signal.aborted || !isRetryableTranslationError(translationError)) throw translationError
+        console.warn(`LINGOMUSE_TRANSLATION_RETRY=${translationError?.code || 'UNKNOWN'}`)
+        result = await translateOnce()
+      }
       if (!firstPartialMarked) stageTimer.mark('first result available', { complete: true })
       stageTimer.mark('examples ready', { examples: result.examples?.length || 0 })
       if (text.length <= 2_000) translationCache.set(cacheKey, result)

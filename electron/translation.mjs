@@ -339,6 +339,12 @@ export async function translateWithOllama({
   }
 }
 
+// A small local model occasionally emits JSON that fails validation even
+// with a schema-constrained decode; one retry usually recovers.
+export function isRetryableTranslationError(error) {
+  return error?.code === 'INVALID_RESPONSE' || error?.code === 'EMPTY_RESPONSE'
+}
+
 export function normalizeBaseUrl(value = '') {
   return String(value).trim().replace(/\/+$/, '') || 'http://127.0.0.1:11434'
 }
