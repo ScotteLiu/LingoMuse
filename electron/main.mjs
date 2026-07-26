@@ -23,6 +23,7 @@ import {
   POPUP_MIN_WIDTH,
 } from './popup-bounds.mjs'
 import { clampPopupOpacity } from './popup-preferences.mjs'
+import { createStageTimer } from './stage-timing.mjs'
 import {
   getOfflineBundle,
   OFFLINE_BASE_URL,
@@ -122,6 +123,7 @@ let cachedEngineStatus = {
 let resumeRecoveryTimer = null
 let resumeRecoveryGeneration = 0
 const doubleCopy = createDoubleCopyDetector({ interval: DEFAULT_SETTINGS.doubleCopyInterval })
+const stageTimer = createStageTimer({ enabled: process.env.LINGOMUSE_TIMING === '1' })
 const hardware = {
   totalMemoryBytes: totalmem(),
   availableMemoryBytes: freemem(),
@@ -344,9 +346,11 @@ function deliverPopupPayload() {
   safeSend(popupWindow, 'clipboard:trigger', pendingPopupPayload)
   pendingPopupPayload = null
   popupWindow.showInactive()
+  stageTimer.mark('popup visible')
 }
 
 function showClipboardPopup(text, timestamp = Date.now()) {
+  stageTimer.mark('popup requested', { textLength: text.length })
   pendingPopupPayload = { text, timestamp }
   if (!popupWindow || popupWindow.isDestroyed()) createPopupWindow()
   deliverPopupPayload()
@@ -408,6 +412,8 @@ async function startKeyboardHook() {
       if (!isCopy || !doubleCopy.noteCopy(Date.now())) return
 
       const triggeredAt = Date.now()
+      stageTimer.begin(triggeredAt)
+      stageTimer.mark('copy detected')
       setTimeout(() => {
         const text = clipboard.readText().trim()
         if (!text) return
@@ -724,6 +730,7 @@ async function restartOfflineEngineNow(token) {
       return cancelledEngineLifecycleResult({ mutated })
     }
     offlineWarmup = warmup
+    if (warmup.ok) stageTimer.mark('model ready', { skipped: warmup.skipped === true })
   }
 
   const engine = await engineStatus()
@@ -940,7 +947,13 @@ function registerIpc() {
       const performance = getPerformanceProfile(text.length)
       const cacheKey = `${settings.baseUrl}\n${settings.model}\n${performance.detailLevel}\n${text}`
       const cachedResult = text.length <= 2_000 ? translationCache.get(cacheKey) : undefined
-      if (cachedResult) return { ok: true, result: cachedResult, cached: true }
+      if (cachedResult) {
+        stageTimer.mark('first result available', { cached: true })
+        stageTimer.mark('examples ready', { cached: true })
+        return { ok: true, result: cachedResult, cached: true }
+      }
+      stageTimer.mark('translation started', { textLength: text.length })
+      let firstPartialMarked = false
       const result = await translateWithOllama({
         text,
         model: settings.model,
@@ -955,6 +968,10 @@ function registerIpc() {
           ? (partial) => {
               if (signal.aborted) return
               if (event.sender.isDestroyed()) return
+              if (!firstPartialMarked) {
+                firstPartialMarked = true
+                stageTimer.mark('first result available', { elapsedMs: partial.elapsedMs })
+              }
               if (isPopupIntegrationTest && popupWindow?.webContents.id === senderId) {
                 console.log(`LINGOMUSE_POPUP_PARTIAL_OK=${JSON.stringify(partial)}`)
               }
@@ -962,6 +979,7 @@ function registerIpc() {
             }
           : undefined,
       })
+      stageTimer.mark('examples ready', { examples: result.examples?.length || 0 })
       if (text.length <= 2_000) translationCache.set(cacheKey, result)
       if (isPopupIntegrationTest && popupWindow?.webContents.id === senderId) {
         try {
@@ -1088,6 +1106,7 @@ function registerIpc() {
     if (payload) {
       positionPopupWindow()
       popupWindow.showInactive()
+      stageTimer.mark('popup visible', { coldStart: true })
     }
     return { payload, settings, edition }
   })
@@ -1170,6 +1189,10 @@ function registerIpc() {
   ipcMain.handle('popup:resize-end', (event) => {
     if (popupResizeSession?.senderId === event.sender.id) popupResizeSession = null
     return { ok: true }
+  })
+  ipcMain.handle('perf:mark', (event, stage) => {
+    requireTrustedSender(event)
+    return stageTimer.mark(String(stage || ''))
   })
 }
 

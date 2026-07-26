@@ -149,6 +149,7 @@ const mockApi: DesktopApi = {
   endPopupResize: async () => undefined,
   setPopupPinned: async (pinned) => ({ ok: true, pinned }),
   setPopupOpacity: async (opacity) => ({ ok: true, opacity }),
+  markPerfStage: async () => false,
   onClipboardTrigger: () => noopUnsubscribe,
   onPopupResult: () => noopUnsubscribe,
   onHookStatus: () => noopUnsubscribe,

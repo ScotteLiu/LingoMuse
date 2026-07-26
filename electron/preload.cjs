@@ -31,6 +31,7 @@ contextBridge.exposeInMainWorld('lingomuse', {
   endPopupResize: () => ipcRenderer.invoke('popup:resize-end'),
   setPopupPinned: (pinned) => ipcRenderer.invoke('popup:set-pinned', pinned),
   setPopupOpacity: (opacity, persist = false) => ipcRenderer.invoke('popup:set-opacity', opacity, persist),
+  markPerfStage: (stage) => ipcRenderer.invoke('perf:mark', stage),
   onClipboardTrigger: (listener) => on('clipboard:trigger', listener),
   onPopupResult: (listener) => on('popup:result', listener),
   onHookStatus: (listener) => on('hook:status', listener),
