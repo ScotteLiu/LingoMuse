@@ -104,7 +104,8 @@ input:focus-visible {
   justify-content: space-between;
   padding: 0 12px 0 16px;
   color: #f8f6ef;
-  background: #23251f;
+  background: linear-gradient(180deg, #282a23, #20221c);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .popup-brand {
@@ -158,6 +159,13 @@ input:focus-visible {
   place-items: center;
   border: 0;
   cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, transform 120ms ease;
+}
+
+.window-actions button:active,
+.result-actions button:active,
+.example-row > button:active {
+  transform: scale(0.92);
 }
 
 .window-actions button {
@@ -342,8 +350,8 @@ input:focus-visible {
   display: -webkit-box;
   margin: 7px 0 0;
   overflow: hidden;
-  color: #65655d;
-  font-size: 11px;
+  color: #60605a;
+  font-size: 12px;
   line-height: 1.55;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -370,7 +378,18 @@ input:focus-visible {
 }
 
 .result-actions button:hover {
+  color: #3c4739;
   background: #dfe5da;
+}
+
+.result-actions button.is-copied {
+  color: #3d6547;
+  background: #dfecdc;
+}
+
+.example-row > button:hover {
+  color: #4a5546;
+  background: #e2e5da;
 }
 
 .result-block h1 {
@@ -461,8 +480,8 @@ input:focus-visible {
 
 .nuance-card p {
   margin: 4px 0 0;
-  color: #687166;
-  font-size: 10px;
+  color: #626b60;
+  font-size: 11px;
   line-height: 1.55;
 }
 
@@ -494,15 +513,15 @@ input:focus-visible {
 .example-row strong {
   color: #35362f;
   font-family: Georgia, "Noto Serif TC", serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.45;
 }
 
 .example-row p {
   margin: 4px 0 0;
-  color: #77776e;
-  font-size: 10px;
+  color: #71716a;
+  font-size: 11px;
   line-height: 1.5;
 }
 
@@ -542,7 +561,14 @@ input:focus-visible {
   font-weight: 800;
   background: transparent;
   border: 0;
+  border-radius: 6px;
   cursor: pointer;
+  transition: color 120ms ease, background-color 120ms ease;
+}
+
+.popup-footer button:hover {
+  color: #333d30;
+  background: #e2e0d6;
 }
 
 .resize-grip {
@@ -558,9 +584,9 @@ input:focus-visible {
 }
 
 .popup-error {
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
-  padding: 28px 28px 12px;
+  padding: 24px 28px 8px;
 }
 
 .popup-error > span {
@@ -586,6 +612,12 @@ input:focus-visible {
   font-weight: 800;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease, transform 120ms ease;
+}
+
+.soft-button:active,
+.text-button:active {
+  transform: scale(0.96);
 }
 
 .soft-button {
@@ -594,10 +626,21 @@ input:focus-visible {
   border: 1px solid #4f604c;
 }
 
+.soft-button:hover {
+  background: #40503e;
+  border-color: #40503e;
+}
+
 .text-button {
   color: #5f665a;
   background: transparent;
   border: 1px solid #cbc9bf;
+}
+
+.text-button:hover {
+  color: #3f463b;
+  background: #f1efe7;
+  border-color: #b4b2a6;
 }
 
 .popup-empty {
@@ -607,8 +650,16 @@ input:focus-visible {
   text-align: center;
 }
 
+.popup-empty > svg {
+  box-sizing: content-box;
+  padding: 13px;
+  color: #67755f;
+  background: #e9eee2;
+  border-radius: 50%;
+}
+
 .popup-empty strong {
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 @keyframes breathe {
@@ -752,5 +803,8 @@ input:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
