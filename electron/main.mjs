@@ -23,6 +23,7 @@ import {
   POPUP_MIN_WIDTH,
 } from './popup-bounds.mjs'
 import { clampPopupOpacity } from './popup-preferences.mjs'
+import { createClipboardCapture } from './clipboard-capture.mjs'
 import { createStageTimer } from './stage-timing.mjs'
 import {
   getOfflineBundle,
@@ -124,6 +125,10 @@ let resumeRecoveryTimer = null
 let resumeRecoveryGeneration = 0
 const doubleCopy = createDoubleCopyDetector({ interval: DEFAULT_SETTINGS.doubleCopyInterval })
 const stageTimer = createStageTimer({ enabled: process.env.LINGOMUSE_TIMING === '1' })
+const captureClipboard = createClipboardCapture({
+  readText: () => clipboard.readText(),
+  onCapture: (text, triggeredAt) => showClipboardPopup(text, triggeredAt),
+})
 const hardware = {
   totalMemoryBytes: totalmem(),
   availableMemoryBytes: freemem(),
@@ -414,11 +419,7 @@ async function startKeyboardHook() {
       const triggeredAt = Date.now()
       stageTimer.begin(triggeredAt)
       stageTimer.mark('copy detected')
-      setTimeout(() => {
-        const text = clipboard.readText().trim()
-        if (!text) return
-        showClipboardPopup(text.length > 12_000 ? text.slice(0, 12_001) : text, triggeredAt)
-      }, 140)
+      captureClipboard(triggeredAt)
     })
     keyboardHook.start()
     hookStarted = true
