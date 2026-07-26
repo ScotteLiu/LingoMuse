@@ -1,0 +1,49 @@
+name: Bug report / 錯誤回報
+description: Report a reproducible problem / 回報可以重現的問題
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve LingoMuse. Do not include private translation or clipboard content.
+
+        感謝你協助改善 LingoMuse。請勿提供私人翻譯或剪貼簿內容。
+  - type: input
+    id: version
+    attributes:
+      label: LingoMuse version / LingoMuse 版本
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version / Windows 版本
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: Performance profile / 效能模式
+      options:
+        - Automatic / 自動
+        - Speed first / 速度優先
+        - Low resource / 低資源
+        - Unknown / 不確定
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / 重現步驟
+      description: Remove all private text before submitting. / 提交前請移除所有私人文字。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior / 預期與實際結果
+    validations:
+      required: true
+

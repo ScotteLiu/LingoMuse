@@ -1,0 +1,29 @@
+name: Feature request / 功能建議
+description: Suggest an improvement / 提出改善建議
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve / 想解決的問題
+      description: Describe the workflow rather than only the desired control. / 請描述使用情境，不要只描述想新增的按鈕。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed experience / 建議體驗
+    validations:
+      required: true
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Project principles / 專案原則
+      options:
+        - label: This can remain offline. / 此功能可以保持離線。
+          required: true
+        - label: This does not require a paid API. / 此功能不需要付費 API。
+          required: true
+
