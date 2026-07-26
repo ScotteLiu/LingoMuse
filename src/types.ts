@@ -34,6 +34,8 @@ export interface Settings {
   voiceRate: number
   popupPinned: boolean
   popupOpacity: number
+  popupWidth: number
+  popupHeight: number
   launchAtLogin: boolean
   saveHistory: boolean
   performanceMode: PerformanceMode
@@ -169,6 +171,7 @@ export interface DesktopApi {
   endPopupResize: () => Promise<unknown>
   setPopupPinned: (pinned: boolean) => Promise<{ ok: boolean; pinned?: boolean; persisted?: boolean }>
   setPopupOpacity: (opacity: number, persist?: boolean) => Promise<{ ok: boolean; opacity?: number; persisted?: boolean }>
+  markPerfStage: (stage: string) => Promise<boolean>
   onClipboardTrigger: (listener: (payload: { text: string; timestamp: number }) => void) => () => void
   onPopupResult: (listener: (payload: { source: string; result: TranslationResult }) => void) => () => void
   onHookStatus: (listener: (payload: HookStatus) => void) => () => void

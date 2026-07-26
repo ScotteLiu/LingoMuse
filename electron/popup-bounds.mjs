@@ -7,6 +7,22 @@ function clamp(value, minimum, maximum) {
   return Math.min(maximum, Math.max(minimum, value))
 }
 
+export function fitPopupSizeToWorkArea({
+  width,
+  height,
+  workArea,
+  margin = 12,
+  minWidth = POPUP_MIN_WIDTH,
+  minHeight = POPUP_MIN_HEIGHT,
+}) {
+  const availableWidth = Math.max(1, Number(workArea?.width) - margin * 2)
+  const availableHeight = Math.max(1, Number(workArea?.height) - margin * 2)
+  return {
+    width: Math.round(Math.min(availableWidth, Math.max(minWidth, Number(width) || minWidth))),
+    height: Math.round(Math.min(availableHeight, Math.max(minHeight, Number(height) || minHeight))),
+  }
+}
+
 export function calculatePopupResizeBounds({
   direction,
   startBounds,

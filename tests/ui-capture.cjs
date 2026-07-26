@@ -109,6 +109,7 @@ function registerMocks() {
     popupIpcCalls.resizeEnd += 1
     return { ok: true }
   })
+  ipcMain.handle('perf:mark', () => false)
 }
 
 async function capture(window, name) {

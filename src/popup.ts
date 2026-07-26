@@ -19,6 +19,8 @@ const settings: Settings = {
   voiceRate: 0.92,
   popupPinned: true,
   popupOpacity: 1,
+  popupWidth: 0,
+  popupHeight: 0,
   launchAtLogin: false,
   performanceMode: 'auto',
   model: 'qwen3:1.7b',
@@ -403,6 +405,10 @@ async function speak(text: string, language: 'en-US' | 'zh-TW'): Promise<boolean
   utterance.lang = language
   utterance.rate = settings.voiceRate
   utterance.voice = decision.voice
+  utterance.onstart = () => {
+    if (attempt !== speechAttempt) return
+    void desktopApi.markPerfStage('speech ready')
+  }
   utterance.onend = () => {
     if (attempt !== speechAttempt) return
     popupState.speechNotice = ''

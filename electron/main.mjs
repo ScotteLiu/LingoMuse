@@ -19,10 +19,13 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { createDoubleCopyDetector } from './double-copy.mjs'
 import {
   calculatePopupResizeBounds,
+  fitPopupSizeToWorkArea,
   POPUP_MIN_HEIGHT,
   POPUP_MIN_WIDTH,
 } from './popup-bounds.mjs'
-import { clampPopupOpacity } from './popup-preferences.mjs'
+import { clampPopupOpacity, sanitizePopupDimension } from './popup-preferences.mjs'
+import { createClipboardCapture } from './clipboard-capture.mjs'
+import { createStageTimer } from './stage-timing.mjs'
 import {
   getOfflineBundle,
   OFFLINE_BASE_URL,
@@ -80,6 +83,8 @@ const DEFAULT_SETTINGS = {
   voiceRate: 0.92,
   popupPinned: true,
   popupOpacity: 1,
+  popupWidth: 0,
+  popupHeight: 0,
   launchAtLogin: false,
   performanceMode: 'auto',
   model: 'qwen3:1.7b',
@@ -122,6 +127,11 @@ let cachedEngineStatus = {
 let resumeRecoveryTimer = null
 let resumeRecoveryGeneration = 0
 const doubleCopy = createDoubleCopyDetector({ interval: DEFAULT_SETTINGS.doubleCopyInterval })
+const stageTimer = createStageTimer({ enabled: process.env.LINGOMUSE_TIMING === '1' })
+const captureClipboard = createClipboardCapture({
+  readText: () => clipboard.readText(),
+  onCapture: (text, triggeredAt) => showClipboardPopup(text, triggeredAt),
+})
 const hardware = {
   totalMemoryBytes: totalmem(),
   availableMemoryBytes: freemem(),
@@ -205,6 +215,8 @@ function sanitizeSettings(value) {
     voiceRate: Math.max(0.6, Math.min(1.35, Number(value.voiceRate) || 0.92)),
     popupPinned: value.popupPinned === true,
     popupOpacity: clampPopupOpacity(value.popupOpacity),
+    popupWidth: sanitizePopupDimension(value.popupWidth, POPUP_MIN_WIDTH),
+    popupHeight: sanitizePopupDimension(value.popupHeight, POPUP_MIN_HEIGHT),
     launchAtLogin: value.launchAtLogin === true,
     saveHistory: value.saveHistory === true,
     performanceMode: sanitizePerformanceMode(value.performanceMode),
@@ -281,9 +293,19 @@ function createPopupWindow() {
   popupRendererReady = false
   popupResizeSession = null
   popupUserResized = false
+  const cursorPoint = screen.getCursorScreenPoint()
+  const { workArea } = screen.getDisplayNearestPoint(cursorPoint)
+  const savedWidth = sanitizePopupDimension(settings.popupWidth, POPUP_MIN_WIDTH)
+  const savedHeight = sanitizePopupDimension(settings.popupHeight, POPUP_MIN_HEIGHT)
+  popupUserResized = savedWidth > 0 || savedHeight > 0
+  const initialSize = fitPopupSizeToWorkArea({
+    width: savedWidth || 468,
+    height: savedHeight || 248,
+    workArea,
+  })
   popupWindow = new BrowserWindow({
-    width: 468,
-    height: 248,
+    width: initialSize.width,
+    height: initialSize.height,
     minWidth: POPUP_MIN_WIDTH,
     minHeight: POPUP_MIN_HEIGHT,
     show: false,
@@ -330,7 +352,15 @@ function positionPopupWindow() {
   if (!popupWindow) return
   const point = screen.getCursorScreenPoint()
   const { workArea } = screen.getDisplayNearestPoint(point)
-  const [width, height] = popupWindow.getSize()
+  const [currentWidth, currentHeight] = popupWindow.getSize()
+  const preferredWidth = popupUserResized && settings.popupWidth > 0 ? settings.popupWidth : currentWidth
+  const preferredHeight = popupUserResized && settings.popupHeight > 0 ? settings.popupHeight : currentHeight
+  const { width, height } = fitPopupSizeToWorkArea({
+    width: preferredWidth,
+    height: preferredHeight,
+    workArea,
+  })
+  if (width !== currentWidth || height !== currentHeight) popupWindow.setSize(width, height, false)
   const preferredX = point.x + 18
   const preferredY = point.y + 18
   const x = Math.max(workArea.x + 12, Math.min(preferredX, workArea.x + workArea.width - width - 12))
@@ -344,9 +374,11 @@ function deliverPopupPayload() {
   safeSend(popupWindow, 'clipboard:trigger', pendingPopupPayload)
   pendingPopupPayload = null
   popupWindow.showInactive()
+  stageTimer.mark('popup visible')
 }
 
 function showClipboardPopup(text, timestamp = Date.now()) {
+  stageTimer.mark('popup requested', { textLength: text.length })
   pendingPopupPayload = { text, timestamp }
   if (!popupWindow || popupWindow.isDestroyed()) createPopupWindow()
   deliverPopupPayload()
@@ -405,14 +437,14 @@ async function startKeyboardHook() {
     keyboardHook.on('keydown', (event) => {
       if (!settings.autoClipboard) return
       const isCopy = event.keycode === UiohookKey.C && (event.ctrlKey || event.metaKey)
-      if (!isCopy || !doubleCopy.noteCopy(Date.now())) return
+      if (!isCopy) return
+      captureClipboard.cancelPending()
+      if (!doubleCopy.noteCopy(Date.now())) return
 
       const triggeredAt = Date.now()
-      setTimeout(() => {
-        const text = clipboard.readText().trim()
-        if (!text) return
-        showClipboardPopup(text.length > 12_000 ? text.slice(0, 12_001) : text, triggeredAt)
-      }, 140)
+      stageTimer.begin(triggeredAt)
+      stageTimer.mark('copy detected')
+      captureClipboard(triggeredAt)
     })
     keyboardHook.start()
     hookStarted = true
@@ -724,6 +756,7 @@ async function restartOfflineEngineNow(token) {
       return cancelledEngineLifecycleResult({ mutated })
     }
     offlineWarmup = warmup
+    if (warmup.ok) stageTimer.mark('model ready', { skipped: warmup.skipped === true })
   }
 
   const engine = await engineStatus()
@@ -940,7 +973,13 @@ function registerIpc() {
       const performance = getPerformanceProfile(text.length)
       const cacheKey = `${settings.baseUrl}\n${settings.model}\n${performance.detailLevel}\n${text}`
       const cachedResult = text.length <= 2_000 ? translationCache.get(cacheKey) : undefined
-      if (cachedResult) return { ok: true, result: cachedResult, cached: true }
+      if (cachedResult) {
+        stageTimer.mark('first result available', { cached: true })
+        stageTimer.mark('examples ready', { cached: true })
+        return { ok: true, result: cachedResult, cached: true }
+      }
+      stageTimer.mark('translation started', { textLength: text.length })
+      let firstPartialMarked = false
       const result = await translateWithOllama({
         text,
         model: settings.model,
@@ -955,6 +994,10 @@ function registerIpc() {
           ? (partial) => {
               if (signal.aborted) return
               if (event.sender.isDestroyed()) return
+              if (!firstPartialMarked) {
+                firstPartialMarked = true
+                stageTimer.mark('first result available', { elapsedMs: partial.elapsedMs })
+              }
               if (isPopupIntegrationTest && popupWindow?.webContents.id === senderId) {
                 console.log(`LINGOMUSE_POPUP_PARTIAL_OK=${JSON.stringify(partial)}`)
               }
@@ -962,6 +1005,8 @@ function registerIpc() {
             }
           : undefined,
       })
+      if (!firstPartialMarked) stageTimer.mark('first result available', { complete: true })
+      stageTimer.mark('examples ready', { examples: result.examples?.length || 0 })
       if (text.length <= 2_000) translationCache.set(cacheKey, result)
       if (isPopupIntegrationTest && popupWindow?.webContents.id === senderId) {
         try {
@@ -1088,6 +1133,7 @@ function registerIpc() {
     if (payload) {
       positionPopupWindow()
       popupWindow.showInactive()
+      stageTimer.mark('popup visible', { coldStart: true })
     }
     return { payload, settings, edition }
   })
@@ -1168,8 +1214,22 @@ function registerIpc() {
     return { ok: true, bounds }
   })
   ipcMain.handle('popup:resize-end', (event) => {
-    if (popupResizeSession?.senderId === event.sender.id) popupResizeSession = null
+    if (popupResizeSession?.senderId === event.sender.id) {
+      popupResizeSession = null
+      if (popupWindow && !popupWindow.isDestroyed()) {
+        const [width, height] = popupWindow.getSize()
+        if (settings.popupWidth !== width || settings.popupHeight !== height) {
+          settings.popupWidth = width
+          settings.popupHeight = height
+          saveSettings()
+        }
+      }
+    }
     return { ok: true }
+  })
+  ipcMain.handle('perf:mark', (event, stage) => {
+    requireTrustedSender(event)
+    return stageTimer.mark(String(stage || ''))
   })
 }
 
