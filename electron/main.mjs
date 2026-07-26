@@ -19,6 +19,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { createDoubleCopyDetector } from './double-copy.mjs'
 import {
   calculatePopupResizeBounds,
+  clampPositionToWorkArea,
   fitPopupSizeToWorkArea,
   POPUP_MIN_HEIGHT,
   POPUP_MIN_WIDTH,
@@ -97,6 +98,9 @@ let pendingPopupPayload = null
 let popupRendererReady = false
 let popupResizeSession = null
 let popupUserResized = false
+let popupUserMoved = false
+let popupAnchorPoint = null
+let expectedPopupPosition = null
 let tray = null
 let keyboardHook = null
 let hookStarted = false
@@ -293,6 +297,9 @@ function createPopupWindow() {
   popupRendererReady = false
   popupResizeSession = null
   popupUserResized = false
+  popupUserMoved = false
+  popupAnchorPoint = null
+  expectedPopupPosition = null
   const cursorPoint = screen.getCursorScreenPoint()
   const { workArea } = screen.getDisplayNearestPoint(cursorPoint)
   const savedWidth = sanitizePopupDimension(settings.popupWidth, POPUP_MIN_WIDTH)
@@ -331,6 +338,17 @@ function createPopupWindow() {
   popupWindow.on('will-resize', () => {
     popupUserResized = true
   })
+  popupWindow.on('moved', () => {
+    if (!popupWindow) return
+    const [x, y] = popupWindow.getPosition()
+    // A move we did not request (dragging the titlebar, OS snapping) means
+    // the user chose this spot; stop yanking the popup back to the cursor.
+    if (!expectedPopupPosition
+      || Math.abs(x - expectedPopupPosition.x) > 2
+      || Math.abs(y - expectedPopupPosition.y) > 2) {
+      popupUserMoved = true
+    }
+  })
   popupWindow.webContents.setWindowOpenHandler(() => ({ action: 'deny' }))
   popupWindow.webContents.on('will-navigate', (event, url) => {
     allowRendererNavigation(event, url)
@@ -339,6 +357,8 @@ function createPopupWindow() {
     popupWindow = null
     popupRendererReady = false
     popupResizeSession = null
+    popupUserMoved = false
+    expectedPopupPosition = null
   })
 
   if (devServerUrl) {
@@ -348,9 +368,30 @@ function createPopupWindow() {
   }
 }
 
+function notePopupPlacement(x, y) {
+  expectedPopupPosition = { x: Math.round(x), y: Math.round(y) }
+}
+
+function keepUserPopupPlacement() {
+  return popupUserMoved && popupWindow?.isVisible()
+}
+
+// Nudges a user-placed popup back inside its display without moving it to
+// the cursor, e.g. after an automatic height change near the screen edge.
+function clampPopupIntoWorkArea() {
+  if (!popupWindow) return
+  const bounds = popupWindow.getBounds()
+  const { workArea } = screen.getDisplayMatching(bounds)
+  const { x, y } = clampPositionToWorkArea({ bounds, workArea })
+  if (x !== bounds.x || y !== bounds.y) {
+    notePopupPlacement(x, y)
+    popupWindow.setPosition(x, y, false)
+  }
+}
+
 function positionPopupWindow() {
   if (!popupWindow) return
-  const point = screen.getCursorScreenPoint()
+  const point = popupAnchorPoint ?? screen.getCursorScreenPoint()
   const { workArea } = screen.getDisplayNearestPoint(point)
   const [currentWidth, currentHeight] = popupWindow.getSize()
   const preferredWidth = popupUserResized && settings.popupWidth > 0 ? settings.popupWidth : currentWidth
@@ -365,12 +406,14 @@ function positionPopupWindow() {
   const preferredY = point.y + 18
   const x = Math.max(workArea.x + 12, Math.min(preferredX, workArea.x + workArea.width - width - 12))
   const y = Math.max(workArea.y + 12, Math.min(preferredY, workArea.y + workArea.height - height - 12))
+  notePopupPlacement(x, y)
   popupWindow.setPosition(Math.round(x), Math.round(y), false)
 }
 
 function deliverPopupPayload() {
   if (!popupWindow || !pendingPopupPayload || !popupRendererReady || popupWindow.webContents.isLoadingMainFrame()) return
-  positionPopupWindow()
+  popupAnchorPoint = screen.getCursorScreenPoint()
+  if (!keepUserPopupPlacement()) positionPopupWindow()
   safeSend(popupWindow, 'clipboard:trigger', pendingPopupPayload)
   pendingPopupPayload = null
   popupWindow.showInactive()
@@ -1131,7 +1174,8 @@ function registerIpc() {
     const payload = pendingPopupPayload
     pendingPopupPayload = null
     if (payload) {
-      positionPopupWindow()
+      popupAnchorPoint = screen.getCursorScreenPoint()
+      if (!keepUserPopupPlacement()) positionPopupWindow()
       popupWindow.showInactive()
       stageTimer.mark('popup visible', { coldStart: true })
     }
@@ -1140,13 +1184,20 @@ function registerIpc() {
   ipcMain.handle('popup:close', (event) => {
     const window = BrowserWindow.fromWebContents(event.sender)
     inferenceQueue.cancel(event.sender.id)
-    if (window === popupWindow) window.hide()
+    if (window === popupWindow) {
+      window.hide()
+      // A dismissed popup reappears next to the next trigger, as usual.
+      popupUserMoved = false
+    }
     return { ok: true }
   })
   ipcMain.handle('popup:open-main', (event, payload) => {
     const window = BrowserWindow.fromWebContents(event.sender)
     inferenceQueue.cancel(event.sender.id)
-    if (window === popupWindow) window.hide()
+    if (window === popupWindow) {
+      window.hide()
+      popupUserMoved = false
+    }
     showWindow()
     if (payload?.source && payload?.result) {
       safeSend(mainWindow, 'popup:result', payload)
@@ -1160,7 +1211,8 @@ function registerIpc() {
     const displayHeight = screen.getDisplayMatching(window.getBounds()).workArea.height
     const height = Math.max(POPUP_MIN_HEIGHT, Math.min(displayHeight, Math.round(Number(rawHeight) || 248)))
     window.setSize(window.getSize()[0], height, false)
-    positionPopupWindow()
+    if (keepUserPopupPlacement()) clampPopupIntoWorkArea()
+    else positionPopupWindow()
     return { ok: true }
   })
   ipcMain.handle('popup:set-pinned', (event, rawPinned) => {
@@ -1210,6 +1262,9 @@ function registerIpc() {
       ...popupResizeSession,
       currentPoint: { x, y },
     })
+    // Edge resizes legitimately shift x/y; record them so the 'moved'
+    // listener does not mistake the resize for a manual drag.
+    notePopupPlacement(bounds.x, bounds.y)
     popupWindow.setBounds(bounds, false)
     return { ok: true, bounds }
   })

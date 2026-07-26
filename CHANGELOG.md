@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- The popup now appears immediately after a double copy instead of waiting a fixed 140 ms, with a follow-up read that corrects slow clipboard writers.
+- The user-resized popup size persists across restarts and is fitted to the active display.
+- A popup dragged to a chosen spot stays there for follow-up translations while it remains open; dismissing it restores cursor-following.
+- Automatic height changes no longer move the popup to the current cursor position mid-translation.
+- Optional stage timing (`LINGOMUSE_TIMING=1`) logs the copy-to-speech pipeline for performance measurement.
+- Visual polish for the popup: button hover/pressed/copied feedback, refined titlebar, friendlier empty and error states, and larger body text.
+- Verified layouts at 125%, 150%, and 200% Windows display scaling.
+
 ## 1.1.1 — 2026-07-15
 
 - Removed both the native Windows shadow and the CSS shadow around the quick-translation popup.
