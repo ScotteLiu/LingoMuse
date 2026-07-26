@@ -438,7 +438,981 @@ function renderTitlebar(): string {
   return `
     <header class="titlebar">
       <div class="drag-zone"></div>
-     ÷_v¶‰ËkºwµçEÍĞ Ÿš¶–r£šê[–
-d]¥¹‘½İÌƒšr³š¦¢ª{¦~ÏŠ˜œ¤(€½¹ÍĞ‘•¥Í¥½¸€ô…İ…¥Ğİ…¥Ñ½É1½…±MÁ••¡Y½¥”¡İ¥¹‘½Ü¹ÍÁ••¡Må¹Ñ¡•Í¥Ì°±…¹Õ…”°ì(€€€Ñ¥µ•½ÕÑ5Ìè€Å|ÔÀÀ°(€€€Í¥¹…°è½¹ÑÉ½±±•È¹Í¥¹…°°(€ô¤(€¥˜€¡½¹ÑÉ½±±•È¹Í¥¹…°¹…‰½ÉÑ•ñğ…ÑÑ•µÁĞ€„ôôÍÁ••¡ÑÑ•µÁĞ¤É•ÑÕÉ¸™…±Í”(€ÍÁ••¡]…¥Ñ½¹ÑÉ½±±•È€ô¹Õ±°(€¥˜€¡‘•¥Í¥½¸¹ÍÑ…ÑÕÌ€„ôô€É•…‘äœ¤ì(€€€½¹ÍĞµ•ÍÍ…”€ô€Ÿš&û’â7–"Ãnã²›j]¥¹‘½İÌƒšr³š¦¢ª{¦~Ï¾ò3–nƒš¶“šr«šr_¢º¾òošZ–¶_šÊKšr'¦–ë¦nï¢›œ(€€€Í¡½İQ½…ÍĞ¡µ•ÍÍ…”¤(€€€É•ÑÕÉ¸™…±Í”(€ô(€½¹ÍĞÕÑÑ•É…¹”€ô¹•ÜMÁ••¡Må¹Ñ¡•Í¥ÍUÑÑ•É…¹”¡Ñ•áĞ¤(€ÕÑÑ•É…¹”¹±…¹œ€ô±…¹Õ…”(€ÕÑÑ•É…¹”¹É…Ñ”€ôÍÑ…Ñ”¹Í•ÑÑ¥¹Ì¹Ù½¥•I…Ñ”(€ÕÑÑ•É…¹”¹Ù½¥”€ô‘•¥Í¥½¸¹Ù½¥”(€ÕÑÑ•É…¹”¹½¹•ÉÉ½È€ô€ ¤€ôøì(€€€¥˜€¡…ÑÑ•µÁĞ€ôôôÍÁ••¡ÑÑ•µÁĞ¤Í¡½İQ½…ÍĞ ]¥¹‘½İÌƒšr³š¦¢ª{¦~Ïšr_¢º–’ÇšV_¾òošZ–¶_šÊKšr'¦–ë¦nï¢›œ¤(€ô(€İ¥¹‘½Ü¹ÍÁ••¡Må¹Ñ¡•Í¥Ì¹ÍÁ•…¬¡ÕÑÑ•É…¹”¤(€Í¡½İQ½…ÍĞ Ÿš¶–r£’öÿR ]¥¹‘½İÌƒšr³š¦¢ª{¦~Ïšr_¢º œ¤(€É•ÑÕÉ¸ÑÉÕ”)ô()™Õ¹Ñ¥½¸ÍÁ•…­¹±¥Í¡M¥‘”¡É•ÍÕ±ĞèQÉ…¹Í±…Ñ¥½¹I•ÍÕ±Ğ°Í½ÕÉ”èÍÑÉ¥¹œ¤èÙ½¥ì(€Ù½¥ÍÁ•…¬¡É•ÍÕ±Ğ¹‘•Ñ•Ñ•‘1…¹Õ…”€ôôô€•¸œ€üÍ½ÕÉ”€èÉ•ÍÕ±Ğ¹ÑÉ…¹Í±…Ñ¥½¸°€•¸µULœ¤)ô()…Íå¹Œ™Õ¹Ñ¥½¸½ÁåQ•áĞ¡Ñ•áĞèÍÑÉ¥¹œ¤èAÉ½µ¥Í”ñÙ½¥øì(€ÑÉäì(€€€…İ…¥Ğ¹…Ù¥…Ñ½È¹±¥Á‰½…É¹İÉ¥Ñ•Q•áĞ¡Ñ•áĞ¤(€ô…Ñ ì(€€€½¹ÍĞÑ•áÑ…É•„€ô‘½Õµ•¹Ğ¹É•…Ñ•±•µ•¹Ğ Ñ•áÑ…É•„œ¤(€€€Ñ•áÑ…É•„¹Ù…±Õ”€ôÑ•áĞ(€€€‘½Õµ•¹Ğ¹‰½‘ä¹…ÁÁ•¹‘¡¥±¡Ñ•áÑ…É•„¤(€€€Ñ•áÑ…É•„¹Í•±•Ğ ¤(€€€‘½Õµ•¹Ğ¹•á•½µµ…¹ ½Áäœ¤(€€€Ñ•áÑ…É•„¹É•µ½Ù” ¤(€ô(€Í¡½İQ½…ÍĞ Ÿ–ŞË¢’¢÷–"Ã–&«¢ÊóÂüœ¤)ô()…Íå¹Œ™Õ¹Ñ¥½¸É•™É•Í¡¹¥¹”¡Í¡½İ••‘‰…¬€ô™…±Í”¤èAÉ½µ¥Í”ñÙ½¥øì(€ÍÑ…Ñ”¹•¹¥¹”€ô…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹•Ñ¹¥¹•MÑ…ÑÕÌ ¤(€¥˜€¡Í¡½İ••‘‰…¬¤Í¡½İQ½…ÍĞ¡ÍÑ…Ñ”¹•¹¥¹”¹½¹±¥¹”€ü€Ÿ–ŞËš&û–"Ãšr³š¦¢ª{¢¢–òWšN8œ€è€Ÿn»–&7’î7š&û’â7–"À=±±…µ„œ¤(€•±Í”É•¹‘•È ¤)ô()…Íå¹Œ™Õ¹Ñ¥½¸ÕÁ‘…Ñ•M•ÑÑ¥¹œ¡­•äè­•å½˜M•ÑÑ¥¹Ì°Ù…±Õ”èM•ÑÑ¥¹Ím­•å½˜M•ÑÑ¥¹Ít¤èAÉ½µ¥Í”ñÙ½¥øì(€½¹ÍĞ‘¥Í…‰±¥¹!¥ÍÑ½Éä€ô­•ä€ôôô€Í…Ù•!¥ÍÑ½Éäœ€˜˜Ù…±Õ”€ôôô™…±Í”(€¥˜€¡‘¥Í…‰±¥¹!¥ÍÑ½Éä¤ì(€€€¡¥ÍÑ½Éå5¥É…Ñ¥½¹•¹•É…Ñ¥½¸€¬ô€Ä(€€€ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì€ôì€¸¸¹ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì°Í…Ù•!¥ÍÑ½Éäè™…±Í”ô(€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éä€ômt(€€€É•¹‘•È ¤(€ô(€½¹ÍĞÉ•ÍÁ½¹Í”€ô…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹ÕÁ‘…Ñ•M•ÑÑ¥¹Ì¡ìm­•åtèÙ…±Õ”ô…ÌA…ÉÑ¥…°ñM•ÑÑ¥¹Ìø¤(€½¹ÍĞÁ•ÉÍ¥ÍÑ•¹•…¥±ÕÉ•±É•…‘åY¥Í¥‰±”€ô€…ÍÑ…Ñ”¹Í•ÑÑ¥¹ÍA•ÉÍ¥ÍÑ•¹”¹Á•ÉÍ¥ÍÑ•(€ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì€ôÉ•ÍÁ½¹Í”¹Í•ÑÑ¥¹Ì(€ÍÑ…Ñ”¹Í•ÑÑ¥¹ÍA•ÉÍ¥ÍÑ•¹”€ôÉ•ÍÁ½¹Í”¹Í•ÑÑ¥¹ÍA•ÉÍ¥ÍÑ•¹”(€¥˜€¡É•ÍÁ½¹Í”¹¡¥ÍÑ½ÉåM¹…ÁÍ¡½Ğ¤ì(€€€…ÁÁ±å!¥ÍÑ½ÉåM¹…ÁÍ¡½Ğ¡É•ÍÁ½¹Í”¹¡¥ÍÑ½ÉåM¹…ÁÍ¡½Ğ°É•ÍÁ½¹Í”¹Í•ÑÑ¥¹Ì¹Í…Ù•!¥ÍÑ½Éä¤(€ô•±Í”ì(€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éå±•…ÉA•¹‘¥¹œ€ôÉ•ÍÁ½¹Í”¹¡¥ÍÑ½Éå±•…ÉA•¹‘¥¹œ(€ô(€ÍÑ…Ñ”¹Á•É™½Éµ…¹”€ôÉ•ÍÁ½¹Í”¹Á•É™½Éµ…¹”(€ÍÑ…Ñ”¹•¹¥¹”€ôÉ•ÍÁ½¹Í”¹•¹¥¹”(€¥˜€¡­•ä€ôôô€Í…Ù•!¥ÍÑ½Éäœ€˜˜€…ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì¹Í…Ù•!¥ÍÑ½Éä¤ì(€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éä€ômt(€€€¥˜€ …±•…É1•…å!¥ÍÑ½Éä ¤ñğÉ•ÍÁ½¹Í”¹¡¥ÍÑ½Éå±•…É=¬€ôôô™…±Í”¤ì(€€€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éå]…É¹¥¹œ€ô€Ÿš¶ß–>Ë–ŞË–sš¶‹’şw–¶c¾ò3’ö’î7šr'šr³š¦šªSš†#¶'–ú]¥¹‘½İÌƒ¢¦f“–6ƒR£–ú3šâ¦f“œ(€€€€€Í¡½İQ½…ÍĞ¡ÍÑ…Ñ”¹¡¥ÍÑ½Éå]…É¹¥¹œ¤(€€€ô•±Í”ì(€€€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éå]…É¹¥¹œ€ô€œœ(€€€ô(€ô•±Í”¥˜€¡­•ä€ôôô€Í…Ù•!¥ÍÑ½Éäœ€˜˜ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì¹Í…Ù•!¥ÍÑ½Éä¤ì(€€€…İ…¥ĞÍå¹¡É½¹¥é•M…Ù•‘!¥ÍÑ½Éä ¤(€ô(€¥˜€¡­•ä€ôôô€…ÕÑ½MÁ•…¬œ€˜˜€…ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì¹…ÕÑ½MÁ•…¬¤…¹•±MÁ••  ¤(€¥˜€ …É•ÍÁ½¹Í”¹Í•ÑÑ¥¹ÍA•ÉÍ¥ÍÑ•¹”¹Á•ÉÍ¥ÍÑ•€˜˜€…Á•ÉÍ¥ÍÑ•¹•…¥±ÕÉ•±É•…‘åY¥Í¥‰±”¤ì(€€€Í¡½İQ½…ÍĞ¡Á•ÉÍ¥ÍÑ•¹•]…É¹¥¹5•ÍÍ…” ¤¤(€ô(€É•¹‘•È ¤)ô()…Íå¹Œ™Õ¹Ñ¥½¸ÁÕ±±M•±•Ñ•‘5½‘•° ¤èAÉ½µ¥Í”ñÙ½¥øì(€ÍÑ…Ñ”¹ÁÕ±±¥¹œ€ôÑÉÕ”(€ÍÑ…Ñ”¹ÁÉ½É•ÍÌ€ôìÍÑ…ÑÕÌè€Ÿšê[–
-g’â/¢ò$œ°Á•É•¹Ğè€À°½µÁ±•Ñ•è€À°Ñ½Ñ…°è€Àô(€É•¹‘•È ¤(€½¹ÍĞÉ•ÍÕ±Ğ€ô…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹ÁÕ±±5½‘•°¡ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì¹µ½‘•°¤(€ÍÑ…Ñ”¹ÁÕ±±¥¹œ€ô™…±Í”(€¥˜€ …É•ÍÕ±Ğ¹½¬¤ì(€€€ÍÑ…Ñ”¹•ÉÉ½È€ôƒš¢‡–z/’â/¢ò'–’ÇšV_¾òh‘íÉ•ÍÕ±Ğ¹•ÉÉ½Èñğ€Ÿ¢®/šª‹š~—ÚË¢Ş¿–ú3–7¢¦›õ€(€€€É•¹‘•È ¤(€€€É•ÑÕÉ¸(€ô(€ÍÑ…Ñ”¹•¹¥¹”€ô…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹•Ñ¹¥¹•MÑ…ÑÕÌ ¤(€ÍÑ…Ñ”¹ÁÉ½É•ÍÌ€ô¹Õ±°(€Í¡½İQ½…ÍĞ Ÿ–7¢Êï¢ª{¢¢š¢‡–z/–ŞË–º'¢w–º3š"@œ¤)ô()™Õ¹Ñ¥½¸±½…‘1•…å!¥ÍÑ½Éä ¤è!¥ÍÑ½Éå¹ÑÉåmtì(€É•ÑÕÉ¸É•…‘!¥ÍÑ½Éä¡±½…±MÑ½É…”¤)ô()™Õ¹Ñ¥½¸±•…É1•…å!¥ÍÑ½Éä ¤è‰½½±•…¸ì(€ÑÉäì(€€€±½…±MÑ½É…”¹É•µ½Ù•%Ñ•´¡!%MQ=Ie}-d¤(€€€É•ÑÕÉ¸ÑÉÕ”(€ô…Ñ ì(€€€É•ÑÕÉ¸™…±Í”(€ô)ô()…Íå¹Œ™Õ¹Ñ¥½¸¡…¹‘±•Ñ¥½¸¡…Ñ¥½¸èÍÑÉ¥¹œ°Ñ…É•Ğè!Q51±•µ•¹Ğ¤èAÉ½µ¥Í”ñÙ½¥øì(€Íİ¥Ñ €¡…Ñ¥½¸¤ì(€€€…Í”€ÑÉ…¹Í±…Ñ”œè(€€€€€…İ…¥ĞÉÕ¹QÉ…¹Í±…Ñ¥½¸ µ…¹Õ…°œ¤(€€€€€‰É•…¬(€€€…Í”€…¹•°œè(€€€€€…Ñ¥Ù•5…¥¹I•ÅÕ•ÍÑ%€ô€œœ(€€€€€µ…¥¹I•ÅÕ•ÍÑM•ÅÕ•¹”€¬ô€Ä(€€€€€…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹…¹•±QÉ…¹Í±…Ñ¥½¸ ¤(€€€€€ÍÑ…Ñ”¹±½…‘¥¹œ€ô™…±Í”(€€€€€ÍÑ…Ñ”¹Á…ÉÑ¥…°€ô¹Õ±°(€€€€€ÍÑ…Ñ”¹•ÉÉ½È€ô€Ÿ–ŞË–sš¶‹¦gš²‡şï¢¶¿œ(€€€€€É•¹‘•È ¤(€€€€€‰É•…¬(€€€…Í”€¹•Üœè(€€€€€ÍÑ…Ñ”¹¥¹ÁÕĞ€ô€œœ(€€€€€ÍÑ…Ñ”¹É•ÍÕ±Ğ€ô¹Õ±°(€€€€€ÍÑ…Ñ”¹•ÉÉ½È€ô€œœ(€€€€€ÍÑ…Ñ”¹¥Í•µ¼€ô™…±Í”(€€€€€É•¹‘•È ¤(€€€€€‘½Õµ•¹Ğ¹ÅÕ•ÉåM•±•Ñ½Èñ!Q51Q•áÑÉ•…±•µ•¹Ğø œÍ½ÕÉ”µ¥¹ÁÕĞœ¤ü¹™½ÕÌ ¤(€€€€€‰É•…¬(€€€…Í”€±•…Èµ¥¹ÁÕĞœè(€€€€€ÍÑ…Ñ”¹¥¹ÁÕĞ€ô€œœ(€€€€€É•¹‘•È ¤(€€€€€‘½Õµ•¹Ğ¹ÅÕ•ÉåM•±•Ñ½Èñ!Q51Q•áÑÉ•…±•µ•¹Ğø œÍ½ÕÉ”µ¥¹ÁÕĞœ¤ü¹™½ÕÌ ¤(€€€€€‰É•…¬(€€€…Í”€Á…ÍÑ”œè(€€€€€ÑÉäì(€€€€€€€ÍÑ…Ñ”¹¥¹ÁÕĞ€ô…İ…¥Ğ¹…Ù¥…Ñ½È¹±¥Á‰½…É¹É•…‘Q•áĞ ¤(€€€€€€€É•¹‘•È ¤(€€€€€ô…Ñ ì(€€€€€€€Í¡½İQ½…ÍĞ Ÿ¢®/’öÿR ÑÉ°­Xƒ¢Êó’â+–Ÿ–ºäœ¤(€€€€€ô(€€€€€‰É•…¬(€€€…Í”€ÍÁ•…¬µÍ½ÕÉ”œè(€€€€€Ù½¥ÍÁ•…¬¡ÍÑ…Ñ”¹¥¹ÁÕĞ°€½mqÔÌĞÀÀµqÔå™™™t¼¹Ñ•ÍĞ¡ÍÑ…Ñ”¹¥¹ÁÕĞ¤€ü€é µQ\œ€è€•¸µULœ¤(€€€€€‰É•…¬(€€€…Í”€ÍÁ•…¬µ•¹±¥Í œè(€€€€€¥˜€¡ÍÑ…Ñ”¹É•ÍÕ±Ğ¤ÍÁ•…­¹±¥Í¡M¥‘”¡ÍÑ…Ñ”¹É•ÍÕ±Ğ°ÍÑ…Ñ”¹¥¹ÁÕĞ¤(€€€€€‰É•…¬(€€€…Í”€ÍÁ•…¬µ•á…µÁ±”œèì(€€€€€½¹ÍĞ•á…µÁ±”€ôÍÑ…Ñ”¹É•ÍÕ±Ğü¹•á…µÁ±•Ím9Õµ‰•È¡Ñ…É•Ğ¹‘…Ñ…Í•Ğ¹¥¹‘•à¥t(€€€€€¥˜€¡•á…µÁ±”€˜˜ÍÑ…Ñ”¹É•ÍÕ±Ğ¤ì(€€€€€€€Ù½¥ÍÁ•…¬¡•á…µÁ±”¹Í½ÕÉ”°ÍÑ…Ñ”¹É•ÍÕ±Ğ¹‘•Ñ•Ñ•‘1…¹Õ…”€ôôô€é œ€ü€é µQ\œ€è€•¸µULœ¤(€€€€€ô(€€€€€‰É•…¬(€€€ô(€€€…Í”€½ÁäµÉ•ÍÕ±Ğœè(€€€€€¥˜€¡ÍÑ…Ñ”¹É•ÍÕ±Ğ¤…İ…¥Ğ½ÁåQ•áĞ¡ÍÑ…Ñ”¹É•ÍÕ±Ğ¹ÑÉ…¹Í±…Ñ¥½¸¤(€€€€€‰É•…¬(€€€…Í”€½ÁäµÁ…ÉÑ¥…°œè(€€€€€¥˜€¡ÍÑ…Ñ”¹Á…ÉÑ¥…°¤…İ…¥Ğ½ÁåQ•áĞ¡ÍÑ…Ñ”¹Á…ÉÑ¥…°¹ÑÉ…¹Í±…Ñ¥½¸¤(€€€€€‰É•…¬(€€€…Í”€ÍÁ•…¬µÁ…ÉÑ¥…°œè(€€€€€¥˜€¡ÍÑ…Ñ”¹Á…ÉÑ¥…°¤ì(€€€€€€€Ù½¥ÍÁ•…¬ (€€€€€€€€€ÍÑ…Ñ”¹Á…ÉÑ¥…°¹‘•Ñ•Ñ•‘1…¹Õ…”€ôôô€•¸œ€üÍÑ…Ñ”¹Á…ÉÑ¥…°¹Í½ÕÉ”€èÍÑ…Ñ”¹Á…ÉÑ¥…°¹ÑÉ…¹Í±…Ñ¥½¸°(€€€€€€€€€€•¸µULœ°(€€€€€€€€¤(€€€€€ô(€€€€€‰É•…¬(€€€…Í”€½Áäµ…±Ñ•É¹…Ñ¥Ù”œèì(€€€€€½¹ÍĞ…±Ñ•É¹…Ñ¥Ù”€ôÍÑ…Ñ”¹É•ÍÕ±Ğü¹…±Ñ•É¹…Ñ¥Ù•Ím9Õµ‰•È¡Ñ…É•Ğ¹‘…Ñ…Í•Ğ¹¥¹‘•à¥t(€€€€€¥˜€¡…±Ñ•É¹…Ñ¥Ù”¤…İ…¥Ğ½ÁåQ•áĞ¡…±Ñ•É¹…Ñ¥Ù”¹Ñ•áĞ¤(€€€€€‰É•…¬(€€€ô(€€€…Í”€¡¥ÍÑ½Éäœèì(€€€€€½¹ÍĞ¥Ñ•´€ôÍÑ…Ñ”¹¡¥ÍÑ½Éä¹™¥¹ ¡•¹ÑÉä¤€ôø•¹ÑÉä¹¥€ôôôÑ…É•Ğ¹‘…Ñ…Í•Ğ¹¥¤(€€€€€¥˜€¡¥Ñ•´¤ì(€€€€€€€ÍÑ…Ñ”¹¥¹ÁÕĞ€ô¥Ñ•´¹Í½ÕÉ”(€€€€€€€ÍÑ…Ñ”¹É•ÍÕ±Ğ€ô¥Ñ•´¹É•ÍÕ±Ğ(€€€€€€€ÍÑ…Ñ”¹¥Í•µ¼€ô™…±Í”(€€€€€€€ÍÑ…Ñ”¹•ÉÉ½È€ô€œœ(€€€€€€€É•¹‘•È ¤(€€€€€ô(€€€€€‰É•…¬(€€€ô(€€€…Í”€±•…Èµ¡¥ÍÑ½Éäœèì(€€€€€¡¥ÍÑ½Éå5¥É…Ñ¥½¹•¹•É…Ñ¥½¸€¬ô€Ä(€€€€€½¹ÍĞ±•…É•€ô…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹±•…É!¥ÍÑ½Éä ¤(€€€€€…ÁÁ±å!¥ÍÑ½ÉåM¹…ÁÍ¡½Ğ¡±•…É•°ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì¹Í…Ù•!¥ÍÑ½Éä¤(€€€€€¥˜€ …±•…É•¹½¬¤ì(€€€€€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éå]…É¹¥¹œ€ô€]¥¹‘½İÌƒšj¯šf‡šÎW–º3š"CŠšâ¦f“¾òo¢®/¦^s¦Z'–>¿¢÷–6ƒR£šªSš†#j¢/–ò?–ú3–7¢¦›œ(€€€€€€€Í¡½İQ½…ÍĞ¡ÍÑ…Ñ”¹¡¥ÍÑ½Éå]…É¹¥¹œ¤(€€€€€ô•±Í”ì(€€€€€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éå]…É¹¥¹œ€ô€œœ(€€€€€€€É•¹‘•È ¤(€€€€€ô(€€€€€‰É•…¬(€€€ô(€€€…Í”€½Áäµ‘¥…¹½ÍÑ¥Ìœè(€€€€€…İ…¥Ğ½ÁåQ•áĞ¡)M=8¹ÍÑÉ¥¹¥™ä¡ì(€€€€€€€…ÁÀè€1¥¹½5ÕÍ”œ°(€€€€€€€Ù•ÉÍ¥½¸èÍÑ…Ñ”¹Ù•ÉÍ¥½¸°(€€€€€€€•‘¥Ñ¥½¸èÍÑ…Ñ”¹•‘¥Ñ¥½¸°(€€€€€€€Á±…Ñ™½É´èÍÑ…Ñ”¹Á±…Ñ™½É´°(€€€€€€€•¹¥¹”èì(€€€€€€€€€½¹±¥¹”èÍÑ…Ñ”¹•¹¥¹”¹½¹±¥¹”°(€€€€€€€€€µ½‘•±I•…‘äèÍÑ…Ñ”¹•¹¥¹”¹µ½‘•±I•…‘ä°(€€€€€€€€€µ½‘•°èÍÑ…Ñ”¹•¹¥¹”¹µ½‘•°°(€€€€€€€€€ÍÑ…ÉÑÉÉ½ÈèÍÑ…Ñ”¹½™™±¥¹•¹¥¹•MÑ…ÉĞü¹•ÉÉ½Èñğ€œœ°(€€€€€€€€€İ…ÉµÕÁÉÉ½ÈèÍÑ…Ñ”¹½™™±¥¹•]…ÉµÕÀü¹•ÉÉ½Èñğ€œœ°(€€€€€€€ô°(€€€€€€€Á•É™½Éµ…¹”èÍÑ…Ñ”¹Á•É™½Éµ…¹”°(€€€€€€€¡½½¬èì(€€€€€€€€€…Ñ¥Ù”èÍÑ…Ñ”¹¡½½¬¹…Ñ¥Ù”°(€€€€€€€€€…Ù…¥±…‰±”èÍÑ…Ñ”¹¡½½¬¹…Ù…¥±…‰±”°(€€€€€€€€€•ÉÉ½ÈèÍÑ…Ñ”¹¡½½¬¹•ÉÉ½Èñğ€œœ°(€€€€€€€ô°(€€€€€ô°¹Õ±°°€È¤¤(€€€€€‰É•…¬(€€€…Í”€½Á•¸µÍ•ÑÑ¥¹Ìœè(€€€€€ÍÑ…Ñ”¹Í•ÑÑ¥¹Í=Á•¸€ôÑÉÕ”(€€€€€É•¹‘•È ¤(€€€€€™½ÕÍÑ¥Ù•¥…±½œ ¤(€€€€€‰É•…¬(€€€…Í”€±½Í”µÍ•ÑÑ¥¹Ìœè(€€€€€ÍÑ…Ñ”¹Í•ÑÑ¥¹Í=Á•¸€ô™…±Í”(€€€€€É•¹‘•È ¤(€€€€€‰É•…¬(€€€…Í”€Í•±•Ğµµ½‘•°œè(€€€€€…İ…¥ĞÕÁ‘…Ñ•M•ÑÑ¥¹œ µ½‘•°œ°Ñ…É•Ğ¹‘…Ñ…Í•Ğ¹µ½‘•°ñğ‘•™…Õ±ÑM•ÑÑ¥¹Ì¹µ½‘•°¤(€€€€€‰É•…¬(€€€…Í”€Í•±•ĞµÁ•É™½Éµ…¹”œè(€€€€€…İ…¥ĞÕÁ‘…Ñ•M•ÑÑ¥¹œ Á•É™½Éµ…¹•5½‘”œ°€¡Ñ…É•Ğ¹‘…Ñ…Í•Ğ¹µ½‘”ñğ€…ÕÑ¼œ¤…ÌM•ÑÑ¥¹ÍlÁ•É™½Éµ…¹•5½‘”t¤(€€€€€‰É•…¬(€€€…Í”€É•™É•Í µ•¹¥¹”œè(€€€€€…İ…¥ĞÉ•™É•Í¡¹¥¹”¡ÑÉÕ”¤(€€€€€‰É•…¬(€€€…Í”€É•ÍÑ…ÉĞµ•¹¥¹”œèì(€€€€€ÍÑ…Ñ”¹É•ÍÑ…ÉÑ¥¹¹¥¹”€ôÑÉÕ”(€€€€€ÍÑ…Ñ”¹•ÉÉ½È€ô€œœ(€€€€€É•¹‘•È ¤(€€€€€½¹ÍĞÉ•ÍÁ½¹Í”€ô…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹É•ÍÑ…ÉÑ=™™±¥¹•¹¥¹” ¤(€€€€€ÍÑ…Ñ”¹É•ÍÑ…ÉÑ¥¹¹¥¹”€ô™…±Í”(€€€€€ÍÑ…Ñ”¹•¹¥¹”€ôÉ•ÍÁ½¹Í”¹•¹¥¹”(€€€€€¥˜€¡É•ÍÁ½¹Í”¹½™™±¥¹•¹¥¹•MÑ…ÉĞ¤ÍÑ…Ñ”¹½™™±¥¹•¹¥¹•MÑ…ÉĞ€ôÉ•ÍÁ½¹Í”¹½™™±¥¹•¹¥¹•MÑ…ÉĞ(€€€€€¥˜€¡É•ÍÁ½¹Í”¹½™™±¥¹•]…ÉµÕÀ¤ÍÑ…Ñ”¹½™™±¥¹•]…ÉµÕÀ€ôÉ•ÍÁ½¹Í”¹½™™±¥¹•]…ÉµÕÀ(€€€€€¥˜€¡É•ÍÁ½¹Í”¹½¬¤Í¡½İQ½…ÍĞ Ÿ¦n‹Şk–òWšN;–ŞËš‹–ú§¾ò3–>¿’î—æóê3şï¢¶¼œ¤(€€€€€•±Í”ì(€€€€€€€ÍÑ…Ñ”¹•ÉÉ½È€ô¡Õµ…¹¥é•=™™±¥¹•¹¥¹•ÉÉ½È¡É•ÍÁ½¹Í”¹•ÉÉ½Èñğ€œœ¤(€€€€€€€É•¹‘•È ¤(€€€€€ô(€€€€€‰É•…¬(€€€ô(€€€…Í”€‘½İ¹±½…µ½±±…µ„œè(€€€€€…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹½Á•¹=±±…µ…½İ¹±½… ¤(€€€€€Í¡½İQ½…ÍĞ Ÿ–ŞË¦Z/–V|=±±…µ„ƒ–ºcšZç’â/¢ò'¦‚œ¤(€€€€€‰É•…¬(€€€…Í”€ÁÕ±°µµ½‘•°œè(€€€€€…İ…¥ĞÁÕ±±M•±•Ñ•‘5½‘•° ¤(€€€€€‰É•…¬(€€€…Í”€½Á•¸µÕ¥‘”œè(€€€€€ÍÑ…Ñ”¹Õ¥‘•=Á•¸€ôÑÉÕ”(€€€€€É•¹‘•È ¤(€€€€€™½ÕÍÑ¥Ù•¥…±½œ ¤(€€€€€‰É•…¬(€€€…Í”€±½Í”µÕ¥‘”œè(€€€€€½µÁ±•Ñ•=¹‰½…É‘¥¹œ ¤(€€€€€ÍÑ…Ñ”¹Õ¥‘•=Á•¸€ô™…±Í”(€€€€€É•¹‘•È ¤(€€€€€‰É•…¬(€€€…Í”€™¥¹¥Í µÕ¥‘”œè(€€€€€½µÁ±•Ñ•=¹‰½…É‘¥¹œ ¤(€€€€€ÍÑ…Ñ”¹Õ¥‘•=Á•¸€ô™…±Í”(€€€€€É•¹‘•È ¤(€€€€€‘½Õµ•¹Ğ¹ÅÕ•ÉåM•±•Ñ½Èñ!Q51Q•áÑÉ•…±•µ•¹Ğø œÍ½ÕÉ”µ¥¹ÁÕĞœ¤ü¹™½ÕÌ ¤(€€€€€‰É•…¬(€€€…Í”€Õ¥‘”µÑ¼µÍ•ÑÑ¥¹Ìœè(€€€€€½µÁ±•Ñ•=¹‰½…É‘¥¹œ ¤(€€€€€ÍÑ…Ñ”¹Õ¥‘•=Á•¸€ô™…±Í”(€€€€€ÍÑ…Ñ”¹Í•ÑÑ¥¹Í=Á•¸€ôÑÉÕ”(€€€€€É•¹‘•È ¤(€€€€€™½ÕÍÑ¥Ù•¥…±½œ ¤(€€€€€‰É•…¬(€€€…Í”€µ¥¹¥µ¥é”œè(€€€€€…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹µ¥¹¥µ¥é” ¤(€€€€€‰É•…¬(€€€…Í”€±½Í”µİ¥¹‘½Üœè(€€€€€…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹±½Í” ¤(€€€€€‰É•…¬(€ô)ô()É½½Ğ¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ±¥¬œ°€¡•Ù•¹Ğ¤€ôøì(€½¹ÍĞÑ…É•Ğ€ô€¡•Ù•¹Ğ¹Ñ…É•Ğ…Ì!Q51±•µ•¹Ğ¤¹±½Í•ÍĞñ!Q51±•µ•¹Ğø m‘…Ñ„µ…Ñ¥½¹tœ¤(€¥˜€ …Ñ…É•Ğ¤É•ÑÕÉ¸(€Ù½¥¡…¹‘±•Ñ¥½¸¡Ñ…É•Ğ¹‘…Ñ…Í•Ğ¹…Ñ¥½¸ñğ€œœ°Ñ…É•Ğ¤)ô¤()É½½Ğ¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ¥¹ÁÕĞœ°€¡•Ù•¹Ğ¤€ôøì(€½¹ÍĞÑ…É•Ğ€ô•Ù•¹Ğ¹Ñ…É•Ğ…Ì!Q51%¹ÁÕÑ±•µ•¹Ğğ!Q51Q•áÑÉ•…±•µ•¹Ğ(€¥˜€¡Ñ…É•Ğ¹¥€ôôô€Í½ÕÉ”µ¥¹ÁÕĞœ¤ì(€€€ÍÑ…Ñ”¹¥¹ÁÕĞ€ôÑ…É•Ğ¹Ù…±Õ”(€€€½¹ÍĞ½Õ¹Ñ•È€ô‘½Õµ•¹Ğ¹ÅÕ•ÉåM•±•Ñ½È œ¡…Èµ½Õ¹Ğœ¤(€€€¥˜€¡½Õ¹Ñ•È¤½Õ¹Ñ•È¹Ñ•áÑ½¹Ñ•¹Ğ€ô€‘íÑ…É•Ğ¹Ù…±Õ”¹±•¹Ñ ¹Ñ½1½…±•MÑÉ¥¹œ ¥ô€¼€ÄÈ°ÀÀÀƒ
-Üƒ’â·š^—¦~OÒ€Ì°ÀÀÁ€(€ô)ô¤()É½½Ğ¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ¡…¹”œ°€¡•Ù•¹Ğ¤€ôøì(€½¹ÍĞÑ…É•Ğ€ô•Ù•¹Ğ¹Ñ…É•Ğ…Ì!Q51%¹ÁÕÑ±•µ•¹Ğ(€½¹ÍĞ­•ä€ôÑ…É•Ğ¹‘…Ñ…Í•Ğ¹Í•ÑÑ¥¹œ…Ì­•å½˜M•ÑÑ¥¹ÌğÕ¹‘•™¥¹•(€¥˜€ …­•ä¤É•ÑÕÉ¸(€±•ĞÙ…±Õ”èÍÑÉ¥¹œğ¹Õµ‰•Èğ‰½½±•…¸€ôÑ…É•Ğ¹Ù…±Õ”(€¥˜€¡Ñ…É•Ğ¹ÑåÁ”€ôôô€¡•­‰½àœ¤Ù…±Õ”€ôÑ…É•Ğ¹¡•­•(€¥˜€¡Ñ…É•Ğ¹ÑåÁ”€ôôô€É…¹”œ¤Ù…±Õ”€ô9Õµ‰•È¡Ñ…É•Ğ¹Ù…±Õ”¤(€Ù½¥ÕÁ‘…Ñ•M•ÑÑ¥¹œ¡­•ä°Ù…±Õ”¤)ô¤()İ¥¹‘½Ü¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ­•å‘½İ¸œ°€¡•Ù•¹Ğ¤€ôøì(€¥˜€¡•Ù•¹Ğ¹­•ä€ôôô€Q…ˆœ€˜˜€¡ÍÑ…Ñ”¹Õ¥‘•=Á•¸ñğÍÑ…Ñ”¹Í•ÑÑ¥¹Í=Á•¸¤¤ì(€€€½¹ÍĞ‘¥…±½œ€ô‘½Õµ•¹Ğ¹ÅÕ•ÉåM•±•Ñ½Èñ!Q51±•µ•¹Ğø¡ÍÑ…Ñ”¹Õ¥‘•=Á•¸€ü€œ¹Õ¥‘”µµ½‘…°œ€è€œ¹Í•ÑÑ¥¹Ìµ‘É…İ•Èœ¤(€€€½¹ÍĞ™½ÕÍ…‰±”€ô‘¥…±½œ(€€€€€€üÉÉ…ä¹™É½´¡‘¥…±½œ¹ÅÕ•ÉåM•±•Ñ½É±°ñ!Q51±•µ•¹Ğø ‰ÕÑÑ½¸é¹½Ğ¡m‘¥Í…‰±•‘t¤°¥¹ÁÕĞé¹½Ğ¡m‘¥Í…‰±•‘t¤°ÍÕµµ…Éä°mÑ…‰¥¹‘•áté¹½Ğ¡mÑ…‰¥¹‘•àôˆ´Ä‰t¤œ¤¤(€€€€€€èmt(€€€¥˜€¡™½ÕÍ…‰±”¹±•¹Ñ ¤ì(€€€€€½¹ÍĞ™¥ÉÍĞ€ô™½ÕÍ…‰±•lÁt(€€€€€½¹ÍĞ±…ÍĞ€ô™½ÕÍ…‰±•m™½ÕÍ…‰±”¹±•¹Ñ €´€Åt(€€€€€¥˜€ …‘¥…±½œü¹½¹Ñ…¥¹Ì¡‘½Õµ•¹Ğ¹…Ñ¥Ù•±•µ•¹Ğ¤¤ì(€€€€€€€•Ù•¹Ğ¹ÁÉ•Ù•¹Ñ•™…Õ±Ğ ¤(€€€€€€€€ì¡•Ù•¹Ğ¹Í¡¥™Ñ-•ä€ü±…ÍĞ€è™¥ÉÍĞ¤¹™½ÕÌ ¤(€€€€€ô•±Í”¥˜€¡•Ù•¹Ğ¹Í¡¥™Ñ-•ä€˜˜‘½Õµ•¹Ğ¹…Ñ¥Ù•±•µ•¹Ğ€ôôô™¥ÉÍĞ¤ì(€€€€€€€•Ù•¹Ğ¹ÁÉ•Ù•¹Ñ•™…Õ±Ğ ¤(€€€€€€€±…ÍĞ¹™½ÕÌ ¤(€€€€€ô•±Í”¥˜€ …•Ù•¹Ğ¹Í¡¥™Ñ-•ä€˜˜‘½Õµ•¹Ğ¹…Ñ¥Ù•±•µ•¹Ğ€ôôô±…ÍĞ¤ì(€€€€€€€•Ù•¹Ğ¹ÁÉ•Ù•¹Ñ•™…Õ±Ğ ¤(€€€€€€€™¥ÉÍĞ¹™½ÕÌ ¤(€€€€€ô(€€€ô(€ô(€¥˜€ ¡•Ù•¹Ğ¹ÑÉ±-•äñğ•Ù•¹Ğ¹µ•Ñ…-•ä¤€˜˜•Ù•¹Ğ¹­•ä€ôôô€¹Ñ•Èœ€˜˜€…ÍÑ…Ñ”¹Õ¥‘•=Á•¸€˜˜€…ÍÑ…Ñ”¹Í•ÑÑ¥¹Í=Á•¸¤ì(€€€•Ù•¹Ğ¹ÁÉ•Ù•¹Ñ•™…Õ±Ğ ¤(€€€Ù½¥ÉÕ¹QÉ…¹Í±…Ñ¥½¸ µ…¹Õ…°œ¤(€ô(€¥˜€¡•Ù•¹Ğ¹­•ä€ôôô€Í…Á”œ¤ì(€€€¥˜€¡ÍÑ…Ñ”¹Õ¥‘•=Á•¸¤ì(€€€€€½µÁ±•Ñ•=¹‰½…É‘¥¹œ ¤(€€€€€ÍÑ…Ñ”¹Õ¥‘•=Á•¸€ô™…±Í”(€€€ô(€€€•±Í”¥˜€¡ÍÑ…Ñ”¹Í•ÑÑ¥¹Í=Á•¸¤ÍÑ…Ñ”¹Í•ÑÑ¥¹Í=Á•¸€ô™…±Í”(€€€•±Í”É•ÑÕÉ¸(€€€É•¹‘•È ¤(€ô)ô¤()‘•Í­Ñ½ÁÁ¤¹½¹±¥Á‰½…É‘QÉ¥•È ¡ìÑ•áĞô¤€ôøì(€ÍÑ…Ñ”¹¥¹ÁÕĞ€ôÑ•áĞ(€ÍÑ…Ñ”¹•ÉÉ½È€ô€œœ(€Í¡½İQ½…ÍĞ Ÿ–ŞËšNß–>[–&«¢ÊóÂÿ¾ò3š¶–r£¢«Ûşï¢¶¼œ¤(€Ù½¥ÉÕ¹QÉ…¹Í±…Ñ¥½¸ ±¥Á‰½…Éœ¤)ô¤()‘•Í­Ñ½ÁÁ¤¹½¹A½ÁÕÁI•ÍÕ±Ğ ¡ìÍ½ÕÉ”°É•ÍÕ±Ğô¤€ôøì(€ÍÑ…Ñ”¹¥¹ÁÕĞ€ôÍ½ÕÉ”(€ÍÑ…Ñ”¹É•ÍÕ±Ğ€ôÉ•ÍÕ±Ğ(€ÍÑ…Ñ”¹•ÉÉ½È€ô€œœ(€ÍÑ…Ñ”¹¥Í•µ¼€ô™…±Í”(€É•¹‘•È ¤)ô¤()‘•Í­Ñ½ÁÁ¤¹½¹!½½­MÑ…ÑÕÌ ¡¡½½¬è!½½­MÑ…ÑÕÌ¤€ôøì(€ÍÑ…Ñ”¹¡½½¬€ô¡½½¬(€É•¹‘•È ¤)ô¤()‘•Í­Ñ½ÁÁ¤¹½¹M•ÑÑ¥¹Í¡…¹• ¡¹•áÑM•ÑÑ¥¹Ì¤€ôøì(€ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì€ô¹•áÑM•ÑÑ¥¹Ì(€¥˜€ …¹•áÑM•ÑÑ¥¹Ì¹Í…Ù•!¥ÍÑ½Éä¤ì(€€€¡¥ÍÑ½Éå5¥É…Ñ¥½¹•¹•É…Ñ¥½¸€¬ô€Ä(€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éä€ômt(€€€¥˜€ …±•…É1•…å!¥ÍÑ½Éä ¤¤ì(€€€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éå]…É¹¥¹œ€ô€Ÿš¶ß–>Ë–ŞË–sš¶‹’şw–¶c¾ò3’ö¢"+–Ë–¶c–6’î7¶'–ú]¥¹‘½İÌƒ¢¦f“–6ƒR£–ú3šâ¦f“œ(€€€ô(€ô(€É•¹‘•È ¤)ô¤()‘•Í­Ñ½ÁÁ¤¹½¹M•ÑÑ¥¹ÍA•ÉÍ¥ÍÑ•¹” ¡ÍÑ…ÑÕÌ¤€ôøì(€½¹ÍĞ‰•…µ•U¹Á•ÉÍ¥ÍÑ•€ôÍÑ…Ñ”¹Í•ÑÑ¥¹ÍA•ÉÍ¥ÍÑ•¹”¹Á•ÉÍ¥ÍÑ•€˜˜€…ÍÑ…ÑÕÌ¹Á•ÉÍ¥ÍÑ•(€ÍÑ…Ñ”¹Í•ÑÑ¥¹ÍA•ÉÍ¥ÍÑ•¹”€ôÍÑ…ÑÕÌ(€É•¹‘•È ¤(€¥˜€¡‰•…µ•U¹Á•ÉÍ¥ÍÑ•¤…¹¹½Õ¹”¡Á•ÉÍ¥ÍÑ•¹•]…É¹¥¹5•ÍÍ…” ¤¤)ô¤()‘•Í­Ñ½ÁÁ¤¹½¹!¥ÍÑ½Éå¡…¹• ¡¡¥ÍÑ½Éä¤€ôøì(€…ÁÁ±å!¥ÍÑ½ÉåM¹…ÁÍ¡½Ğ¡¡¥ÍÑ½Éä°ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì¹Í…Ù•!¥ÍÑ½Éä¤(€¥˜€ …ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì¹Í…Ù•!¥ÍÑ½Éä¤ÍÑ…Ñ”¹¡¥ÍÑ½Éä€ômt(€É•¹‘•È ¤)ô¤()‘•Í­Ñ½ÁÁ¤¹½¹QÉ…¹Í±…Ñ¥½¹A…ÉÑ¥…° ¡Á…ÉÑ¥…°¤€ôøì(€¥˜€¡Á…ÉÑ¥…°¹É•ÅÕ•ÍÑ%€„ôô…Ñ¥Ù•5…¥¹I•ÅÕ•ÍÑ%¤É•ÑÕÉ¸(€ÍÑ…Ñ”¹Á…ÉÑ¥…°€ôì€¸¸¹Á…ÉÑ¥…°°Í½ÕÉ”è…Ñ¥Ù•5…¥¹M½ÕÉ”ô(€É•¹‘•È ¤(€…¹¹½Õ¹” Ÿ–ş¯¦şï¢¶¿¦‚C¢š÷–ŞË¦†¿’ë¾ò3–º3šVÓÖCšzs’î7–r£š‚ã–Â7œ¤)ô¤()‘•Í­Ñ½ÁÁ¤¹½¹¹¥¹•MÑ…Ñ” ¡Á…å±½…¤€ôøì(€ÍÑ…Ñ”¹•¹¥¹”€ôÁ…å±½…¹•¹¥¹”(€¥˜€¡Á…å±½…¹Á•É™½Éµ…¹”¤ÍÑ…Ñ”¹Á•É™½Éµ…¹”€ôÁ…å±½…¹Á•É™½Éµ…¹”(€¥˜€¡Á…å±½…¹½™™±¥¹•¹¥¹•MÑ…ÉĞ¤ÍÑ…Ñ”¹½™™±¥¹•¹¥¹•MÑ…ÉĞ€ôÁ…å±½…¹½™™±¥¹•¹¥¹•MÑ…ÉĞ(€¥˜€¡Á…å±½…¹½™™±¥¹•]…ÉµÕÀ¤ÍÑ…Ñ”¹½™™±¥¹•]…ÉµÕÀ€ôÁ…å±½…¹½™™±¥¹•]…ÉµÕÀ(€É•¹‘•È ¤)ô¤()‘•Í­Ñ½ÁÁ¤¹½¹5½‘•±AÉ½É•ÍÌ ¡ÁÉ½É•ÍÌè5½‘•±AÉ½É•ÍÌ¤€ôøì(€ÍÑ…Ñ”¹ÁÉ½É•ÍÌ€ôÁÉ½É•ÍÌ(€¥˜€¡ÁÉ½É•ÍÌ¹Á•É•¹Ğ€„ôô±…ÍÑAÉ½É•ÍÍA•É•¹Ğ¤ì(€€€±…ÍÑAÉ½É•ÍÍA•É•¹Ğ€ôÁÉ½É•ÍÌ¹Á•É•¹Ğ(€€€É•¹‘•È ¤(€ô)ô¤()…Íå¹Œ™Õ¹Ñ¥½¸¥¹¥Ñ¥…±¥é” ¤èAÉ½µ¥Í”ñÙ½¥øì(€É•¹‘•È ¤(€ÑÉäì(€€€½¹ÍĞÍ¹…ÁÍ¡½Ğ€ô…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹•ÑMÑ…Ñ” ¤(€€€=‰©•Ğ¹…ÍÍ¥¸¡ÍÑ…Ñ”°Í¹…ÁÍ¡½Ğ¤(€€€¥˜€¡ÍÑ…Ñ”¹¡¥ÍÑ½Éå±•…ÉA•¹‘¥¹œ¤ì(€€€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éå]…É¹¥¹œ€ô€Ÿš¶ß–>Ë–ŞË–sš¶‹’şw–¶c¾òoŠšâ¦f“’î7–r£¶'–ú]¥¹‘½İÌƒ¢¦f“šªSš†#–6ƒR£œ(€€€ô(€€€¥˜€¡ÍÑ…Ñ”¹Í•ÑÑ¥¹Ì¹Í…Ù•!¥ÍÑ½Éä¤ì(€€€€€…İ…¥ĞÍå¹¡É½¹¥é•M…Ù•‘!¥ÍÑ½Éä ¤(€€€ô•±Í”ì(€€€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éä€ômt(€€€€€…ÁÁ±å!¥ÍÑ½ÉåM¹…ÁÍ¡½Ğ¡…İ…¥Ğ‘•Í­Ñ½ÁÁ¤¹±¥ÍÑ!¥ÍÑ½Éä ¤°™…±Í”¤(€€€€€¥˜€¡ÍÑ…Ñ”¹¡¥ÍÑ½Éå±•…ÉÕÑ¡½É¥é•€˜˜€…±•…É1•…å!¥ÍÑ½Éä ¤¤ì(€€€€€€€ÍÑ…Ñ”¹¡¥ÍÑ½Éå]…É¹¥¹œ€ô€Ÿš¶ß–>Ë–ŞË–sš¶‹’şw–¶c¾ò3’ö¢"+–Ë–¶c–6’î7¶'–ú]¥¹‘½İÌƒ¢¦f“–6ƒR£–ú3šâ¦f“œ(€€€€€ô(€€€ô(€€€¥˜€¡¥Í•Í­Ñ½À€˜˜€…½¹‰½…É‘¥¹½µÁ±•Ñ• ¤¤ÍÑ…Ñ”¹Õ¥‘•=Á•¸€ôÑÉÕ”(€ô…Ñ ì(€€€ÍÑ…Ñ”¹•ÉÉ½È€ô€Ÿ‡šÎW¢º–>[š†3¦v‹¢/–ò?.š/œ(€ô(€É•¹‘•È ¤(€½¹ÍĞÁ•ÉÍ¥ÍÑ•¹•]…É¹¥¹œ€ôÁ•ÉÍ¥ÍÑ•¹•]…É¹¥¹5•ÍÍ…” ¤(€¥˜€¡Á•ÉÍ¥ÍÑ•¹•]…É¹¥¹œ¤…¹¹½Õ¹”¡Á•ÉÍ¥ÍÑ•¹•]…É¹¥¹œ¤(€¥˜€¡ÍÑ…Ñ”¹Õ¥‘•=Á•¸¤™½ÕÍÑ¥Ù•¥…±½œ ¤((€İ¥¹‘½Ü¹Í•Ñ%¹Ñ•ÉÙ…°  ¤€ôøì(€€€¥˜€¡‘½Õµ•¹Ğ¹Ù¥Í¥‰¥±¥ÑåMÑ…Ñ”€„ôô€Ù¥Í¥‰±”œ¤É•ÑÕÉ¸(€€€¥˜€ …ÍÑ…Ñ”¹•¹¥¹”¹½¹±¥¹”ñğÍÑ…Ñ”¹Í•ÑÑ¥¹Í=Á•¸¤Ù½¥É•™É•Í¡¹¥¹” ¤(€ô°€ÄÕ|ÀÀÀ¤)ô()Ù½¥¥¹¥Ñ¥…±¥é” ¤(
+      <button class="status-pill ${state.engine.online && state.engine.modelReady ? 'online' : ''}" type="button" data-action="open-settings">
+        <span></span><b>${escapeHtml(statusText)}</b>
+      </button>
+      <div class="clipboard-status ${state.hook.active ? 'active' : ''}">
+        ${icon('clipboard', 15)} ${state.hook.active ? 'é›™æ“Šè¤‡è£½å·²é–‹å•Ÿ' : 'é›™æ“Šè¤‡è£½æœªå•Ÿç”¨'}
+      </div>
+      <button class="title-icon" type="button" data-action="open-settings" aria-label="è¨­å®š">${icon('settings', 17)}</button>
+      ${isDesktop ? `<button class="window-button" type="button" data-action="minimize" aria-label="æœ€å°åŒ–">${icon('minus', 16)}</button><button class="window-button close" type="button" data-action="close-window" aria-label="é—œé–‰">${icon('x', 16)}</button>` : ''}
+    </header>
+  `
+}
+
+function renderHero(): string {
+  return `
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CHINESE <span>â†”</span> ENGLISH</p>
+        <h1>ç¿»çš„ä¸åªå­—é¢ï¼Œ<em>æ˜¯èªæ°£ã€‚</em></h1>
+        <p class="hero-copy">æœ¬æ©Ÿ AI ç†è§£æƒ…å¢ƒèˆ‡èªæ°£ï¼Œå„ªå…ˆé¿å…é€å­—ç¡¬è­¯ï¼›é‡è¦å…§å®¹ä»è«‹æ ¸å°åŸæ–‡ã€‚</p>
+      </div>
+      <div class="shortcut-card">
+        <div class="keycaps"><kbd>Ctrl</kbd><b>+</b><kbd>C</kbd><i>Ã— 2</i></div>
+        <span>åœ¨ä»»ä½•è»Ÿé«”é€£æŒ‰å…©æ¬¡</span>
+        <strong>è¤‡è£½ã€ç¿»è­¯ã€ç™¼éŸ³</strong>
+      </div>
+    </section>
+  `
+}
+
+function renderSetupNotice(): string {
+  if (state.engine.online && state.engine.modelReady) return ''
+  const online = state.engine.online
+  const offline = state.edition === 'offline'
+  const starting = offline && state.offlineEngineStart?.starting
+  return `
+    <section class="setup-notice">
+      <div class="setup-symbol">${online ? icon('download', 21) : icon('info', 21)}</div>
+      <div>
+        <strong>${offline ? starting ? 'æ­£åœ¨æº–å‚™å®Œæ•´é›¢ç·šå¼•æ“' : 'å®Œæ•´é›¢ç·šå¼•æ“å°šæœªå°±ç·’' : online ? 'å†ä¸€æ­¥ï¼Œå°±èƒ½æ°¸ä¹…å…è²»ç¿»è­¯' : 'å…ˆå•Ÿç”¨å…è²»çš„æœ¬æ©Ÿèªè¨€å¼•æ“'}</strong>
+        <p>${offline ? starting ? 'ä¸»ç•«é¢å·²å¯æ“ä½œï¼›æ¨¡å‹æ­£åœ¨èƒŒæ™¯è¼‰å…¥ï¼Œé›™æ“Šè¤‡è£½åŠŸèƒ½ä¹Ÿå·²é–‹å§‹ç›£è½ã€‚' : 'å¼•æ“èˆ‡æ¨¡å‹éƒ½å·²éš¨é™„ï¼Œå¯æŸ¥çœ‹ç‹€æ…‹ä¸¦è‡ªå‹•é‡è©¦ã€‚' : online ? `ä¸‹è¼‰ ${escapeHtml(state.settings.model)} å¾Œï¼Œæ‰€æœ‰ç¿»è­¯éƒ½åªåœ¨é€™å°é›»è…¦å®Œæˆã€‚` : 'ä¸éœ€å¸³è™Ÿã€ä¸éœ€ä¿¡ç”¨å¡ï¼›å®‰è£ Ollama å¾Œå³å¯é›¢ç·šä½¿ç”¨ã€‚'}</p>
+      </div>
+      <button class="text-button" type="button" data-action="open-settings">${offline ? 'æŸ¥çœ‹ç‹€æ…‹' : online ? 'ä¸‹è¼‰æ¨¡å‹' : 'é–‹å§‹è¨­å®š'} ${icon('arrow', 16)}</button>
+    </section>
+  `
+}
+
+function renderTranslator(): string {
+  return `
+    <section class="translator-grid">
+      <div class="translation-column">
+        <article class="input-card">
+          <div class="card-topline">
+            <div class="language-route">
+              <span>è‡ªå‹•åµæ¸¬</span>${icon('arrow', 15)}<strong>ä¸­è‹±äº’è­¯</strong>
+            </div>
+            <span class="char-count" id="char-count">${state.input.length.toLocaleString()} / 12,000 Â· ä¸­æ—¥éŸ“ç´„ 3,000</span>
+          </div>
+          <textarea id="source-input" maxlength="12000" spellcheck="true" lang="${/[\u3400-\u9fff]/.test(state.input) ? 'zh-Hant' : 'en'}" aria-label="è¦ç¿»è­¯çš„ä¸­æ–‡æˆ–è‹±æ–‡" placeholder="è¼¸å…¥ä¸­æ–‡æˆ–è‹±æ–‡â€¦">${escapeHtml(state.input)}</textarea>
+          <div class="input-actions">
+            <div>
+              <button class="icon-button" type="button" data-action="paste" title="è²¼ä¸Š">${icon('clipboard', 18)}</button>
+              <button class="icon-button" type="button" data-action="speak-source" title="æœ—è®€åŸæ–‡">${icon('volume', 18)}</button>
+              ${state.input ? `<button class="subtle-action" type="button" data-action="clear-input">æ¸…é™¤</button>` : ''}
+            </div>
+            ${
+              state.loading
+                ? `<button class="translate-button stop" type="button" data-action="cancel">åœæ­¢ ${icon('x', 17)}</button>`
+                : `<button class="translate-button" type="button" data-action="translate">è‡ªç„¶ç¿»è­¯ ${icon('arrow', 18)}</button>`
+            }
+          </div>
+        </article>
+
+        ${state.error ? `<div class="error-banner" role="alert">${icon('info', 18)}<span>${escapeHtml(state.error)}</span><button type="button" data-action="open-settings">æª¢æŸ¥è¨­å®š</button></div>` : ''}
+        ${renderResult()}
+      </div>
+      <aside class="learning-column">${renderLearningPanel()}</aside>
+    </section>
+  `
+}
+
+function renderResult(): string {
+  if (state.partial) {
+    const partial = state.partial
+    return `
+      <article class="result-card main-partial-card">
+        <div class="result-label">
+          <span>${partial.targetLanguage === 'zh' ? 'ç¹é«”ä¸­æ–‡' : 'NATURAL ENGLISH'}</span>
+          <b class="local-badge">å¿«é€Ÿé è¦½</b>
+        </div>
+        <div class="translation-row">
+          <h2 lang="${languageTag(partial.targetLanguage)}">${escapeHtml(partial.translation)}</h2>
+          <div class="result-actions">
+            <button class="icon-button" type="button" data-action="speak-partial" title="æœ—è®€è‹±æ–‡" aria-label="æœ—è®€è‹±æ–‡">${icon('volume', 19)}</button>
+            <button class="icon-button" type="button" data-action="copy-partial" title="è¤‡è£½è­¯æ–‡" aria-label="è¤‡è£½è­¯æ–‡">${icon('copy', 18)}</button>
+          </div>
+        </div>
+        <div class="main-partial-progress ${state.loading ? '' : 'has-error'}">
+          ${state.loading ? '<i></i>' : icon('info', 15)}
+          <span><strong>${state.loading ? 'å¿«é€Ÿé è¦½å°šåœ¨æ ¸å°ï¼Œä¸¦è£œé½Šèªæ°£èªªæ˜èˆ‡ä¾‹å¥' : 'å®Œæ•´æ ¸å°æ²’æœ‰å®Œæˆ'}</strong><small>${state.loading ? `å¿«é€Ÿé è¦½ ${partial.elapsedMs} ms Â· é‡è¦å…§å®¹è«‹ç­‰å®Œæ•´çµæœ` : 'ä¸Šæ–¹å…§å®¹åƒ…ä¾›åƒè€ƒï¼Œå¯é‡æ–°ç¿»è­¯å–å¾—å®Œæ•´çµæœ'}</small></span>
+        </div>
+      </article>
+    `
+  }
+  if (state.loading) {
+    return `
+      <article class="result-card loading-card">
+        <div class="loading-head"><span class="thinking-orbit"></span><div><strong>æ­£åœ¨ç†è§£èªæ°£èˆ‡æƒ…å¢ƒ</strong><small>æœ¬æ©Ÿæ¨¡å‹é‹ç®—ä¸­ï¼Œä¸æœƒä¸Šå‚³å…§å®¹</small></div></div>
+        <div class="skeleton wide"></div><div class="skeleton medium"></div>
+        <div class="skeleton-block"><div class="skeleton short"></div><div class="skeleton wide"></div></div>
+      </article>
+    `
+  }
+  if (!state.result) {
+    return `
+      <article class="result-card empty-result">
+        <div class="empty-symbol">è­¯</div>
+        <strong>è‡ªç„¶è­¯æ–‡æœƒå‡ºç¾åœ¨é€™è£¡</strong>
+        <p>é™¤äº†ç¿»è­¯ï¼Œé‚„æœƒé™„ä¸Šèªæ°£èªªæ˜ã€æ›¿ä»£èªªæ³•èˆ‡å¯¦ç”¨é›™èªä¾‹å¥ã€‚</p>
+      </article>
+    `
+  }
+
+  const result = state.result
+  return `
+    <article class="result-card">
+      <div class="result-label">
+        <span>${result.targetLanguage === 'zh' ? 'ç¹é«”ä¸­æ–‡' : 'NATURAL ENGLISH'}</span>
+        ${state.isDemo ? '<b>ä»‹é¢ç¤ºç¯„</b>' : '<b class="local-badge">æœ¬æ©Ÿç”Ÿæˆ</b>'}
+      </div>
+      <div class="translation-row">
+        <h2 lang="${languageTag(result.targetLanguage)}">${escapeHtml(result.translation)}</h2>
+        <div class="result-actions">
+          <button class="icon-button" type="button" data-action="speak-english" title="æœ—è®€è‹±æ–‡">${icon('volume', 19)}</button>
+          <button class="icon-button" type="button" data-action="copy-result" title="è¤‡è£½è­¯æ–‡">${icon('copy', 18)}</button>
+        </div>
+      </div>
+      <div class="pronunciation">
+        <span lang="en">${escapeHtml(result.pronunciation.text)}</span>
+        <strong>${escapeHtml(result.pronunciation.ipa)}</strong>
+      </div>
+      <div class="nuance-box">
+        <span class="nuance-label">ç‚ºä»€éº¼é€™æ¨£ç¿»</span>
+        <p>${escapeHtml(result.naturalnessNote)}</p>
+      </div>
+      <details class="literal-detail">
+        <summary>æŸ¥çœ‹ç›´è­¯å·®ç•°</summary>
+        <p>${escapeHtml(result.literalMeaning)}</p>
+      </details>
+    </article>
+  `
+}
+
+function renderLearningPanel(): string {
+  if (state.loading) {
+    return `
+      <div class="learning-head"><span>èªæ„Ÿç­†è¨˜</span><b>LEARN</b></div>
+      <div class="learning-skeleton"><div></div><div></div><div></div></div>
+    `
+  }
+  const result = state.result
+  if (!result) {
+    return `
+      <div class="learning-head"><span>èªæ„Ÿç­†è¨˜</span><b>LEARN</b></div>
+      <div class="learning-empty">å®Œæˆç¿»è­¯å¾Œï¼Œé€™è£¡æœƒæ•´ç†ä¸åŒèªæ°£èˆ‡å¯¦ç”¨ä¾‹å¥ã€‚</div>
+    `
+  }
+
+  const alternatives = result.alternatives
+    .map(
+      (item, index) => `
+        <div class="alternative-item">
+          <span>${String(index + 1).padStart(2, '0')}</span>
+          <div><small>${escapeHtml(item.label)}</small><strong lang="${languageTag(result.targetLanguage)}">${escapeHtml(item.text)}</strong></div>
+          <button type="button" data-action="copy-alternative" data-index="${index}" aria-label="è¤‡è£½">${icon('copy', 15)}</button>
+        </div>`,
+    )
+    .join('')
+
+  const examples = result.examples
+    .map(
+      (example, index) => `
+        <div class="example-item">
+          <div class="example-number">${index + 1}</div>
+          <div>
+            <p lang="${languageTag(result.detectedLanguage)}">${escapeHtml(example.source)}</p>
+            <strong lang="${languageTag(result.targetLanguage)}">${escapeHtml(example.target)}</strong>
+            <small>${escapeHtml(example.note)}</small>
+          </div>
+          <button type="button" data-action="speak-example" data-index="${index}" aria-label="æœ—è®€ä¾‹å¥">${icon('volume', 15)}</button>
+        </div>`,
+    )
+    .join('')
+
+  const keywords = result.keywords
+    .map((item) => `<span class="keyword"><strong>${escapeHtml(item.term)}</strong>${escapeHtml(item.meaning)}</span>`)
+    .join('')
+
+  return `
+    <div class="learning-head"><span>èªæ„Ÿç­†è¨˜</span><b>LEARN</b></div>
+    <section class="learning-section">
+      <h3>æ›å€‹èªæ°£èªª</h3>
+      ${alternatives}
+    </section>
+    <section class="learning-section examples-section">
+      <h3>æ”¾é€²æƒ…å¢ƒè£¡</h3>
+      ${examples}
+    </section>
+    <section class="learning-section">
+      <h3>é—œéµç”¨æ³•</h3>
+      <div class="keyword-list">${keywords}</div>
+      <ul class="usage-list">${result.usageTips.map((tip) => `<li>${escapeHtml(tip)}</li>`).join('')}</ul>
+    </section>
+  `
+}
+
+function renderSettings(): string {
+  if (!state.settingsOpen) return ''
+  const offline = state.edition === 'offline'
+  const engineStarting = offline && state.offlineEngineStart?.starting
+  const selectedModel = MODEL_CHOICES.find((item) => item.id === state.settings.model)
+  const progress = state.progress
+  const resolvedModeLabels = {
+    balanced: 'å¹³è¡¡æ¨¡å¼',
+    fast: 'é€Ÿåº¦å„ªå…ˆ',
+    eco: 'ä½è³‡æºæ¨¡å¼',
+  }
+  const performanceModes: Array<{
+    id: Settings['performanceMode']
+    name: string
+    description: string
+    recommended?: boolean
+  }> = [
+    {
+      id: 'auto',
+      name: 'è‡ªå‹•',
+      description: 'ä¾å•Ÿå‹•ï¼å–šé†’æ™‚å¯ç”¨è¨˜æ†¶é«”èˆ‡è™•ç†å™¨ï¼Œè‡ªå‹•ä¿ç•™è¾¦å…¬ç©ºé–“',
+      recommended: true,
+    },
+    {
+      id: 'fast',
+      name: 'é€Ÿåº¦å„ªå…ˆ',
+      description: 'æ¨¡å‹å¸¸é§è¨˜æ†¶é«”ï¼Œé©åˆæ€§èƒ½è¼ƒå¥½çš„é›»è…¦',
+    },
+    {
+      id: 'eco',
+      name: 'ä½è³‡æº',
+      description: 'ä¸åœ¨å•Ÿå‹•æ™‚è¼‰å…¥æ¨¡å‹ï¼Œé–’ç½®ç´„ 3 åˆ†é˜å¾Œé‡‹æ”¾è¨˜æ†¶é«”',
+    },
+  ]
+  const performanceCards = performanceModes.map((mode) => `
+    <button class="performance-card ${state.settings.performanceMode === mode.id ? 'selected' : ''}" type="button" data-action="select-performance" data-mode="${mode.id}" aria-pressed="${state.settings.performanceMode === mode.id}">
+      <span class="radio-mark"></span>
+      <span><strong>${mode.name}${mode.recommended ? '<em>å»ºè­°</em>' : ''}</strong><small>${mode.description}</small></span>
+    </button>
+  `).join('')
+  const modelCards = (offline ? MODEL_CHOICES.filter((model) => model.id === 'qwen3:1.7b') : MODEL_CHOICES).map((model) => {
+    const installed = isModelInstalled(model.id)
+    return `
+      <button class="model-card ${state.settings.model === model.id ? 'selected' : ''}" type="button" data-action="select-model" data-model="${model.id}" aria-pressed="${state.settings.model === model.id}">
+        <span class="radio-mark"></span>
+        <span><strong>${model.name}${model.recommended ? '<em>å»ºè­°</em>' : ''}</strong><small>${model.description}</small></span>
+        <b>${model.size}</b>
+        ${installed ? `<i>${icon('check', 12)} å·²ä¸‹è¼‰</i>` : ''}
+      </button>
+    `
+  }).join('')
+
+  const engineAction = offline
+    ? engineStarting
+      ? `<div class="engine-ready-row is-loading">${icon('refresh', 17)} <span><strong>æ­£åœ¨èƒŒæ™¯æº–å‚™é›¢ç·šå¼•æ“</strong><small>ä¸»ç•«é¢èˆ‡é›™æ“Šè¤‡è£½å·²å…ˆå•Ÿå‹•ï¼Œä¸éœ€é‡æ–°é–‹å•Ÿç¨‹å¼</small></span></div>`
+      : state.engine.online && state.engine.modelReady
+      ? `<div class="engine-ready-row">${icon('check', 17)} <span><strong>å®Œæ•´é›¢ç·šç‰ˆå·²å¯ä½¿ç”¨</strong><small>å¼•æ“èˆ‡ ${escapeHtml(state.settings.model)} å‡ç”±ç¨‹å¼è‡ªå‹•ç®¡ç†</small></span></div>`
+      : `<div class="engine-recovery"><div class="offline-engine-error">${icon('info', 17)}<span><strong>å…§å»ºå¼•æ“å°šæœªå°±ç·’</strong><small>${escapeHtml(humanizeOfflineEngineError(state.offlineEngineStart?.error || ''))}</small></span></div><button class="primary-action" type="button" data-action="restart-engine" ${state.restartingEngine ? 'disabled' : ''}>${state.restartingEngine ? 'æ­£åœ¨é‡æ–°å•Ÿå‹•â€¦' : 'è‡ªå‹•ä¿®å¾©ä¸¦é‡æ–°å•Ÿå‹•'} ${icon('refresh', 16)}</button></div>`
+    : !state.engine.online
+    ? `<button class="primary-action" type="button" data-action="download-ollama">å…è²»ä¸‹è¼‰ Ollama ${icon('arrow', 17)}</button>`
+    : !state.engine.modelReady
+      ? `<button class="primary-action" type="button" data-action="pull-model" ${state.pulling ? 'disabled' : ''}>${state.pulling ? 'æ­£åœ¨ä¸‹è¼‰â€¦' : `ä¸‹è¼‰ ${escapeHtml(selectedModel?.name || 'æ¨¡å‹')}`} ${icon('download', 17)}</button>`
+      : `<div class="engine-ready-row">${icon('check', 17)} <span><strong>å·²å¯é›¢ç·šç¿»è­¯</strong><small>${escapeHtml(state.settings.model)} å·²å°±ç·’</small></span></div>`
+
+  return `
+    <div class="drawer-backdrop" data-action="close-settings"></div>
+    <aside class="settings-drawer" role="dialog" aria-modal="true" aria-label="è¨­å®š">
+      <header>
+        <div><span>SETTINGS</span><h2>è®“éˆè­¯æ›´åƒä½ </h2></div>
+        <button type="button" data-action="close-settings" aria-label="é—œé–‰">${icon('x', 19)}</button>
+      </header>
+      <div class="settings-scroll">
+        <section class="settings-section engine-settings">
+          <div class="section-heading"><span>01</span><div><h3>å…è²»æœ¬æ©Ÿèªè¨€å¼•æ“</h3><p>ç¿»è­¯åªåœ¨ä½ çš„é›»è…¦åŸ·è¡Œï¼Œä¸ä½¿ç”¨ä»˜è²» APIã€‚</p></div></div>
+          <div class="engine-health ${state.engine.online ? 'online' : ''}">
+            <span></span><strong>${state.engine.online ? offline ? 'å…§å»º Ollama å·²å•Ÿå‹•' : 'Ollama å·²é€£ç·š' : offline ? 'å…§å»º Ollama æœªå•Ÿå‹•' : 'Ollama å°šæœªé€£ç·š'}</strong>
+            <button type="button" data-action="refresh-engine">${icon('refresh', 15)} é‡æ–°åµæ¸¬</button>
+          </div>
+          <div class="model-list">${modelCards}</div>
+          ${
+            state.pulling && progress
+              ? `<div class="download-progress"><div><span>${escapeHtml(progress.status)}</span><strong>${progress.percent}%</strong></div><div class="progress-track"><i style="width:${progress.percent}%"></i></div><small>${progress.total ? `${formatBytes(progress.completed)} / ${formatBytes(progress.total)}` : 'æ­£åœ¨æº–å‚™æª”æ¡ˆâ€¦'}</small></div>`
+              : ''
+          }
+          ${engineAction}
+          <div class="performance-settings">
+            <div class="performance-title"><strong>é›»è…¦æ€§èƒ½</strong><small>é¿å…ç¿»è­¯å½±éŸ¿ Wordã€ç€è¦½å™¨èˆ‡è¦–è¨Šæœƒè­°</small></div>
+            <div class="performance-options">${performanceCards}</div>
+            <p class="hardware-summary">${icon('sparkles', 14)} å·²åµæ¸¬ ${state.performance.totalMemoryGb} GB RAM Â· å•Ÿå‹•æ™‚å¯ç”¨ ${state.performance.availableMemoryGb} GB Â· ${state.performance.logicalCores} å€‹é‚è¼¯æ ¸å¿ƒ Â· ç›®å‰æ¡ç”¨ ${resolvedModeLabels[state.performance.resolvedMode]}</p>
+            ${state.performance.resolvedMode === 'eco' ? '<p class="eco-note">ä½è³‡æºæ¨¡å¼ä»ä¿ç•™è‡ªç„¶ç¿»è­¯ã€ç™¼éŸ³èˆ‡ä¾‹å¥ï¼›å®Œæ•´èªªæ˜æœƒç²¾ç°¡ç‚ºå…©å€‹ä¾‹å¥ï¼Œæ¸›å°‘ç­‰å¾…èˆ‡è€—é›»ã€‚</p>' : ''}
+          </div>
+          <p class="cost-proof">${icon('shield', 15)} ${offline ? 'å¼•æ“èˆ‡æ¨¡å‹å·²å®Œæ•´éš¨é™„ï¼Œä¸éœ€å®‰è£ã€ä¸‹è¼‰æˆ–é€£ç·šã€‚' : 'Ollama èˆ‡æ‰€é¸æ¨¡å‹çš†å¯å…è²»åœ¨æœ¬æ©Ÿä½¿ç”¨ï¼›æœ¬ç¨‹å¼ä¸å«ä»»ä½•ä»˜è²»ç«¯é»ã€‚'}</p>
+        </section>
+
+        <section class="settings-section">
+          <div class="section-heading"><span>02</span><div><h3>é›™æ“Šè¤‡è£½</h3><p>åœ¨å…¶ä»–è»Ÿé«”ä¹Ÿèƒ½å³æ™‚å–šé†’ç¿»è­¯ã€‚</p></div></div>
+          ${renderToggle('autoClipboard', 'é€£æŒ‰å…©æ¬¡ Ctrl+C è‡ªå‹•ç¿»è­¯', 'ä¸æœƒæ”¹è®ŠåŸæœ¬çš„è¤‡è£½åŠŸèƒ½', state.settings.autoClipboard)}
+          ${renderToggle('autoSpeak', 'è‡ªå‹•æœ—è®€è‹±æ–‡', 'åªä½¿ç”¨ Windows æ˜ç¢ºæ¨™ç¤ºçš„æœ¬æ©ŸèªéŸ³', state.settings.autoSpeak)}
+          ${!state.hook.available ? `<div class="hook-warning">${icon('info', 16)}<div><strong>é›™æ“Šè¤‡è£½ç›®å‰ç„¡æ³•ä½¿ç”¨</strong><small>ä»å¯åœ¨ä¸»ç•«é¢æ­£å¸¸ç¿»è­¯ï¼›é‡æ–°å•Ÿå‹•ç¨‹å¼å¾Œæœƒå†æ¬¡å˜—è©¦è¼‰å…¥å…¨åŸŸå¿«é€Ÿéµã€‚</small></div></div>` : ''}
+          <div class="popup-mode-note">${icon('sparkles', 17)}<div><strong>ç¿»è­¯æ”¹ç”¨æ‡¸æµ®å°çª—é¡¯ç¤º</strong><small>é›™æ“Šè¤‡è£½ä¸å†æ‰“é–‹æ•´å€‹ä¸»ç•«é¢ï¼›å¯æ‹–æ›³é‚Šç·£èª¿æ•´å¤§å°ï¼Œä¹Ÿèƒ½æœ—è®€ã€è¤‡è£½æˆ–æŸ¥çœ‹å®Œæ•´è§£æã€‚</small></div></div>
+          <label class="range-setting">
+            <span><strong>é›™æ“Šé–“éš”</strong><small id="interval-label">${state.settings.doubleCopyInterval} æ¯«ç§’</small></span>
+            <input type="range" min="350" max="1200" step="10" value="${state.settings.doubleCopyInterval}" data-setting="doubleCopyInterval" aria-valuetext="${state.settings.doubleCopyInterval} æ¯«ç§’" />
+          </label>
+          <label class="range-setting">
+            <span><strong>æœ—è®€é€Ÿåº¦</strong><small id="rate-label">${state.settings.voiceRate.toFixed(2)}Ã—</small></span>
+            <input type="range" min="0.65" max="1.25" step="0.01" value="${state.settings.voiceRate}" data-setting="voiceRate" aria-valuetext="${state.settings.voiceRate.toFixed(2)} å€" />
+          </label>
+        </section>
+
+        <section class="settings-section">
+          <div class="section-heading"><span>03</span><div><h3>æ‡‰ç”¨ç¨‹å¼</h3><p>å¸¸é§ç³»çµ±åŒ£ï¼Œéš¨æ™‚å¯ä»¥ç¿»è­¯ã€‚</p></div></div>
+          ${renderToggle('saveHistory', 'å„²å­˜æœ€è¿‘ç¿»è­¯', 'åªä¿å­˜åœ¨é€™å°é›»è…¦ï¼›é—œé–‰æ™‚æœƒç«‹å³æ¸…é™¤ç¾æœ‰è¨˜éŒ„', state.settings.saveHistory)}
+          ${renderToggle('launchAtLogin', 'é–‹æ©Ÿæ™‚è‡ªå‹•å•Ÿå‹•', 'å®‰è£ç‰ˆå¯ä½¿ç”¨æ­¤åŠŸèƒ½', state.settings.launchAtLogin)}
+          ${offline ? '' : `<details class="advanced-settings">
+            <summary>é€²éšè¨­å®š</summary>
+            <label>æœ¬æ©Ÿå¼•æ“ç¶²å€<input type="url" data-setting="baseUrl" value="${escapeHtml(state.settings.baseUrl)}" /></label>
+          </details>`}
+          <button class="diagnostic-button" type="button" data-action="copy-diagnostics">${icon('copy', 15)} è¤‡è£½è¨ºæ–·è³‡è¨Š <small>ä¸åŒ…å«ç¿»è­¯æˆ–å‰ªè²¼ç°¿å…§å®¹</small></button>
+        </section>
+        <div class="settings-meta">LingoMuse v${escapeHtml(state.version)} Â· MIT License</div>
+      </div>
+    </aside>
+  `
+}
+
+function renderToggle(key: keyof Settings, title: string, description: string, checked: boolean): string {
+  return `
+    <label class="toggle-setting">
+      <span><strong>${escapeHtml(title)}</strong><small>${escapeHtml(description)}</small></span>
+      <input type="checkbox" data-setting="${String(key)}" ${checked ? 'checked' : ''}/><i></i>
+    </label>
+  `
+}
+
+function renderGuide(): string {
+  if (!state.guideOpen) return ''
+  return `
+    <div class="modal-backdrop" data-action="close-guide"></div>
+    <section class="guide-modal" role="dialog" aria-modal="true" aria-label="ä½¿ç”¨æŒ‡å—">
+      <button class="modal-close" type="button" data-action="close-guide" aria-label="é—œé–‰ä½¿ç”¨æŒ‡å—">${icon('x', 19)}</button>
+      <p class="eyebrow">3 STEPS Â· ZERO COST</p>
+      <h2>ä¸‰æ­¥é–‹å§‹è‡ªç„¶èªæ„Ÿç¿»è­¯</h2>
+      <div class="guide-steps">
+        <article><span>1</span><div><strong>${state.edition === 'offline' ? 'ç›´æ¥é–‹å•Ÿå³å¯ä½¿ç”¨' : 'å®‰è£æœ¬æ©Ÿå¼•æ“'}</strong><p>${state.edition === 'offline' ? 'å®Œæ•´ç‰ˆå·²åŒ…å« Ollama èˆ‡ 1.7B èªè¨€æ¨¡å‹ï¼Œä¸éœ€è¦ä»»ä½•è¨­å®šã€‚' : 'åœ¨è¨­å®šä¸­å…è²»å®‰è£ Ollamaï¼Œå†ä¸‹è¼‰è¼•é‡çš„ 1.7B èªè¨€æ¨¡å‹ã€‚'}</p></div></article>
+        <article><span>2</span><div><strong>åœ¨ä»»ä½•åœ°æ–¹è¤‡è£½å…©æ¬¡</strong><p>é¸å–ä¸­æ–‡æˆ–è‹±æ–‡ï¼Œæ–¼ 720 æ¯«ç§’å…§é€£æŒ‰å…©æ¬¡ Ctrl+Cã€‚</p></div></article>
+        <article><span>3</span><div><strong>è½ç™¼éŸ³ï¼Œä¹Ÿå­¸èªæ„Ÿ</strong><p>ç¿»è­¯æœƒé¡¯ç¤ºä¾‹å¥èˆ‡èªæ°£èªªæ˜ï¼›éœ€è¦æ™‚å¯æŒ‰æœ—è®€ï¼Œè‡ªå‹•æœ—è®€å¯åœ¨è¨­å®šé–‹å•Ÿã€‚</p></div></article>
+      </div>
+      <div class="privacy-callout">${icon('shield', 22)}<div><strong>å…§å®¹ç•™åœ¨ä½ çš„é›»è…¦</strong><p>ä¸éœ€è¦å¸³è™Ÿã€API é‡‘é‘°æˆ–ä¿¡ç”¨å¡ï¼Œä¹Ÿæ²’æœ‰æŒ‰æ¬¡æˆ–æŒ‰å­—è¨ˆè²»ã€‚æœ€è¿‘ç¿»è­¯é è¨­ä¸ä¿å­˜ï¼Œå¯åœ¨è¨­å®šä¸­è‡ªè¡Œé–‹å•Ÿã€‚</p></div></div>
+      ${state.engine.online && state.engine.modelReady
+        ? `<button class="primary-action" type="button" data-action="finish-guide">é–‹å§‹ä½¿ç”¨ ${icon('arrow', 17)}</button>`
+        : `<button class="primary-action" type="button" data-action="guide-to-settings">æª¢æŸ¥æœ¬æ©Ÿå¼•æ“ ${icon('arrow', 17)}</button>`}
+    </section>
+  `
+}
+
+function updateVoiceLabels(): void {
+  const intervalInput = document.querySelector<HTMLInputElement>('[data-setting="doubleCopyInterval"]')
+  intervalInput?.addEventListener('input', () => {
+    const label = document.querySelector('#interval-label')
+    if (label) label.textContent = `${intervalInput.value} æ¯«ç§’`
+    intervalInput.setAttribute('aria-valuetext', `${intervalInput.value} æ¯«ç§’`)
+  })
+  const rateInput = document.querySelector<HTMLInputElement>('[data-setting="voiceRate"]')
+  rateInput?.addEventListener('input', () => {
+    const label = document.querySelector('#rate-label')
+    if (label) label.textContent = `${Number(rateInput.value).toFixed(2)}Ã—`
+    rateInput.setAttribute('aria-valuetext', `${Number(rateInput.value).toFixed(2)} å€`)
+  })
+}
+
+function showToast(message: string): void {
+  state.toast = message
+  window.clearTimeout(toastTimer)
+  toastTimer = window.setTimeout(() => {
+    state.toast = ''
+    render()
+  }, 2600)
+  render()
+  announce(message)
+}
+
+async function runTranslation(trigger: Trigger): Promise<void> {
+  const text = state.input.trim()
+  if (!text) {
+    state.error = 'è«‹å…ˆè¼¸å…¥æˆ–è²¼ä¸Šè¦ç¿»è­¯çš„å…§å®¹ã€‚'
+    render()
+    return
+  }
+  cancelSpeech()
+  const requestId = `main-${++mainRequestSequence}`
+  activeMainRequestId = requestId
+  activeMainSource = text
+  state.loading = true
+  state.partial = null
+  state.result = null
+  state.error = ''
+  state.isDemo = false
+  render()
+  announce('æ­£åœ¨ä½¿ç”¨æœ¬æ©Ÿæ¨¡å‹ç¿»è­¯ã€‚')
+
+  let response: Awaited<ReturnType<typeof desktopApi.translate>>
+  try {
+    response = await desktopApi.translate(text, requestId)
+  } catch {
+    if (activeMainRequestId !== requestId) return
+    activeMainRequestId = ''
+    state.loading = false
+    state.error = 'æ¡Œé¢ç¿»è­¯æœå‹™æš«æ™‚æ²’æœ‰å›æ‡‰ï¼Œè«‹é‡æ–°å•Ÿå‹•é›¢ç·šå¼•æ“å¾Œå†è©¦ã€‚'
+    render()
+    return
+  }
+  if (activeMainRequestId !== requestId) return
+  activeMainRequestId = ''
+  state.loading = false
+    if (!response.ok) {
+      if (response.code === 'CANCELLED') {
+        state.partial = null
+        render()
+        return
+      }
+      state.error = humanizeError(response.error, response.code)
+      if (['ENGINE_OFFLINE', 'MODEL_NOT_FOUND'].includes(response.code)) state.settingsOpen = true
+      render()
+      if (state.settingsOpen) focusActiveDialog()
+      return
+  }
+
+  state.result = response.result
+  state.partial = null
+  const entry: HistoryEntry = {
+    id: crypto.randomUUID(),
+    source: text,
+    result: response.result,
+    createdAt: Date.now(),
+  }
+  render()
+  announce('å®Œæ•´ç¿»è­¯èˆ‡ä¾‹å¥å·²å®Œæˆã€‚')
+
+  if (state.settings.saveHistory) {
+    void desktopApi.addHistory(entry).then((saved) => {
+      const applied = applyHistorySnapshot(saved, state.settings.saveHistory)
+      if (!saved.ok) {
+        if (saved.error !== 'DISABLED') {
+          state.historyWarning = 'ç¿»è­¯å·²å®Œæˆï¼Œä½† Windows æš«æ™‚ç„¡æ³•å¯«å…¥æœ¬æ©Ÿæ­·å²ã€‚'
+          showToast(state.historyWarning)
+        }
+        return
+      }
+      state.historyWarning = ''
+      if (applied) render()
+    }).catch(() => showToast('ç¿»è­¯å·²å®Œæˆï¼Œä½†é€™æ¬¡ç„¡æ³•å¯«å…¥æœ¬æ©Ÿæ­·å²ã€‚'))
+  }
+
+  if (trigger === 'clipboard' && state.settings.autoSpeak) {
+    speakEnglishSide(response.result, text)
+  }
+}
+
+function humanizeError(message: string, code: string): string {
+  if (code === 'MODEL_NOT_FOUND') return 'å°šæœªä¸‹è¼‰æ‰€é¸çš„å…è²»èªè¨€æ¨¡å‹ï¼Œè«‹åœ¨è¨­å®šä¸­ä¸‹è¼‰ã€‚'
+  if (code === 'ENGINE_OFFLINE') {
+    return state.edition === 'offline'
+      ? 'å…§å»ºé›¢ç·šå¼•æ“å°šæœªå°±ç·’ï¼Œè«‹é–‹å•Ÿè¨­å®šä¸¦ä½¿ç”¨ã€Œè‡ªå‹•ä¿®å¾©ä¸¦é‡æ–°å•Ÿå‹•ã€ã€‚'
+      : 'æ‰¾ä¸åˆ° Ollama æœ¬æ©Ÿå¼•æ“ï¼›è«‹å…ˆå®Œæˆå…è²»å®‰è£ä¸¦å•Ÿå‹•ã€‚'
+  }
+  if (code === 'INVALID_RESPONSE') return 'æœ¬æ©Ÿæ¨¡å‹é€™æ¬¡æ²’æœ‰ç”¢ç”Ÿå®Œæ•´çµæœï¼Œè«‹å†è©¦ä¸€æ¬¡ã€‚'
+  if (code === 'INPUT_TOKEN_BUDGET') return 'å…§å®¹è¶…éå®‰å…¨çš„æ¨¡å‹ä¸Šä¸‹æ–‡é ç®—ï¼›ä¸­æ–‡ã€æ—¥æ–‡æˆ–éŸ“æ–‡è«‹åˆ†æˆç´„ 3,000 å­—ä»¥å…§å†ç¿»è­¯ã€‚'
+  if (code === 'RESPONSE_TOO_LARGE') return 'æœ¬æ©Ÿæ¨¡å‹å›å‚³çš„å…§å®¹ç•°å¸¸éå¤§ï¼Œå·²ç‚ºä¿è­·é›»è…¦è¨˜æ†¶é«”è€Œåœæ­¢ã€‚'
+  return message || 'ç¿»è­¯æš«æ™‚å¤±æ•—ï¼Œè«‹ç¨å¾Œå†è©¦ã€‚'
+}
+
+function humanizeOfflineEngineError(code: string): string {
+  if (code === 'OFFLINE_BUNDLE_MISSING') return 'é›¢ç·šå¼•æ“æª”æ¡ˆä¸å®Œæ•´ï¼Œè«‹é‡æ–°å–å¾—å®Œæ•´é›¢ç·šç‰ˆã€‚'
+  if (code === 'OFFLINE_PORT_IN_USE') return 'æœ¬æ©Ÿé€£æ¥åŸ  11435 å·²è¢«å…¶ä»–ç¨‹å¼å ç”¨ï¼Œè«‹å…ˆé—œé–‰è©²ç¨‹å¼å†é‡è©¦ã€‚'
+  if (code === 'OFFLINE_MODEL_MISSING') return 'æ‰¾ä¸åˆ°éš¨é™„çš„èªè¨€æ¨¡å‹ï¼Œé›¢ç·šç‰ˆæª”æ¡ˆå¯èƒ½ä¸å®Œæ•´ã€‚'
+  if (code === 'ENGINE_START_TIMEOUT') return 'å¼•æ“å•Ÿå‹•æ™‚é–“éé•·ï¼Œå¯æŒ‰ä¸‹æ–¹æŒ‰éˆ•è‡ªå‹•é‡è©¦ã€‚'
+  if (code.startsWith('ENGINE_SPAWN_ERROR')) return 'Windows ç„¡æ³•å•Ÿå‹•å…§å»ºå¼•æ“ï¼Œè«‹ç¢ºèªæª”æ¡ˆæœªè¢«é˜²æ¯’è»Ÿé«”éš”é›¢å¾Œå†é‡è©¦ã€‚'
+  if (code.startsWith('ENGINE_EXITED_')) return 'é›¢ç·šå¼•æ“æ„å¤–çµæŸï¼Œå¯æŒ‰ä¸‹æ–¹æŒ‰éˆ•è‡ªå‹•é‡è©¦ã€‚'
+  return 'å¯å…ˆä½¿ç”¨ä¸‹æ–¹è‡ªå‹•ä¿®å¾©ï¼›ç¿»è­¯å…§å®¹ä¸æœƒå‚³é€åˆ°ç¶²è·¯ã€‚'
+}
+
+function cancelSpeech(): void {
+  speechAttempt += 1
+  speechWaitController?.abort()
+  speechWaitController = null
+  window.speechSynthesis?.cancel()
+}
+
+async function speak(text: string, language: 'en-US' | 'zh-TW'): Promise<boolean> {
+  if (!text.trim()) return false
+  const attempt = ++speechAttempt
+  speechWaitController?.abort()
+  const controller = new AbortController()
+  speechWaitController = controller
+  if (!('speechSynthesis' in window)) {
+    speechWaitController = null
+    const message = 'é€™å°é›»è…¦ä¸æ”¯æ´æœ¬æ©ŸèªéŸ³ï¼Œå› æ­¤æœªæœ—è®€ï¼›æ–‡å­—æ²’æœ‰é€å‡ºé›»è…¦ã€‚'
+    showToast(message)
+    return false
+  }
+  window.speechSynthesis.cancel()
+  if (window.speechSynthesis.getVoices().length === 0) showToast('æ­£åœ¨æº–å‚™ Windows æœ¬æ©ŸèªéŸ³â€¦')
+  const decision = await waitForLocalSpeechVoice(window.speechSynthesis, language, {
+    timeoutMs: 1_500,
+    signal: controller.signal,
+  })
+  if (controller.signal.aborted || attempt !== speechAttempt) return false
+  speechWaitController = null
+  if (decision.status !== 'ready') {
+    const message = 'æ‰¾ä¸åˆ°ç›¸ç¬¦çš„ Windows æœ¬æ©ŸèªéŸ³ï¼Œå› æ­¤æœªæœ—è®€ï¼›æ–‡å­—æ²’æœ‰é€å‡ºé›»è…¦ã€‚'
+    showToast(message)
+    return false
+  }
+  const utterance = new SpeechSynthesisUtterance(text)
+  utterance.lang = language
+  utterance.rate = state.settings.voiceRate
+  utterance.voice = decision.voice
+  utterance.onerror = () => {
+    if (attempt === speechAttempt) showToast('Windows æœ¬æ©ŸèªéŸ³æœ—è®€å¤±æ•—ï¼›æ–‡å­—æ²’æœ‰é€å‡ºé›»è…¦ã€‚')
+  }
+  window.speechSynthesis.speak(utterance)
+  showToast('æ­£åœ¨ä½¿ç”¨ Windows æœ¬æ©ŸèªéŸ³æœ—è®€')
+  return true
+}
+
+function speakEnglishSide(result: TranslationResult, source: string): void {
+  void speak(result.detectedLanguage === 'en' ? source : result.translation, 'en-US')
+}
+
+async function copyText(text: string): Promise<void> {
+  try {
+    await navigator.clipboard.writeText(text)
+  } catch {
+    const textarea = document.createElement('textarea')
+    textarea.value = text
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    textarea.remove()
+  }
+  showToast('å·²è¤‡è£½åˆ°å‰ªè²¼ç°¿')
+}
+
+async function refreshEngine(showFeedback = false): Promise<void> {
+  state.engine = await desktopApi.getEngineStatus()
+  if (showFeedback) showToast(state.engine.online ? 'å·²æ‰¾åˆ°æœ¬æ©Ÿèªè¨€å¼•æ“' : 'ç›®å‰ä»æ‰¾ä¸åˆ° Ollama')
+  else render()
+}
+
+async function updateSetting(key: keyof Settings, value: Settings[keyof Settings]): Promise<void> {
+  const disablingHistory = key === 'saveHistory' && value === false
+  if (disablingHistory) {
+    historyMigrationGeneration += 1
+    state.settings = { ...state.settings, saveHistory: false }
+    state.history = []
+    render()
+  }
+  const response = await desktopApi.updateSettings({ [key]: value } as Partial<Settings>)
+  const persistenceFailureAlreadyVisible = !state.settingsPersistence.persisted
+  state.settings = response.settings
+  state.settingsPersistence = response.settingsPersistence
+  if (response.historySnapshot) {
+    applyHistorySnapshot(response.historySnapshot, response.settings.saveHistory)
+  } else {
+    state.historyClearPending = response.historyClearPending
+  }
+  state.performance = response.performance
+  state.engine = response.engine
+  if (key === 'saveHistory' && !state.settings.saveHistory) {
+    state.history = []
+    if (!clearLegacyHistory() || response.historyClearOk === false) {
+      state.historyWarning = 'æ­·å²å·²åœæ­¢ä¿å­˜ï¼Œä½†ä»æœ‰æœ¬æ©Ÿæª”æ¡ˆç­‰å¾… Windows è§£é™¤å ç”¨å¾Œæ¸…é™¤ã€‚'
+      showToast(state.historyWarning)
+    } else {
+      state.historyWarning = ''
+    }
+  } else if (key === 'saveHistory' && state.settings.saveHistory) {
+    await synchronizeSavedHistory()
+  }
+  if (key === 'autoSpeak' && !state.settings.autoSpeak) cancelSpeech()
+  if (!response.settingsPersistence.persisted && !persistenceFailureAlreadyVisible) {
+    showToast(persistenceWarningMessage())
+  }
+  render()
+}
+
+async function pullSelectedModel(): Promise<void> {
+  state.pulling = true
+  state.progress = { status: 'æº–å‚™ä¸‹è¼‰', percent: 0, completed: 0, total: 0 }
+  render()
+  const result = await desktopApi.pullModel(state.settings.model)
+  state.pulling = false
+  if (!result.ok) {
+    state.error = `æ¨¡å‹ä¸‹è¼‰å¤±æ•—ï¼š${result.error || 'è«‹æª¢æŸ¥ç¶²è·¯å¾Œå†è©¦ã€‚'}`
+    render()
+    return
+  }
+  state.engine = await desktopApi.getEngineStatus()
+  state.progress = null
+  showToast('å…è²»èªè¨€æ¨¡å‹å·²å®‰è£å®Œæˆ')
+}
+
+function loadLegacyHistory(): HistoryEntry[] {
+  return readHistory(localStorage)
+}
+
+function clearLegacyHistory(): boolean {
+  try {
+    localStorage.removeItem(HISTORY_KEY)
+    return true
+  } catch {
+    return false
+  }
+}
+
+async function handleAction(action: string, target: HTMLElement): Promise<void> {
+  switch (action) {
+    case 'translate':
+      await runTranslation('manual')
+      break
+    case 'cancel':
+      activeMainRequestId = ''
+      mainRequestSequence += 1
+      await desktopApi.cancelTranslation()
+      state.loading = false
+      state.partial = null
+      state.error = 'å·²åœæ­¢é€™æ¬¡ç¿»è­¯ã€‚'
+      render()
+      break
+    case 'new':
+      state.input = ''
+      state.result = null
+      state.error = ''
+      state.isDemo = false
+      render()
+      document.querySelector<HTMLTextAreaElement>('#source-input')?.focus()
+      break
+    case 'clear-input':
+      state.input = ''
+      render()
+      document.querySelector<HTMLTextAreaElement>('#source-input')?.focus()
+      break
+    case 'paste':
+      try {
+        state.input = await navigator.clipboard.readText()
+        render()
+      } catch {
+        showToast('è«‹ä½¿ç”¨ Ctrl+V è²¼ä¸Šå…§å®¹')
+      }
+      break
+    case 'speak-source':
+      void speak(state.input, /[\u3400-\u9fff]/.test(state.input) ? 'zh-TW' : 'en-US')
+      break
+    case 'speak-english':
+      if (state.result) speakEnglishSide(state.result, state.input)
+      break
+    case 'speak-example': {
+      const example = state.result?.examples[Number(target.dataset.index)]
+      if (example && state.result) {
+        void speak(example.source, state.result.detectedLanguage === 'zh' ? 'zh-TW' : 'en-US')
+      }
+      break
+    }
+    case 'copy-result':
+      if (state.result) await copyText(state.result.translation)
+      break
+    case 'copy-partial':
+      if (state.partial) await copyText(state.partial.translation)
+      break
+    case 'speak-partial':
+      if (state.partial) {
+        void speak(
+          state.partial.detectedLanguage === 'en' ? state.partial.source : state.partial.translation,
+          'en-US',
+        )
+      }
+      break
+    case 'copy-alternative': {
+      const alternative = state.result?.alternatives[Number(target.dataset.index)]
+      if (alternative) await copyText(alternative.text)
+      break
+    }
+    case 'history': {
+      const item = state.history.find((entry) => entry.id === target.dataset.id)
+      if (item) {
+        state.input = item.source
+        state.result = item.result
+        state.isDemo = false
+        state.error = ''
+        render()
+      }
+      break
+    }
+    case 'clear-history': {
+      historyMigrationGeneration += 1
+      const cleared = await desktopApi.clearHistory()
+      applyHistorySnapshot(cleared, state.settings.saveHistory)
+      if (!cleared.ok) {
+        state.historyWarning = 'Windows æš«æ™‚ç„¡æ³•å®Œæˆç£ç¢Ÿæ¸…é™¤ï¼›è«‹é—œé–‰å¯èƒ½å ç”¨æª”æ¡ˆçš„ç¨‹å¼å¾Œå†è©¦ã€‚'
+        showToast(state.historyWarning)
+      } else {
+        state.historyWarning = ''
+        render()
+      }
+      break
+    }
+    case 'copy-diagnostics':
+      await copyText(JSON.stringify({
+        app: 'LingoMuse',
+        version: state.version,
+        edition: state.edition,
+        platform: state.platform,
+        engine: {
+          online: state.engine.online,
+          modelReady: state.engine.modelReady,
+          model: state.engine.model,
+          startError: state.offlineEngineStart?.error || '',
+          warmupError: state.offlineWarmup?.error || '',
+        },
+        performance: state.performance,
+        hook: {
+          active: state.hook.active,
+          available: state.hook.available,
+          error: state.hook.error || '',
+        },
+      }, null, 2))
+      break
+    case 'open-settings':
+      state.settingsOpen = true
+      render()
+      focusActiveDialog()
+      break
+    case 'close-settings':
+      state.settingsOpen = false
+      render()
+      break
+    case 'select-model':
+      await updateSetting('model', target.dataset.model || defaultSettings.model)
+      break
+    case 'select-performance':
+      await updateSetting('performanceMode', (target.dataset.mode || 'auto') as Settings['performanceMode'])
+      break
+    case 'refresh-engine':
+      await refreshEngine(true)
+      break
+    case 'restart-engine': {
+      state.restartingEngine = true
+      state.error = ''
+      render()
+      const response = await desktopApi.restartOfflineEngine()
+      state.restartingEngine = false
+      state.engine = response.engine
+      if (response.offlineEngineStart) state.offlineEngineStart = response.offlineEngineStart
+      if (response.offlineWarmup) state.offlineWarmup = response.offlineWarmup
+      if (response.ok) showToast('é›¢ç·šå¼•æ“å·²æ¢å¾©ï¼Œå¯ä»¥ç¹¼çºŒç¿»è­¯')
+      else {
+        state.error = humanizeOfflineEngineError(response.error || '')
+        render()
+      }
+      break
+    }
+    case 'download-ollama':
+      await desktopApi.openOllamaDownload()
+      showToast('å·²é–‹å•Ÿ Ollama å®˜æ–¹ä¸‹è¼‰é ')
+      break
+    case 'pull-model':
+      await pullSelectedModel()
+      break
+    case 'open-guide':
+      state.guideOpen = true
+      render()
+      focusActiveDialog()
+      break
+    case 'close-guide':
+      completeOnboarding()
+      state.guideOpen = false
+      render()
+      break
+    case 'finish-guide':
+      completeOnboarding()
+      state.guideOpen = false
+      render()
+      document.querySelector<HTMLTextAreaElement>('#source-input')?.focus()
+      break
+    case 'guide-to-settings':
+      completeOnboarding()
+      state.guideOpen = false
+      state.settingsOpen = true
+      render()
+      focusActiveDialog()
+      break
+    case 'minimize':
+      await desktopApi.minimize()
+      break
+    case 'close-window':
+      await desktopApi.close()
+      break
+  }
+}
+
+root.addEventListener('click', (event) => {
+  const target = (event.target as HTMLElement).closest<HTMLElement>('[data-action]')
+  if (!target) return
+  void handleAction(target.dataset.action || '', target)
+})
+
+root.addEventListener('input', (event) => {
+  const target = event.target as HTMLInputElement | HTMLTextAreaElement
+  if (target.id === 'source-input') {
+    state.input = target.value
+    const counter = document.querySelector('#char-count')
+    if (counter) counter.textContent = `${target.value.length.toLocaleString()} / 12,000 Â· ä¸­æ—¥éŸ“ç´„ 3,000`
+  }
+})
+
+root.addEventListener('change', (event) => {
+  const target = event.target as HTMLInputElement
+  const key = target.dataset.setting as keyof Settings | undefined
+  if (!key) return
+  let value: string | number | boolean = target.value
+  if (target.type === 'checkbox') value = target.checked
+  if (target.type === 'range') value = Number(target.value)
+  void updateSetting(key, value)
+})
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Tab' && (state.guideOpen || state.settingsOpen)) {
+    const dialog = document.querySelector<HTMLElement>(state.guideOpen ? '.guide-modal' : '.settings-drawer')
+    const focusable = dialog
+      ? Array.from(dialog.querySelectorAll<HTMLElement>('button:not([disabled]), input:not([disabled]), summary, [tabindex]:not([tabindex="-1"])'))
+      : []
+    if (focusable.length) {
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (!dialog?.contains(document.activeElement)) {
+        event.preventDefault()
+        ;(event.shiftKey ? last : first).focus()
+      } else if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+  }
+  if ((event.ctrlKey || event.metaKey) && event.key === 'Enter' && !state.guideOpen && !state.settingsOpen) {
+    event.preventDefault()
+    void runTranslation('manual')
+  }
+  if (event.key === 'Escape') {
+    if (state.guideOpen) {
+      completeOnboarding()
+      state.guideOpen = false
+    }
+    else if (state.settingsOpen) state.settingsOpen = false
+    else return
+    render()
+  }
+})
+
+desktopApi.onClipboardTrigger(({ text }) => {
+  state.input = text
+  state.error = ''
+  showToast('å·²æ“·å–å‰ªè²¼ç°¿ï¼Œæ­£åœ¨è‡ªç„¶ç¿»è­¯')
+  void runTranslation('clipboard')
+})
+
+desktopApi.onPopupResult(({ source, result }) => {
+  state.input = source
+  state.result = result
+  state.error = ''
+  state.isDemo = false
+  render()
+})
+
+desktopApi.onHookStatus((hook: HookStatus) => {
+  state.hook = hook
+  render()
+})
+
+desktopApi.onSettingsChanged((nextSettings) => {
+  state.settings = nextSettings
+  if (!nextSettings.saveHistory) {
+    historyMigrationGeneration += 1
+    state.history = []
+    if (!clearLegacyHistory()) {
+      state.historyWarning = 'æ­·å²å·²åœæ­¢ä¿å­˜ï¼Œä½†èˆŠå„²å­˜å€ä»ç­‰å¾… Windows è§£é™¤å ç”¨å¾Œæ¸…é™¤ã€‚'
+    }
+  }
+  render()
+})
+
+desktopApi.onSettingsPersistence((status) => {
+  const becameUnpersisted = state.settingsPersistence.persisted && !status.persisted
+  state.settingsPersistence = status
+  render()
+  if (becameUnpersisted) announce(persistenceWarningMessage())
+})
+
+desktopApi.onHistoryChanged((history) => {
+  applyHistorySnapshot(history, state.settings.saveHistory)
+  if (!state.settings.saveHistory) state.history = []
+  render()
+})
+
+desktopApi.onTranslationPartial((partial) => {
+  if (partial.requestId !== activeMainRequestId) return
+  state.partial = { ...partial, source: activeMainSource }
+  render()
+  announce('å¿«é€Ÿç¿»è­¯é è¦½å·²é¡¯ç¤ºï¼Œå®Œæ•´çµæœä»åœ¨æ ¸å°ã€‚')
+})
+
+desktopApi.onEngineState((payload) => {
+  state.engine = payload.engine
+  if (payload.performance) state.performance = payload.performance
+  if (payload.offlineEngineStart) state.offlineEngineStart = payload.offlineEngineStart
+  if (payload.offlineWarmup) state.offlineWarmup = payload.offlineWarmup
+  render()
+})
+
+desktopApi.onModelProgress((progress: ModelProgress) => {
+  state.progress = progress
+  if (progress.percent !== lastProgressPercent) {
+    lastProgressPercent = progress.percent
+    render()
+  }
+})
+
+async function initialize(): Promise<void> {
+  render()
+  try {
+    const snapshot = await desktopApi.getState()
+    Object.assign(state, snapshot)
+    if (state.historyClearPending) {
+      state.historyWarning = 'æ­·å²å·²åœæ­¢ä¿å­˜ï¼›ç£ç¢Ÿæ¸…é™¤ä»åœ¨ç­‰å¾… Windows è§£é™¤æª”æ¡ˆå ç”¨ã€‚'
+    }
+    if (state.settings.saveHistory) {
+      await synchronizeSavedHistory()
+    } else {
+      state.history = []
+      applyHistorySnapshot(await desktopApi.listHistory(), false)
+      if (state.historyClearAuthorized && !clearLegacyHistory()) {
+        state.historyWarning = 'æ­·å²å·²åœæ­¢ä¿å­˜ï¼Œä½†èˆŠå„²å­˜å€ä»ç­‰å¾… Windows è§£é™¤å ç”¨å¾Œæ¸…é™¤ã€‚'
+      }
+    }
+    if (isDesktop && !onboardingCompleted()) state.guideOpen = true
+  } catch {
+    state.error = 'ç„¡æ³•è®€å–æ¡Œé¢ç¨‹å¼ç‹€æ…‹ã€‚'
+  }
+  render()
+  const persistenceWarning = persistenceWarningMessage()
+  if (persistenceWarning) announce(persistenceWarning)
+  if (state.guideOpen) focusActiveDialog()
+
+  window.setInterval(() => {
+    if (document.visibilityState !== 'visible') return
+    if (!state.engine.online || state.settingsOpen) void refreshEngine()
+  }, 15_000)
+}
+
+void initialize()

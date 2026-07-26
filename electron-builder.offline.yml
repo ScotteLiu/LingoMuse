@@ -1,0 +1,30 @@
+appId: tw.lingomuse.desktop
+productName: LingoMuse 靈譯
+asar: true
+npmRebuild: false
+asarUnpack:
+  - node_modules/uiohook-napi/**
+directories:
+  output: work/offline-build
+  buildResources: build
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+  - LICENSE
+  - PRIVACY.md
+extraResources:
+  - from: work/offline-runtime/ollama
+    to: offline/ollama
+  - from: work/offline-runtime/models
+    to: offline/models
+  - from: offline/edition.json
+    to: offline/edition.json
+  - from: work/offline-runtime/legal
+    to: offline/legal
+  - from: THIRD_PARTY_NOTICES.md
+    to: offline/THIRD_PARTY_NOTICES.md
+win:
+  icon: build/icon.ico
+  target:
+    - dir
