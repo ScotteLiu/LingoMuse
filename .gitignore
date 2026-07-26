@@ -1,0 +1,16 @@
+node_modules/
+dist/
+release/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+work/
+outputs/
+.agents/
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.key
