@@ -4,6 +4,14 @@
   "description": "A private, zero-cost, on-device Chinese-English translation companion.",
   "author": "LingoMuse",
   "license": "MIT",
+  "homepage": "https://scotteliu.github.io/LingoMuse/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScotteLiu/LingoMuse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ScotteLiu/LingoMuse/issues"
+  },
   "type": "module",
   "main": "electron/main.mjs",
   "scripts": {
@@ -15,6 +23,7 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "verify": "tsc --noEmit && vitest run && vite build",
+    "site:build": "node scripts/build-site.mjs",
     "package:win": "vite build && electron-builder --win nsis --x64 --config.artifactName=LingoMuse-${version}-${os}-${arch}-Setup.${ext} && electron-builder --win portable --x64 --config.artifactName=LingoMuse-${version}-${os}-${arch}-Portable.${ext}",
     "package:offline": "vite build && electron-builder --config electron-builder.offline.yml --win dir --x64"
   },

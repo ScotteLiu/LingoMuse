@@ -1,102 +1,108 @@
-# LingoMuse 靈譯
+# LingoMuse
 
-自然語感優先、避免逐字硬譯，並完全在本機執行的中英雙向 AI 翻譯桌面工具。
+**Natural Chinese–English translation that stays entirely on your computer.**
 
-## 產品特色
+[English](README.md) · [繁體中文](README.zh-TW.md) · [Website](https://scotteliu.github.io/LingoMuse/) · [Privacy](PRIVACY.en.md)
 
-- 中英自動偵測與雙向翻譯，繁體中文固定使用台灣語感。
-- 以本機語言模型理解語境、口吻、禮貌程度與慣用語，優先避免逐字硬翻；重要或專業內容仍應核對原文。
-- 每次提供自然譯文、直譯差異、替代說法、用法重點，以及依電腦性能提供兩至三組雙語例句。
-- 只使用作業系統明確標示為本機的語音朗讀英文，可調整語速；找不到本機語音時不朗讀，也不把文字送出電腦。
-- 在任何應用程式中連按兩次 `Ctrl+C`，用可自由縮放的懸浮小窗自動擷取與翻譯；自動朗讀可自行開啟。
-- 歷史紀錄只存在使用者的電腦。
-- 最近翻譯預設不保存；開啟後仍可隨時關閉並立即清除已保存內容。
-- 不使用任何付費 API，不需帳號、API 金鑰或信用卡。
+[![License: MIT](https://img.shields.io/badge/License-MIT-22251f.svg)](LICENSE)
+[![Platform: Windows](https://img.shields.io/badge/Platform-Windows-5f725d.svg)](#requirements)
+[![Cloud cost: $0](https://img.shields.io/badge/Cloud%20cost-%240-8ba087.svg)](#zero-cost-by-design)
 
-## 電腦性能模式
+LingoMuse is an open-source Windows translation companion for Traditional Chinese and English. It uses a local, already-trained language model to produce context-aware translations, examples, alternatives, and usage notes without sending your text to a cloud translation service.
 
-- `自動`（預設）：依啟動時可用 RAM、總 RAM 與處理器核心數，在速度與辦公軟體流暢度之間取得平衡。
-- `速度優先`：讓模型常駐記憶體，適合性能較好的電腦。
-- `低資源`：不在啟動時載入模型、限制推理執行緒，閒置約三分鐘後釋放模型記憶體。
+## Why LingoMuse
 
-## 零費用架構
+- **Natural, context-aware translation** — prioritizes meaning, tone, politeness, and idiomatic phrasing instead of rigid word-for-word output.
+- **Double-copy quick translation** — select text in any application and press `Ctrl+C` twice to open a compact translation window.
+- **A complete quick window** — resize it, pin it above other windows, adjust opacity, copy results, and play local English pronunciation.
+- **Examples that teach usage** — translations include bilingual examples, alternatives, and concise nuance notes.
+- **Fully local processing** — translation runs through a loopback-only Ollama engine. The full offline edition bundles both the engine and model.
+- **Designed for ordinary office computers** — automatic, speed-first, and low-resource performance profiles balance response time and memory use.
+- **No subscription or paid API** — no account, API key, credit card, per-request fee, advertising, or telemetry.
 
-LingoMuse 透過 [Ollama](https://ollama.com/) 在本機執行免費、已訓練完成的開源模型。預設模型為 `qwen3:1.7b`，約 1.4 GB；模型下載完成後可離線翻譯。
+## How it works
 
-可選模型：
+```text
+Selected text
+    ↓  Ctrl+C twice
+LingoMuse quick window
+    ↓  loopback only (127.0.0.1)
+Local Ollama + Qwen model
+    ↓
+Natural translation, examples, notes, and local speech
+```
 
-| 模型 | 下載大小 | 建議硬體 | 定位 |
+The lightweight edition connects only to a local Ollama instance at `127.0.0.1:11434`. The full offline edition runs its bundled engine at `127.0.0.1:11435`. Remote engine addresses are rejected.
+
+## Performance profiles
+
+| Profile | Best for | Behavior |
+| --- | --- | --- |
+| Automatic | Most computers | Selects a balanced configuration from available memory and CPU cores |
+| Speed first | Faster computers | Keeps the model warm for the quickest repeated translations |
+| Low resource | Office and older PCs | Delays model loading, limits inference threads, and releases idle memory |
+
+## Local model options
+
+| Model | Approximate download | Suggested memory | Positioning |
 | --- | ---: | --- | --- |
-| `qwen3:1.7b` | 約 1.4 GB | 8 GB RAM | 輕量、快速（預設） |
-| `qwen3:4b-instruct` | 約 2.5 GB | 8–16 GB RAM | 長句與細膩語氣更穩定 |
-| `qwen3:8b` | 約 5.2 GB | 16 GB+ RAM | 語氣更細膩 |
+| `qwen3:1.7b` | 1.4 GB | 8 GB RAM | Lightweight and fast; default |
+| `qwen3:4b-instruct` | 2.5 GB | 8–16 GB RAM | More stable for longer sentences |
+| `qwen3:8b` | 5.2 GB | 16 GB+ RAM | Finer tone and nuance |
 
-程式碼中沒有付費雲端翻譯端點。使用過程唯一可能產生的是一般網路與電力成本；LingoMuse 本身不會產生訂閱、API 或按次費用。
+Important or professional material should still be checked against the original text.
 
-## 使用方式
+## Zero-cost by design
 
-1. 安裝並啟動 LingoMuse。
-2. 從設定頁開啟 Ollama 官方下載頁並完成安裝。
-3. 回到設定頁按「重新偵測」，再下載免費語言模型。
-4. 在 LingoMuse 輸入文字後按「自然翻譯」，或在任何軟體選取文字並連按兩次 `Ctrl+C`。
+LingoMuse contains no paid translation endpoint. The program itself creates no subscription, API, or usage charge. Normal electricity and internet costs may apply when downloading the application, Ollama, or a model; translation is offline after local installation is complete.
 
-Windows 關閉主視窗後程式會留在系統匣，讓雙擊複製功能持續運作；從系統匣選單可完全結束。
+## Privacy
 
-單次最多 12,000 個拉丁字元；為保留模型輸出空間，中日韓文字採約 3,000 字的安全預算，超過時會明確要求分段，不會靜默截斷。
+- No account, telemetry, advertising, analytics SDK, or cloud sync.
+- Clipboard text is read only after double-copy translation is enabled and the trigger is detected.
+- Translation history stays on the device, is disabled by default, and can be cleared immediately.
+- English speech uses only voices reported by the operating system as local.
+- Translation text is accepted only by a loopback engine address.
 
-## 完整離線版
+Read the [English privacy policy](PRIVACY.en.md) or [Traditional Chinese privacy policy](PRIVACY.md).
 
-完整離線 ZIP 內含 Ollama 獨立執行引擎與 `qwen3:1.7b` 模型。解壓縮後直接執行 `LingoMuse 靈譯.exe`，程式會在自己的 `127.0.0.1:11435` 啟動內建引擎；不需另外安裝 Ollama、下載模型或連接網路。完全結束 LingoMuse 時，內建引擎也會一起關閉。
+## Requirements
 
-完整版檔案較大，輕量安裝版與免安裝版則維持小型下載，讓使用者自行選擇。
+- Windows 10 or Windows 11, x64
+- Node.js 22+ and pnpm 10+ for source development
+- Lightweight edition: a local Ollama installation and one supported model
+- Full offline edition: no separate engine or model installation
 
-## 隱私
-
-- 輕量版翻譯文字只傳送至 loopback 本機引擎（預設 `127.0.0.1:11434`）；完整離線版只傳送至程式管理的 `127.0.0.1:11435`。介面會拒絕遠端引擎網址。
-- 歷史紀錄由主程序單一寫入使用者資料目錄的本機檔案，避免主視窗與小窗互相覆蓋；關閉保存後立即清除。
-- 沒有遙測、廣告、使用者帳號或雲端同步。
-- 完整政策請見 [PRIVACY.md](PRIVACY.md)。
-
-## 開發
-
-需求：Node.js 22+、pnpm 10+。
+## Build from source
 
 ```powershell
-pnpm install
+pnpm install --frozen-lockfile
+pnpm verify
 pnpm dev
 ```
 
-驗證：
-
-```powershell
-pnpm verify
-```
-
-建立 Windows 安裝版與免安裝版：
+Build the Windows installer and portable edition:
 
 ```powershell
 pnpm package:win
 ```
 
-輸出位於 `release/`。
-
-建立完整離線版前，先準備經雜湊驗證的官方引擎與模型，再執行封裝：
+Prepare and package the complete offline edition:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts/prepare-offline-runtime.ps1
 pnpm package:offline
 ```
 
-準備腳本會保留 CPU 與 Vulkan 後端、移除大型 CUDA 後端，並將模型寫入 `work/offline-runtime/`。
+Build the project website:
 
-## 技術架構
+```powershell
+pnpm site:build
+```
 
-- Electron：桌面視窗、系統匣、剪貼簿與安全 IPC。
-- `uiohook-napi`：不攔截原按鍵行為的全域雙擊複製偵測。
-- Vite + TypeScript：應用介面與型別檢查。
-- Ollama `/api/chat`：本機推論與 JSON Schema 結構化輸出。
-- Web Speech API：只選用 `localService` 本機語音，不使用遠端合成語音。
+## Open-source project
 
-## 授權
+LingoMuse is released under the [MIT License](LICENSE). Contributions are welcome; please read [CONTRIBUTING.md](CONTRIBUTING.md), follow the [Code of Conduct](CODE_OF_CONDUCT.md), and report security issues through [SECURITY.md](SECURITY.md).
 
-LingoMuse 原始碼採 MIT License。Ollama 與 Qwen 模型使用各自的授權條款；模型不包含在本原始碼儲存庫或輕量安裝包中，完整離線版則依第三方授權與聲明一併提供。
+Third-party components and model licenses remain governed by their respective terms. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
