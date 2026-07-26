@@ -23,6 +23,17 @@ export function fitPopupSizeToWorkArea({
   }
 }
 
+export function clampPositionToWorkArea({ bounds, workArea }) {
+  const width = Math.max(1, Number(bounds?.width) || 1)
+  const height = Math.max(1, Number(bounds?.height) || 1)
+  const maxX = workArea.x + workArea.width - width
+  const maxY = workArea.y + workArea.height - height
+  return {
+    x: Math.round(Math.max(workArea.x, Math.min(Number(bounds?.x) || 0, maxX))),
+    y: Math.round(Math.max(workArea.y, Math.min(Number(bounds?.y) || 0, maxY))),
+  }
+}
+
 export function calculatePopupResizeBounds({
   direction,
   startBounds,

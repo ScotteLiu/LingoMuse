@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { calculatePopupResizeBounds, fitPopupSizeToWorkArea } from '../electron/popup-bounds.mjs'
+import {
+  calculatePopupResizeBounds,
+  clampPositionToWorkArea,
+  fitPopupSizeToWorkArea,
+} from '../electron/popup-bounds.mjs'
 
 const base = {
   startBounds: { x: 200, y: 120, width: 468, height: 640 },
@@ -50,5 +54,30 @@ describe('fitPopupSizeToWorkArea', () => {
       height: 1200,
       workArea: { x: -1366, y: 0, width: 1366, height: 728 },
     })).toEqual({ width: 1342, height: 704 })
+  })
+})
+
+describe('clampPositionToWorkArea', () => {
+  const workArea = { x: 0, y: 0, width: 1920, height: 1040 }
+
+  it('keeps a window that is already fully visible in place', () => {
+    expect(clampPositionToWorkArea({
+      bounds: { x: 600, y: 300, width: 468, height: 640 },
+      workArea,
+    })).toEqual({ x: 600, y: 300 })
+  })
+
+  it('pulls a window back inside when it would grow past the bottom edge', () => {
+    expect(clampPositionToWorkArea({
+      bounds: { x: 600, y: 900, width: 468, height: 640 },
+      workArea,
+    })).toEqual({ x: 600, y: 400 })
+  })
+
+  it('respects a secondary monitor origin with negative coordinates', () => {
+    expect(clampPositionToWorkArea({
+      bounds: { x: -2000, y: -50, width: 468, height: 248 },
+      workArea: { x: -1920, y: 0, width: 1920, height: 1040 },
+    })).toEqual({ x: -1920, y: 0 })
   })
 })
