@@ -22,7 +22,7 @@ import {
   POPUP_MIN_HEIGHT,
   POPUP_MIN_WIDTH,
 } from './popup-bounds.mjs'
-import { clampPopupOpacity } from './popup-preferences.mjs'
+import { clampPopupOpacity, sanitizePopupDimension } from './popup-preferences.mjs'
 import { createClipboardCapture } from './clipboard-capture.mjs'
 import { createStageTimer } from './stage-timing.mjs'
 import {
@@ -82,6 +82,8 @@ const DEFAULT_SETTINGS = {
   voiceRate: 0.92,
   popupPinned: true,
   popupOpacity: 1,
+  popupWidth: 0,
+  popupHeight: 0,
   launchAtLogin: false,
   performanceMode: 'auto',
   model: 'qwen3:1.7b',
@@ -212,6 +214,8 @@ function sanitizeSettings(value) {
     voiceRate: Math.max(0.6, Math.min(1.35, Number(value.voiceRate) || 0.92)),
     popupPinned: value.popupPinned === true,
     popupOpacity: clampPopupOpacity(value.popupOpacity),
+    popupWidth: sanitizePopupDimension(value.popupWidth, POPUP_MIN_WIDTH),
+    popupHeight: sanitizePopupDimension(value.popupHeight, POPUP_MIN_HEIGHT),
     launchAtLogin: value.launchAtLogin === true,
     saveHistory: value.saveHistory === true,
     performanceMode: sanitizePerformanceMode(value.performanceMode),
@@ -288,9 +292,13 @@ function createPopupWindow() {
   popupRendererReady = false
   popupResizeSession = null
   popupUserResized = false
+  const { workAreaSize } = screen.getPrimaryDisplay()
+  const savedWidth = sanitizePopupDimension(settings.popupWidth, POPUP_MIN_WIDTH)
+  const savedHeight = sanitizePopupDimension(settings.popupHeight, POPUP_MIN_HEIGHT)
+  popupUserResized = savedWidth > 0 || savedHeight > 0
   popupWindow = new BrowserWindow({
-    width: 468,
-    height: 248,
+    width: Math.min(savedWidth || 468, workAreaSize.width),
+    height: Math.min(savedHeight || 248, workAreaSize.height),
     minWidth: POPUP_MIN_WIDTH,
     minHeight: POPUP_MIN_HEIGHT,
     show: false,
@@ -1188,7 +1196,17 @@ function registerIpc() {
     return { ok: true, bounds }
   })
   ipcMain.handle('popup:resize-end', (event) => {
-    if (popupResizeSession?.senderId === event.sender.id) popupResizeSession = null
+    if (popupResizeSession?.senderId === event.sender.id) {
+      popupResizeSession = null
+      if (popupWindow && !popupWindow.isDestroyed()) {
+        const [width, height] = popupWindow.getSize()
+        if (settings.popupWidth !== width || settings.popupHeight !== height) {
+          settings.popupWidth = width
+          settings.popupHeight = height
+          saveSettings()
+        }
+      }
+    }
     return { ok: true }
   })
   ipcMain.handle('perf:mark', (event, stage) => {

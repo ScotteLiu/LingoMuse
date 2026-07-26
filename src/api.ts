@@ -9,6 +9,8 @@ const mockSettings: Settings = {
   voiceRate: 0.92,
   popupPinned: true,
   popupOpacity: 1,
+  popupWidth: 0,
+  popupHeight: 0,
   launchAtLogin: false,
   performanceMode: 'auto',
   model: 'qwen3:1.7b',

@@ -34,6 +34,8 @@ export interface Settings {
   voiceRate: number
   popupPinned: boolean
   popupOpacity: number
+  popupWidth: number
+  popupHeight: number
   launchAtLogin: boolean
   saveHistory: boolean
   performanceMode: PerformanceMode
