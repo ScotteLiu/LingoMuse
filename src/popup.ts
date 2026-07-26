@@ -405,6 +405,10 @@ async function speak(text: string, language: 'en-US' | 'zh-TW'): Promise<boolean
   utterance.lang = language
   utterance.rate = settings.voiceRate
   utterance.voice = decision.voice
+  utterance.onstart = () => {
+    if (attempt !== speechAttempt) return
+    void desktopApi.markPerfStage('speech ready')
+  }
   utterance.onend = () => {
     if (attempt !== speechAttempt) return
     popupState.speechNotice = ''
@@ -414,7 +418,6 @@ async function speak(text: string, language: 'en-US' | 'zh-TW'): Promise<boolean
     if (attempt === speechAttempt) showSpeechNotice('Windows 本機語音朗讀失敗；文字沒有送出電腦。')
   }
   window.speechSynthesis.speak(utterance)
-  void desktopApi.markPerfStage('speech ready')
   showSpeechNotice('正在使用 Windows 本機語音朗讀')
   return true
 }

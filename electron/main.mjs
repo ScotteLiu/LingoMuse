@@ -19,6 +19,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { createDoubleCopyDetector } from './double-copy.mjs'
 import {
   calculatePopupResizeBounds,
+  fitPopupSizeToWorkArea,
   POPUP_MIN_HEIGHT,
   POPUP_MIN_WIDTH,
 } from './popup-bounds.mjs'
@@ -292,13 +293,19 @@ function createPopupWindow() {
   popupRendererReady = false
   popupResizeSession = null
   popupUserResized = false
-  const { workAreaSize } = screen.getPrimaryDisplay()
+  const cursorPoint = screen.getCursorScreenPoint()
+  const { workArea } = screen.getDisplayNearestPoint(cursorPoint)
   const savedWidth = sanitizePopupDimension(settings.popupWidth, POPUP_MIN_WIDTH)
   const savedHeight = sanitizePopupDimension(settings.popupHeight, POPUP_MIN_HEIGHT)
   popupUserResized = savedWidth > 0 || savedHeight > 0
+  const initialSize = fitPopupSizeToWorkArea({
+    width: savedWidth || 468,
+    height: savedHeight || 248,
+    workArea,
+  })
   popupWindow = new BrowserWindow({
-    width: Math.min(savedWidth || 468, workAreaSize.width),
-    height: Math.min(savedHeight || 248, workAreaSize.height),
+    width: initialSize.width,
+    height: initialSize.height,
     minWidth: POPUP_MIN_WIDTH,
     minHeight: POPUP_MIN_HEIGHT,
     show: false,
@@ -345,7 +352,15 @@ function positionPopupWindow() {
   if (!popupWindow) return
   const point = screen.getCursorScreenPoint()
   const { workArea } = screen.getDisplayNearestPoint(point)
-  const [width, height] = popupWindow.getSize()
+  const [currentWidth, currentHeight] = popupWindow.getSize()
+  const preferredWidth = popupUserResized && settings.popupWidth > 0 ? settings.popupWidth : currentWidth
+  const preferredHeight = popupUserResized && settings.popupHeight > 0 ? settings.popupHeight : currentHeight
+  const { width, height } = fitPopupSizeToWorkArea({
+    width: preferredWidth,
+    height: preferredHeight,
+    workArea,
+  })
+  if (width !== currentWidth || height !== currentHeight) popupWindow.setSize(width, height, false)
   const preferredX = point.x + 18
   const preferredY = point.y + 18
   const x = Math.max(workArea.x + 12, Math.min(preferredX, workArea.x + workArea.width - width - 12))
@@ -422,7 +437,9 @@ async function startKeyboardHook() {
     keyboardHook.on('keydown', (event) => {
       if (!settings.autoClipboard) return
       const isCopy = event.keycode === UiohookKey.C && (event.ctrlKey || event.metaKey)
-      if (!isCopy || !doubleCopy.noteCopy(Date.now())) return
+      if (!isCopy) return
+      captureClipboard.cancelPending()
+      if (!doubleCopy.noteCopy(Date.now())) return
 
       const triggeredAt = Date.now()
       stageTimer.begin(triggeredAt)
@@ -988,6 +1005,7 @@ function registerIpc() {
             }
           : undefined,
       })
+      if (!firstPartialMarked) stageTimer.mark('first result available', { complete: true })
       stageTimer.mark('examples ready', { examples: result.examples?.length || 0 })
       if (text.length <= 2_000) translationCache.set(cacheKey, result)
       if (isPopupIntegrationTest && popupWindow?.webContents.id === senderId) {

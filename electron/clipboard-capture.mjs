@@ -13,11 +13,23 @@ export function createClipboardCapture({
   onCapture,
   followUpDelayMs = 160,
   schedule = setTimeout,
+  cancelSchedule = clearTimeout,
 } = {}) {
-  return function capture(triggeredAt) {
+  let followUpHandle = null
+
+  function cancelPending() {
+    if (followUpHandle === null || followUpHandle === undefined) return false
+    cancelSchedule(followUpHandle)
+    followUpHandle = null
+    return true
+  }
+
+  function capture(triggeredAt) {
+    cancelPending()
     const first = truncateClipboardText(readText())
     if (first) onCapture(first, triggeredAt, { immediate: true })
-    schedule(() => {
+    followUpHandle = schedule(() => {
+      followUpHandle = null
       // Slow applications may commit the copy to the clipboard after the
       // second Ctrl+C arrives; a single follow-up read corrects the popup.
       const second = truncateClipboardText(readText())
@@ -26,4 +38,7 @@ export function createClipboardCapture({
     }, followUpDelayMs)
     return first
   }
+
+  capture.cancelPending = cancelPending
+  return capture
 }

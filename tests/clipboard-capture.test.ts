@@ -10,6 +10,8 @@ function captureHarness(reads: string[]) {
   const captured: Array<{ text: string; triggeredAt: number; immediate: boolean }> = []
   let followUp: (() => void) | null = null
   let followUpDelay = 0
+  let nextHandle = 0
+  const cancelledHandles: number[] = []
   const capture = createClipboardCapture({
     readText: () => reads[Math.min(readIndex++, reads.length - 1)],
     onCapture: (text: string, triggeredAt: number, { immediate }: { immediate: boolean }) => {
@@ -18,13 +20,17 @@ function captureHarness(reads: string[]) {
     schedule: (task: () => void, delay: number) => {
       followUp = task
       followUpDelay = delay
+      nextHandle += 1
+      return nextHandle
     },
+    cancelSchedule: (handle: number) => cancelledHandles.push(handle),
   })
   return {
     capture,
     captured,
     runFollowUp: () => followUp?.(),
     followUpDelay: () => followUpDelay,
+    cancelledHandles,
   }
 }
 
@@ -75,5 +81,20 @@ describe('createClipboardCapture', () => {
     const { capture, followUpDelay } = captureHarness(['text'])
     capture(5_000)
     expect(followUpDelay()).toBe(160)
+  })
+
+  it('cancels a pending follow-up when a later copy event starts', () => {
+    const { capture, cancelledHandles } = captureHarness(['first', 'second'])
+    capture(5_000)
+    expect(capture.cancelPending()).toBe(true)
+    expect(cancelledHandles).toEqual([1])
+    expect(capture.cancelPending()).toBe(false)
+  })
+
+  it('replaces an earlier pending follow-up when capture runs again', () => {
+    const { capture, cancelledHandles } = captureHarness(['first', 'second'])
+    capture(5_000)
+    capture(5_100)
+    expect(cancelledHandles).toEqual([1])
   })
 })
