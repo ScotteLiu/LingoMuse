@@ -27,6 +27,7 @@ import {
 import { clampPopupOpacity, sanitizePopupDimension } from './popup-preferences.mjs'
 import { createClipboardCapture } from './clipboard-capture.mjs'
 import { createStageTimer } from './stage-timing.mjs'
+import { waitForEngineReady } from './engine-wait.mjs'
 import {
   getOfflineBundle,
   OFFLINE_BASE_URL,
@@ -73,6 +74,7 @@ const allowTestOverrides = !app.isPackaged
 const isSmokeTest = allowTestOverrides && process.env.LINGOMUSE_SMOKE_TEST === '1'
 const isOfflineIntegrationTest = allowTestOverrides && process.env.LINGOMUSE_OFFLINE_INTEGRATION_TEST === '1'
 const isPopupIntegrationTest = allowTestOverrides && process.env.LINGOMUSE_POPUP_INTEGRATION_TEST === '1'
+const isPopupEarlyTriggerTest = isPopupIntegrationTest && process.env.LINGOMUSE_POPUP_EARLY_TRIGGER === '1'
 const offlineBundle = getOfflineBundle(process.resourcesPath, { allowOverride: allowTestOverrides })
 const edition = offlineBundle.available ? 'offline' : 'light'
 let offlineEngineStart = { ok: false, error: '' }
@@ -1002,17 +1004,31 @@ function registerIpc() {
         code: 'INPUT_TOKEN_BUDGET',
       }
     }
-    if (edition === 'offline' && !offlineEngineStart.ok) {
-      return {
-        ok: false,
-        error: offlineEngineStart.starting ? '離線引擎仍在準備中，請稍候再試。' : '內建離線引擎尚未就緒。',
-        code: 'ENGINE_OFFLINE',
-      }
+    if (edition === 'offline' && !offlineEngineStart.ok && !offlineEngineStart.starting) {
+      return { ok: false, error: '內建離線引擎尚未就緒。', code: 'ENGINE_OFFLINE' }
     }
 
     const senderId = event.sender.id
     return inferenceQueue.run(senderId, async (signal) => {
       try {
+      if (edition === 'offline' && !offlineEngineStart.ok) {
+        // The engine is still booting (first 2-3 s after launch). Wait for
+        // it instead of failing the user's very first translation.
+        const engineReady = await waitForEngineReady({
+          isReady: () => offlineEngineStart.ok === true,
+          isStarting: () => offlineEngineStart.starting === true,
+          signal,
+          timeoutMs: 30_000,
+        })
+        if (signal.aborted) {
+          const cancelledError = new Error('已取消這次翻譯。')
+          cancelledError.code = 'CANCELLED'
+          throw cancelledError
+        }
+        if (!engineReady) {
+          return { ok: false, error: '離線引擎仍在準備中，請稍候再試。', code: 'ENGINE_OFFLINE' }
+        }
+      }
       const performance = getPerformanceProfile(text.length)
       const cacheKey = `${settings.baseUrl}\n${settings.model}\n${performance.detailLevel}\n${text}`
       const cachedResult = text.length <= 2_000 ? translationCache.get(cacheKey) : undefined
@@ -1335,11 +1351,17 @@ if (!gotLock) {
     await hookInitialization
 
     if (isSmokeTest) {
+      if (isPopupEarlyTriggerTest) {
+        // Exercise the translate-waits-for-engine path: fire the popup while
+        // the offline engine is still booting.
+        console.log(`LINGOMUSE_POPUP_EARLY_TRIGGERED=${JSON.stringify({ engineReady: offlineEngineStart.ok === true })}`)
+        showClipboardPopup('我不是故意讓你為難。')
+      }
       await engineInitialization
       console.log('LINGOMUSE_SMOKE_READY')
       if (isPopupIntegrationTest) {
         console.log('LINGOMUSE_POPUP_TRIGGERED')
-        showClipboardPopup('我不是故意讓你為難。')
+        if (!isPopupEarlyTriggerTest) showClipboardPopup('我不是故意讓你為難。')
         setTimeout(() => {
           console.error('LINGOMUSE_POPUP_TRANSLATION_TIMEOUT')
           process.exitCode = 1
