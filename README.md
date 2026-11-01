@@ -1,5 +1,12 @@
 # LingoMuse
 
+## Handoff / 接手先讀
+
+1. [`STATUS.md`](STATUS.md)：現在、下一個動作、卡住／依賴。
+2. [`AGENTS.md`](AGENTS.md)：這個專案的規則。
+3. [`pipeline/PIPELINE.md`](pipeline/PIPELINE.md)：步驟與狀態。
+4. Latest [`logs/conversations/`](logs/conversations/) record.
+
 **Natural Chinese–English translation that stays entirely on your computer.**
 
 [English](README.md) · [繁體中文](README.zh-TW.md) · [Website](https://scotteliu.github.io/LingoMuse/) · [Privacy](PRIVACY.en.md)
